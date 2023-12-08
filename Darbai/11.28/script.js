@@ -166,7 +166,7 @@ Math.floor(Math.random() * (10.00 - 1.00 + 1.00)) + 1.00;
 result = Math.round(suKableliu * 100) / 10000;
 
 console.log(result);
-//Sukurti du kintamuosius a = 5 bei b = 20; Nepasinaudojant trečiu kintamuoju, apkeisti šių dviejų kintamųjų reikšmes vietomis;
+//13 užduotis (Sukurti du kintamuosius a = 5 bei b = 20; Nepasinaudojant trečiu kintamuoju, apkeisti šių dviejų kintamųjų reikšmes vietomis;)
 let pirma = 5, 
     antra = 6;
 [pirma, antra] = [antra, pirma];
