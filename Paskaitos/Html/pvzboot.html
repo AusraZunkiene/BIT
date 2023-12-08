@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anotification</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">   <style>
+        :root {
+            --br-body-bg: #eff1f3;
+        }
+        .page-heading {
+            position: relative;
+        }
+        .page-heading::after {
+            content: "";
+            height: 5px;
+            width: 90px;
+            background-color: #29b6f6;
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+        }
+        .notification-active {
+            border-left: 4px solid #29b6f6;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="bg-light">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+        <h2 class=" mb-0">Navbar</h2>
+            <ul class="nav fs-5 gap-2">
+                <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+                <li><a href="#" class="nav-link px-2 link-secondary">About</a></li>
+                <li><a href="#" class="nav-link px-2 link-secondary">Contact</a></li>
+                <li><a href="#" class="nav-link px-2 link-secondary">Login</a></li>
+                <li><a href="#" class="nav-link px-2 link-secondary">Signup</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="container py-5">
+            <div class="d-flex align-items-center page-heading">
+                <h1 class="fw-normal">Notifications</h1>
+                <i class="bi bi-bell-fill ms-2 text-secondary" style="font-size: 40px;"></i>
+            </div>
+            <div class="mt-5">
+                <div class="bg-white d-flex p-4 gap-3 shadow-sm notification-active mb-2">
+                    <div>
+                        <img src="076d98265d5d25371521c16e92577b00.jpg" alt="" style="width: 60px;" class="rounded-5"/>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div>
+                            <strong>John Doe</strong>
+                            <span>reacted to your post</span>
+                        </div>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ex animi doloribus cumque minus pariatur!
+                        </div>
+                        <div>
+                            <small class="text-secondary">10 min ago</small>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="OIP (1).jpg" alt="" style="width: 60px; height: 60px; object-fit: cover;" class="rounded-2"/>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <div class="bg-white d-flex p-4 gap-3 shadow-sm notification-active mb-2">
+                    <div>
+                        <img src="076d98265d5d25371521c16e92577b00.jpg" alt="" style="width: 60px;" class="rounded-5"/>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div>
+                            <strong>John Doe</strong>
+                            <span>reacted to your post</span>
+                        </div>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ex animi doloribus cumque minus pariatur!
+                        </div>
+                        <div>
+                            <small class="text-secondary">10 min ago</small>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="OIP (1).jpg" alt="" style="width: 60px; height: 60px; object-fit: cover;" class="rounded-2"/>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <div class="bg-white d-flex p-4 gap-3 shadow-sm mb-2">
+                    <div>
+                        <img src="076d98265d5d25371521c16e92577b00.jpg" alt="" style="width: 60px;" class="rounded-5"/>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div>
+                            <strong>John Doe</strong>
+                            <span>reacted to your post</span>
+                        </div>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ex animi doloribus cumque minus pariatur!
+                        </div>
+                        <div>
+                            <small class="text-secondary">10 min ago</small>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="OIP (1).jpg" alt="" style="width: 60px; height: 60px; object-fit: cover;" class="rounded-2"/>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    
+</body>
+</html>

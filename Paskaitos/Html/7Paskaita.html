@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            /* Pagal nutylėjimą overflow savybė priskirta elementams yra visible */
+            /* hidden reiškia, jog paslepiame perteklinį turinį */
+            /* overflow: hidden; */
+            /* scroll nurodo slankmačių priskyrimus vertikaliai ir horizontaliai */
+            /* overflow: scroll; */
+            overflow-y: hidden;
+            overflow-x: scroll;
+        }
+        .letter-spacing {
+            /* Norodome tarpelių plotį tarp kiekvieno simbolio */
+            letter-spacing: 10px;
+            /* letter-spacing: -2px; */
+        }
+
+        .text-indent {
+            /* Pirmos eilutės atitraukimas iš kairės pusės */
+            text-indent: 30px;
+            /* text-indent: -100px; */
+        }
+
+        .white-space {
+            /* white-space reišmė pagal nutylėjimą yra wrap */
+            /* white-space: wrap; */
+            /* Tekstas nekrenta į kitą eilutę pasiekus elemento ribą: */
+            /* white-space: nowrap; */
+        }
+
+        .tab-size {
+            white-space: pre-wrap;
+            /* tab-size: 2; */
+        }
+
+        .text-shadow {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            /* Teksto šešėlio generavimas */
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-transform {
+            /* Tekstas nėra transformuojamas */
+            text-transform: none;
+            /* Didžiosios raidės */
+            text-transform: uppercase;
+            /* Mažosios raidės */
+            text-transform: lowercase;
+            /* Žodžiai iš didžiųjų raidžių */
+            text-transform: capitalize;
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            box-sizing: border-box;
+            border: 1px solid rgb(216, 216, 216);
+            padding: 10px;
+
+            /* Norint pašalinti textarea elemento modifikaciją */
+            resize: none;
+            resize: horizontal;
+            resize: vertical; 
+        }
+        .rotate {
+            /* Norint paversti elementą */
+            transform: rotate(45deg);
+        }
+
+        .scale {
+            margin-top: 100px;
+            /* Mastelis */
+            transform: scale(1.2);
+        }
+
+        .skew {
+            margin-top: 100px;
+            transform: skew(-25deg, 50deg);
+        }
+
+        .translate {
+            /* transform: translate(50px, -50px); */
+            position: absolute;
+            /* top: calc(50% - (300px / 2));
+            left: calc(50% - (300px / 2)); */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(255, 0, 255);
+            /* 1s = 1000ms */
+            /* 0.5s = 500ms */
+            /* .5s = 500ms */
+            /* transition: background-color 2s ease-in-out; */
+            transition: all 1s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

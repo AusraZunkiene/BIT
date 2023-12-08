@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formos</title>
+    <style>
+        label {
+            display: block;
+        }
+        input {width:100%;
+        padding: 10px 20px;
+    border:1px solid rgb(213, 211, 211)}
+        input [type="radio"], [type="checkbox"] {
+            width: auto;
+        }
+        select {width: 100%;}
+        .flex {display: flex;}
+    </style>
+</head>
+<body>
+    <form>
+        <label>Jųsū vardas</label>
+        <input type="text" placeholder="Vardenis Pavardenis" required>
+        <label>Produktų kiekis</label>
+        <input type="number" placeholder="Įveskite kiekį" min="1" max="50">
+        <label>Jūsų el.pašto adresas</label>
+        <input type="email" placeholder="email@gmail.com" value="vilius@bit.lt">
+        <label>Jųsū slaptažodis</label>
+        <input type="pasword" required>
+        <label>Pasirinkite spalvą</label>
+        <input type="color">
+        <label>Pasirinkite fiksuotą spavą</label>
+        <input type="color" list="spalvos">
+        <datalist id="spalvos">
+            <option value="white">Balta</option>
+            <option value="black">Juoda</option>
+            <option value="grey">Pilka</option>
+        </datalist>
+        <label>Pasirinkite datą</label>
+        <input type="date">
+        <label>Pasirinkite datą ir laiką</label>
+        <input type="datetime-local">
+        <label>Pasirinkite failą</label>
+        <input type="file">
+        <label>Pasirinkite failus</label>
+        <input type="file" multipe>
+        <h3>checkboxes</h3>
+        <label>
+            <input type="checkbox">
+            Susipažinau su privatumo politika</label>
+        <div class="flex">
+        <input type="checkbox" id="newletter">
+        <label for="newletter">  Gauti naujienlaiškiu</label>
+        </div>
+        <h3>Radio</h3>
+        <label>
+            <input type="radio" name="topic">
+            <span>Sąskaitos</span>
+        </label>
+        <label>
+            <input type="radio"name="topic">
+            <span>Klientų informacija</span>
+        </label>
+        <label>
+            <input type="radio"name="topic">
+            <span>Garantija</span>
+        </label>
+        <h3>Select</h3>
+        <select>
+            <option>Sąskaitos</option>
+            <option>Klientų informacija</option>
+            <option>Garantija</option>
+        </select>
+        <button>Siųsti</button>
+    </form>
+</body>
+</html>

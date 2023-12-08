@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shadow</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+        }
+        .outer-shadow {
+            background-color: brown;
+            box-shadow: 30px 10px 29px 19px rgb(103, 15, 15);
+        }
+        .inner-shadow {
+            background-color: aqua;
+            box-shadow: inset 0px 10px 29px 19px rgb(15, 81, 103);
+        }
+    </style>
+</head>
+<body>
+    <div class="box outer-shadow"></div>
+    <div class="box inner-shadow"></div>
+</body>
+</html>

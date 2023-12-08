@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travlog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <style>
+        @font-face {
+            font-family: "CircularSTD";
+            src: url('font/circularstd-book-webfont.woff') format('woff');
+            font-weight: 300;
+        }
+        @font-face {
+            font-family: "CircularSTD";
+            src: url('font/circularstd-bold-webfont.woff') format('woff');
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: "CircularSTD";
+            src: url('font/circularstd-black-webfont.woff') format('woff');
+            font-weight: 800;
+        }
+
+        :root {
+            --bs-border-radius: 1.5rem;
+        }
+        body {
+            font-family: "CircularSTD";
+        }
+
+        ul{
+            list-style: none;
+        }
+        .sing {
+            background-color: #5D50C6;
+            color: white;
+        }
+        span {
+            color: #F85E9F;
+        }
+        .row h1 {
+            font-size: 69px;
+            font-weight: 600;
+        }
+        .btn-shadow {
+            box-shadow: 0 15px 15px 0 #00000012;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .row p {
+            color: #19182567;
+            font-size: 18px;
+            line-height: 30px;
+            font-family: 'Inter', sans-serif;
+        }
+        .play {
+            color: #222831;
+            border-color: #D9D9D9;
+        }
+        .hamburger {
+            border: none;
+            width: 48px;
+            height: 49px;
+            background: url(img/menu.11\ 1.svg) no-repeat center center;
+        }
+        @media screen and (min-width: 992px) {
+            nav.navbar {
+                display: block;
+            }
+
+        }
+        @media screen and (max-width: 992px) {
+            nav.navbar {
+                position: fixed;
+                top: 0;
+                left: -280px;
+                font-size: 18px;
+                background: white;
+                padding: 1rem;
+                z-index: 1000;
+                height: 100vh;
+                width: 280px;
+                border-right: 1px solid rgb(153 153 153);
+                transition: left .5s ease-in-out;
+            }
+
+            nav.navbar::after {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: -100vw;
+                background-color: rgba(0, 0, 0, 0.3);
+                width: calc(100vw - 280px);
+                height: 100vh;
+                transition: left .5s ease-in-out;
+            }
+
+            input[name="nav-toggler"]:checked + nav {
+                display: block;
+                left: 0;
+            }
+
+            input[name="nav-toggler"]:checked + nav::after {
+                left: 280px;
+            }
+        }
+} 
+        
+
+    </style>
+</head>
+<body>
+    <header class="ps-5">
+        <div class="container-lg ms-5 mt-5 d-flex justify-content-between align-items-center flex-row-reverse flex-md-row">
+            <div class="d-block d-lg-none menu">
+                <label class="hamburger" for="nav-toggler"></label>
+            </div>
+            <div class="logo">
+                <img src="img/Frame 1.png" alt="Logotipas"/>
+            </div>
+            <input type="checkbox" id="nav-toggler" class="d-none">
+            <nav class="navbar navbar-expand">
+                <label class="close-offcanvas fs-1 position-absolute top-0 d-lg-none" for="nav-toggler" style="right: 1rem">
+                    <i class="bi bi-x"></i>
+                </label>
+                <ul class="navbar-nav  flex-column  flex-lg-row gap-lg-5 gap-4 pt-3">
+                    <li class="active"><a href="#" class="text-decoration-none fw-bold fs-14" style="color:#222831;">Home</a></li>
+                    <li><a href="#" class="text-decoration-none fw-bold fs-14" style="color:#191825;">Discover</a></li>
+                    <li><a href="#" class="text-decoration-none fw-bold fs-14" style="color:#191825;">Special Deals</a></li>
+                    <li><a href="#" class="text-decoration-none fw-bold fs-14"style="color:#191825">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="navbar-nav d-md-flex flex-row d-none gap-3">
+                <button class="border border-0 bg-white fw-bold fs-14" type="submit">Log In</button>
+                <button class="sing rounded-pill fw-bold fs-14" type="submit" style="width: 115px;height: 49px;">Sign up</button>
+            </div>
+        </div>
+    </header>
+    <main class="ps-5">
+        <div class="container-lg mt-5">
+            <div class="row">
+                <div class="col-4 mt-5">
+                    <div class="mt-5 mb-4">
+                        <a href="#" class="btn btn-shadow" style="color: #F85E9F">Explore the world!<img src="img/work 1.png"/></a>
+                    </div>
+                    <h1>Travel<span> top destination</span> of the world</h1>
+                    <p class="mt-5 mb-5">We always make our customer happy by <br> providing <br>as many choices as possible </p>
+                    <div class="d-flex gap-4">
+                        <button class="sing rounded-pill fw-bold fs-14"style="height: 49px;">Get Started</button>
+                        <button class="rounded-pill fw-bold fs-14 play btn btn-outline-primary d-flex justify-content-center align-items-center gap-2" style="height: 49px;"><img src="img/play-circle.5 1.svg"/>Watch Demo</button>
+                    </div>
+                </div>
+                <div class="col-8 mt-5">
+                    <img src="img/Group 1.png">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

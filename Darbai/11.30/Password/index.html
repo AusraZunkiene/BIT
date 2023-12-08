@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+        }
+        #message {
+            display:none;
+            background: #f1f1f1;
+            color: #000;
+            position: relative;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        #message p {
+            padding: 10px 35px;
+            font-size: 18px;
+        }
+        .valid {
+            background-color: green;
+            color:white;
+        }
+
+        .invalid {
+            background-color: red;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/action_page.php">
+            <label for="psw">Password</label>
+            <input type="password" id="psw" name="psw" required>
+            
+            <input type="submit" value="Submit">
+        </form>
+        <div id="message">
+            <h3>Slaptažodis turi atitikti šiuos reikalavimus:</h3>
+            <p id="length" class="invalid">Slaptažodis turi būti bent 8 simbolių arba ilgesnis</b></p>
+            <p id="length1" class="invalid">Slaptažodžio maksimalus ilgis 28 simboliai</b></p>
+            <p id="capital" class="invalid">Slaptažodyje turi būti bent viena didžioji raidė</p>
+            <p id="letter" class="invalid">Slaptažodyje turi būti bent viena mažoji raidė</p>
+            <p id="number" class="invalid">Slaptažodyje turi būti bent vienas skaičius</b></p>
+            <p id="symbol" class="invalid">Slaptažodyje turi būti bent vienas specialusis simbolis</p>
+        </div>
+        <script src="srcpt.js"></script>
+    </div>
+</body>
+</html>

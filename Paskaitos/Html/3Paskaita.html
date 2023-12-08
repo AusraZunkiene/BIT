@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stiliai</title>
+    <style>
+    /* CSS stilius priskiriamas pagal selektoriaus poziciją sąraše bei selektoriaus individualumą */
+    /* ID atributai CSS stiliuje yra žymimi grotelėmis */
+    /* Pats unikaliausias variantas CSS hierarchijoje yra inline atributo stilius */
+    h1 {
+            /* Font Stack */
+            /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial; */
+            font-family: 'Oswald', sans-serif;
+        }
+        /* prie head reikia nukopint iš google jei imi. <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">*/
+    .zodis {
+            /* inherit raktažodis nurodo paveldėjimą iš tėvinio elemento */
+            height: inherit;
+            /* unset pašalina reikšmę */
+            color: unset;
+        }
+    p {
+            /* line-height: 100%; */
+            /* Eilutės aukštis */
+            line-height: 58px;
+            /* Šrifto dydis */
+            font-size: 38px;
+            /* Šrifto storis */
+            font-weight: bold;
+            /* Tarpai tarp simbolių */
+            letter-spacing: 18px;
+        }
+    .padding {
+            background-color: aqua;
+            /* Turinio atitikraukimas nuo elemento vidaus iš visų keturių kraštinių */
+            /* padding: 50px; */
+            /* Turinio atitraukimas kiekvienai kraštinei individualiia */
+            /* 
+            padding-top: 20px;
+            padding-right: 30px;
+            padding-bottom: 10px; 
+            padding-left: 50px;
+            */
+            /* Atitraukimas kiekvienai kraštinei individualiai, tačiau vienoje eilutėje */
+            /* padding: 20px 30px 10px 50px; */
+            /* Jeigu iš viršaus ir apačios, bei kairės ir dešinės turimos reikšmės yra vienodos  */
+            /* padding: 20px 50px; */
+            /* Jeigu reikšmė yra vienoda iš kairės ir dešinės, bet skiriasi tarp viršaus ir apačios */
+            padding: 20px 50px 30px;
+        }   
+
+    .margin {
+            background-color: brown;
+            margin: 50px;
+            /* Tos pačios taisyklės reikšmių aprašymui galioja ir margin savybei */
+        }
+         </style>
+</head>
+<body>
+        <!-- Nuotraukos patalpinimas -->
+        <img src="top-20-small-dog-breeds.jpeg.webp" alt="Alternatyvus tekstas">
+    
+</body>
+</html>

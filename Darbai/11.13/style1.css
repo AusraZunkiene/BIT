@@ -1,0 +1,117 @@
+body {
+    font-family:'Open Sans', sans-serif;
+    font-weight: 600;
+}
+.login-first {
+    display: flex;
+    width: 1366px;
+    height: 768px;
+    background-color: white;
+}
+.left {
+   height: 768px;
+   width: 500px;
+   background-image: url(img/19f74bd464326c89ba412ff16fe9e63e.jpg);
+   background-size: cover;
+}
+.box {
+    width: 428px;
+    height: 223px;
+    display: flex;
+    padding: 36px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding-top: 50px;
+}
+.text {
+    font-weight: 500;
+    color:white;
+    font-size: 20px;
+    line-height: 26px;
+    padding-left: 20px;
+    letter-spacing: 1px;
+}
+.logo {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.right {
+    width: 863px;
+    height: 768px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box3 {
+    width: 340px;
+    height: 387px;
+}
+.cover h1 {
+    color:  #1f2937;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+}
+.group {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+    justify-content: space-between;
+}
+label{
+    color:#6B7280;
+}
+.eta {
+    width: 340px;
+    height: 48px;
+    margin-bottom: 20px;
+}
+.click {
+   border:  none;
+    color: #6D58BA;
+    padding-left: 6px;  
+    font-size: 14px;
+}
+.line {           
+    width: 100%;
+    color: #6B7280;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+.continue {
+    background-color: #724DFF;
+    font-size: 16px;
+    height: 44px;
+    width: 247px;
+    color: white;
+    border-radius: 6px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.support {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    padding-top: 15px;
+    color: #6B7280;
+}
+a {
+    text-decoration: none;
+    color: #6D58BA;
+    padding-left: 6px;   
+}
+.email {
+    color: #6D58BA;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+.nzn {
+    width: 20px;
+    height: 20px;
+    margin-top: 18px;
+}

@@ -1,0 +1,540 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.cont {
+    width: 1900px;
+}
+.logo {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 63px;
+    color: #9A54BC;
+}
+.navb li {
+    list-style-type: none;
+}
+.navb a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: #2B0236;
+    font-size: 16px;
+}
+header {
+    box-shadow: 0 5px #0000000F;
+    margin-left: -10px;
+    width: 1900px;
+}
+
+header::before {
+    content: "India’s first mobile app for construction industry. Learn More";
+    background-color: #60267F;
+    color: white;
+    font-size: 13px;
+    padding: 10px 770px 10px 770px;
+}
+.demo {
+    color: #9A54BC;
+    font-size: 16px;
+    border: 2px solid #9A54BC;
+    border-radius: 4px;
+    background-color: white;
+    padding: 10px;
+    font-weight: 700;
+}
+.first {
+    text-align: center;
+}
+.first h1 {
+    font-size: 64px;
+    line-height: 75px;
+    color: #2B0236;
+    padding-top: 80px;
+}
+.demo1 {
+    background-color: #9A54BC;
+    color: white;
+    font-weight: 700;
+    padding: 20px 55px 20px 55px;
+    border: 4px solid #9A54BC;
+    border-radius: 7px;
+}
+
+.box1 {
+    background-color: #f5e1ff4b;
+    height: 905px;
+    width: 905px;
+    border-radius: 50%;
+    top: 100px;
+    left: 490px;
+    position: relative;
+}
+.box2 {
+    background-color: #f5e1ffff;
+    height: 538px;
+    width: 538px;
+    border-radius: 50%;
+    position: absolute;
+    top: 650px;
+    left: 680px;
+}
+.box3 {
+    background-color: white;
+    height: 537px;
+    width: 277px;
+    border-radius: 12px;
+    position: absolute;
+    top: 670px;
+    left: 810px;
+    border: 4px solid #9A54BC;
+}
+.log {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 63px;
+    color: #9A54BC;
+    padding-top: 200px;
+}
+.box4 {
+    border: 4px solid #9A54BC;
+    width: 255px;
+    height: 61px;
+    border-radius: 7px;
+    position: absolute;
+    top: 1310px;
+    left: 820px;
+}
+.tex {
+    font-weight: 500;
+    font-size: 24px;
+    color: #60267f;
+    padding: 10px;
+}
+.second {
+    margin-top: 300px;
+}
+.second h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 150px;
+}
+.third .cont {
+    margin-top: 200px;
+    background-color: #e2bdf230;
+    height: 563px;
+    margin-bottom: 500px;
+}
+.third h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 100px;
+    padding-top: 100px;
+}
+.two {
+    border-radius: 6px;
+    background-color: white;
+    width: 638px;
+    height: 61px;
+    margin-left: -20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.smol {
+    border: 6px solid #9A54BC;
+    background-color: #60267F;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 100px 15px 100px;
+    border-radius: 6px;
+}
+.smol2 {
+    padding: 18px 50px 18px 10px;
+}
+.rows {
+    box-shadow: -140px -20px 0px 0px white;
+}
+    
+.row1 {
+    background-color: #F2F2F2;
+    font-size: 20px;
+    width: 600px;
+    padding: 40px 20px 40px 20px;
+    margin-top: 10px;
+}
+.and {
+    box-shadow: -140px -10px 0px 0px white;
+}
+.fourth h2 {
+    font-size: 48px;
+}
+.fourth p {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    font-weight: 500;
+}
+.play {
+    position: relative;
+}
+.play2 {
+    position: absolute;
+    top: 250px;
+    left: 1400px;
+}
+.fifth h2 {
+    font-size: 48px;
+    padding-top: 100px;
+    margin-bottom: 60px;
+}
+.fifth .cont {
+    margin-top: 50px;
+    background-color: #e2bdf230;
+    height: 858px;
+    margin-bottom: 100px;
+}
+.title {
+    color: #60267F;
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 30px;
+    text-align: left;
+    padding-left: 20px;
+}
+.whitebox {
+    background-color: white;
+}
+.parag {
+    color: black;
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: left;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+.sixth h2 {
+    font-size: 48px;
+}
+.sixth p {
+    font-size: 24px;
+    color: #A79D9D;
+    padding-top: 20px;
+    font-weight: 500;
+}
+.yearly {
+    font-size: 24px;
+    color: black;
+    padding-top: 20px;
+    font-weight: 500;
+}
+.green {
+    padding-top: 10px;
+}
+.discount {
+    font-size: 14px;
+    color: black;
+    margin-top: 25px;
+    font-weight: 500;
+    background-color: #FFE87A;
+    height: 25px;
+    padding: 2px 6px 2px 6px;
+}
+.basic {
+    border: 1px solid #AAAAAA;
+    border-radius: 14px;
+    width: 334px;
+    height: 598px;
+}
+.basic3 {
+    border: 1px solid #AAAAAA;
+    background-color: #56E6A5;
+    border-radius: 14px;
+    width: 334px;
+    height: 598px;
+}
+.sixth h1 {
+    font-size: 48px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    padding-top: 30px;
+}
+.sixth h3 {
+    font-size: 26px;
+    padding-left: 40px;
+    padding-top: 30px;
+}
+.sixth button {
+    border: 4px solid black;
+    color: #2B0236;
+    background-color: white;
+    width: 255px;
+    height: 74px;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 7px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+}
+.sixth li {
+    font-size: 20px;
+    color:#000000c7;
+}
+.li {
+    font-size: 18px;
+    color:#000000c7;
+    padding-left: 40px;
+}
+ul {
+  list-style: none;
+}
+.sixth li {
+    padding-left: 40px;
+}
+.sixth li::before { 
+  content: "";
+  border-color: transparent #111;
+  border-style: solid;
+  border-width: 0.45em 0 0.45em 0.55em;
+  display: block;
+  height: 0;
+  width: 0;
+  left: -3rem;
+  top: 1em;
+  position: relative;
+  margin-left: 20px;
+}
+.seventh .cont {
+    margin-top: 150px;
+    background-color: #e2bdf230;
+    height: 858px;
+    align-self: center;
+}
+.padi {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+.seventh p {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    margin-bottom: 70px;
+}
+.pav {
+    font-size: 24px;
+    padding-top: 10px;
+}
+.arowl {
+    padding-top: 400px;
+}
+.arowr {
+    padding-top: 400px;
+}
+.eighth {
+    height: 800px;
+}
+.foto {
+    position: relative;
+}
+.kringel {
+    position: absolute;
+    padding-left: 150px;
+}
+.face1 {
+    position: relative;
+    top: -30px;
+    left: -800px;
+}
+.face2 {
+    position: relative;
+    top: 30px;
+    left: -600px;
+}
+.face3 {
+    position: relative;
+    top: -150px;
+    left: -350px;
+}
+.face4 {
+    position: relative;
+    top: -170px;
+    left: -180px;
+}
+.face5 {
+    position: relative;
+    top: -300px;
+    left: 50px;
+}
+.face6 {
+    position: relative;
+    top: -470px;
+    left: 300px;
+}
+.face7 {
+    position: relative;
+    top: -600px;
+    left: 520px;
+}
+.face8 {
+    position: relative;
+    top: -850px;
+    left: 650px;
+}
+.box9 {
+    position: relative;
+    color: #9A54BC;
+    font-size: 24px;
+    border: 1px solid white;
+    width: 54px;
+    height: 31px;
+    top: -1050px;
+    left: 1350px;
+    font-weight: 500;
+}
+.eighth h2 {
+    font-size: 48px;
+    margin-top: 150px;
+}
+.eighth p {
+    font-size: 24px;
+    color: #000000;
+    padding-top: 20px;
+    font-weight: 400;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.eighth button {
+    color: white;
+    border-radius: 7px;
+    background-color: #9A54BC;
+    padding: 17px;
+    border: 4px solid  #9A54BC;
+    font-size: 24px;
+}
+.nineth {
+    background-color: #9A54BC;
+    width: 1900px;
+}
+.nineth h2 {
+    color: white;
+    font-size: 76px;
+    padding-top: 200px;
+    padding-bottom: 50px;
+}
+.buts {
+    padding-bottom: 250px;
+}
+.uno {
+    background-color: white;
+    color: #9A54BC;
+    font-size: 24px;
+    font-weight: 700;
+    border: 4px solid white;
+    border-radius: 7px;
+    padding: 17px 30px 17px 30px;
+}
+.dos {
+    font-size: 24px;
+    font-weight: 700;
+    border: 4px solid white;
+    border-radius: 7px;
+    padding: 17px;
+    color: white;
+    background-color: #9A54BC;
+    padding: 17px 30px 17px 30px;
+}
+.tres {
+    font-size: 24px;
+    font-weight: 700;
+    border: 4px solid white;
+    border-radius: 7px;
+    padding: 17px;
+    color: white;
+    background-color: #9A54BC;
+    padding: 17px 30px 17px 30px;
+}
+.tenth .cont {
+    background-color: #e2bdf215;
+}
+.tenth h1 {
+    font-size: 48px;
+    margin-top: 200px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+}
+.tenth h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    margin-left: 200px;
+}
+.tenth h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    margin-left: 260px;
+}
+.tenth .row {
+    margin-left: 100px;
+}
+.map {
+    padding-left: 100px;
+}
+footer p {
+    font-size: 32px;
+    line-height: 37px;
+    color: #2C2C2C;
+    margin-bottom: 40px;
+    padding-left: 200px;
+}
+footer h3 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 32px;
+    padding-top: 80px;
+    margin-left: -30px;
+}
+.folo {
+    font-size: 32px;
+    line-height: 37px;
+    font-weight: 600;
+    color: black;
+    padding-left: 200px;
+}
+.foot li,
+.foot a {
+    font-size: 26px;
+    color: #60267F;
+    text-decoration: none;
+    list-style: none;
+    padding-top: 40px;
+    margin-left: -30px;
+}
+.contact {
+    padding-top: 150px;
+    margin-left: -680px;
+}
+.us {
+    font-size: 28px;
+    font-weight: 600;
+}
+.social {
+    padding-left: 200px;
+}
+.logos {
+    padding-left: 200px;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 63px;
+    color: #9A54BC;
+}
+.gmail {
+    color:#60267F;
+    font-size: 26px;
+}
+footer .row {
+    margin-bottom: 70px;
+}
+footer::after {
+    content: "@2022 Collab | All Rights Reserved";
+    background-color: #60267F;
+    color: white;
+    font-size: 24px;
+    padding: 10px 760px 10px 760px;
+}

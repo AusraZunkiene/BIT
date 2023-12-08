@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Fono nuotraukos adresas */
+    .background {background-image: url();
+            /* Fono nuotrauka gali būti ir nuoroda */
+            /* background-image: url(https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403); */
+            /* Išjungiamas fono nuotraukos pakartojimas */
+        background-repeat: no-repeat;
+            /* Kartojimas tik į dešinę pusę */
+            /* background-repeat: repeat-x; */
+            /* Kartojimas tik žemyn */
+            /* background-repeat: repeat-y; */
+            /* Originali background-repeat reikšmė: */
+            /* background-repeat: repeat; */
+            /* Fono pozicijos: */
+            /* background-position: 381px 200px; */
+            /* background-position: 50% 50%; */
+            /* background-position: top left; */
+        background-position: center center;
+            /* Fono dydis: */
+            /* background-size: 1500px 500px; */
+            /* background-size: 100%; */
+            /* Viso elemento ploto uždegimas pagal aukščio ir pločio diferencialą */
+        background-size: cover;
+            /* background-size: contain; */
+            /* background-attachment nurodo, jog nuotrauka liks fiksuotoje padėtyje slenkant puslapį žemyn */
+        background-attachment: fixed;
+            background: black url() no-repeat center center / cover fixed;}
+   
+
+
+            html {
+            /* Animuotam keliavimui per nuorodas */
+            scroll-behavior: smooth;
+        }
+        body {
+            /* reset */
+            margin: 0;
+            font-family: Oswald;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            /* list-style savybė nurodo numeravimo ikonos tipą */
+            list-style: none;
+            /* Display flex savybė automatiškai išlygiuoja elementus  */
+            /* https://angrytools.com/css-flex/ */
+            display: flex;
+            /* Gap savybė nurodo tarpelį tarp elementų */
+            gap: 20px;
+        }
+
+        li {
+            /* float: left; */
+            /* Paverčia elementą į inline tipą */
+            /* display: inline; */
+            /* Paverčia elementą į block tipo elementą */    
+            /* display: block;     */
+            /* display: inline-block; */
+        }
+        
+        a {
+            /* Apatinio brūkščio nuėmimas nuo nuorodos */
+            text-decoration: none;
+            font-size: 24px;
+            color: black;
+        }
+        
+        /* Jau aplankytos nuorodos stilius */
+        a:visited {
+            color: red;
+        }
+
+        /* Užvedus su pele ant nuorodos aktyvuojama fazė hover */
+        a:hover {
+            color: green;
+        }
+
+        /* Paspaudus su pele ant elemento iki klavišo atleidimo */
+        a:active {
+            color: rgb(255, 119, 0);
+        }
+
+        header .container {
+            display: flex;
+            /* justify-content: space-around; */
+            /* justify-content: space-evenly; */
+            justify-content: space-between;
+            align-items: center;
+        }
+   </style>
+</head>
+<body>
+        <!-- Unordered List burbuliukai -->
+        <ul>
+            <!-- List Item -->
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem, ipsum dolor.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+        </ul>
+    
+        <!-- Ordered List skaičiai -->
+        <ol>
+            <!-- List Item -->
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem, ipsum dolor.</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+        </ol>
+</body>
+</html>

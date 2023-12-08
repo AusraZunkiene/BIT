@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            --background-color: white;
+            --input-background-color: white;
+            --input-border-color:rgb(220, 206, 206);
+            --button-background-color:rgb(220, 206, 206);
+            --button-color: darkgrey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: var(--background-color);
+        }
+        form {
+            text-align: center;
+        }
+        body.dark {
+            --background-color: rgb(20, 18, 18);
+            --input-background-color: rgb(90, 83, 83);
+            --input-border-color:rgb(182, 178, 178);
+            --button-background-color:rgb(99, 94, 94);
+            --button-color: rgb(241, 238, 238);
+        }
+        input{
+            max-width: 768px;
+            width: 100%;
+            margin: 0 auto;
+            border: 1px solid var(--input-border-color);
+            border-radius: 25px;
+            padding: 10px 25px;
+            margin-bottom: 10px;
+            display: block;
+            box-sizing: border-box;
+            background-color: var(--input-background-color);
+        }
+        button {
+            background-color: var(--button-background-color);
+            color: var(--button-color);
+            border: none;
+            padding: 8px 10px;
+        }
+    </style>
+
+</head>
+<body class="dark">
+    <form>
+        <input type="text">
+        <button>Search</button>
+    </form>
+</body>
+</html>

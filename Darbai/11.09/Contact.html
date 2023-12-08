@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .title {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        span {
+            color: #6DE1C2;
+        }
+        body {
+            margin: 0;
+            background: url(img/Design_Contact\ Us.png) no-repeat;
+        }
+     
+        .contact { 
+            position: relative;
+            background-color: white;
+            max-width: 1440px;
+            width: 100%;
+            margin: 250px 300px;
+            border-radius: 40px;
+            padding: 30px 50px;
+            overflow: hidden;
+        }
+        .contact::after {
+            content:"";
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #6DE1C2;
+            height: 100%;
+            width: 419px;
+        }
+        .contact-inner {
+            height: 100%;
+            display: flex;
+            position: relative;
+            z-index: 1;
+        }
+        .flex {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+        input {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            padding: 10px;
+            border-color: rgb(200, 193, 193);
+        }
+        input[name="City"]{
+            width: 60%;
+        }
+        input[name="PostCode"]{
+            width: 30%;
+        }
+        .left {
+            width: 50%;
+            height: 100%;
+        }
+        .right {
+            width: 50%;
+        }
+        .right iframe {
+            width: 100%;
+            height: 100%;
+            padding-left: 40px;
+        }
+        form input {
+            display: flex;
+            width: 100%;
+            padding: 20px 10px 10px;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+        }
+        .first {
+            width: 100%;
+            padding-top: 10px;
+            text-align: center;
+        }
+        .first tr, td {
+            width: 40px;
+            height: 70px;
+            border: 1px dashed rgb(190, 185, 185);
+            align-items: center;
+        }
+        #gr {
+            color: #8E8E8E;
+            font-size: 12px;
+            padding-top: 10px;
+        }
+        button {
+            background-color: #0982FE;
+            width: 100%;
+            height: 40px;
+            border-radius: 8px;
+            border-color: #0982FE;
+            Color: white;
+            font-weight: bold;
+        }
+        .chec {
+            padding-top: 20px;
+            padding-bottom: 10px;
+            color: #383C3E;
+            font-size: 14px;
+        }
+        #agree {
+            margin-left:0;
+        }
+        input [type="checkbox"] {
+            display: inline-block;
+            width: 20px;
+        }
+        .flex2 {
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+            padding-top: 20px;
+        }
+        .text-wrapper {
+            width: 100%;
+            background-color: white;
+            color: black;
+            padding-left: 20px;
+        }
+        .header {
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .second tr td{
+            width: 100%;
+            border-style: none; 
+            padding-left: 50px;
+            padding-right: 30px;
+            font-weight: bold;
+        }
+        #red {
+            color: #DD5471;
+        }
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+            .contact {
+                margin: 0;
+                border-radius: 0;
+                padding: 15px 15px 0;
+            }
+            .contact::after {
+                width: 6px;
+            }
+            .title {
+                font-size: 32px;
+                text-align: center;
+            }
+            .contact-inner {
+                flex-direction: column;
+                gap: 30px;
+                padding: none;
+            }
+            .left, 
+            .right {
+                width: 100%;
+                padding: 0;
+            }
+            .right iframe {
+                height: 415px;
+                padding: 0;
+            }
+            .contact p.mobile {
+                display: block;
+                font-size: 24px;
+                text-align: center;
+                margin: 15px 0 0;
+            }
+            .contact p.desktop {
+                display: none;
+            }
+            .chec {
+                padding-top: 20px;
+                font-size: 10px;
+                padding-left: 70px;
+            }
+            .butto {
+                margin-left: 20px;
+                width: 90%;
+                height: 40px;
+            }
+            .flex2{
+                padding-top: 15px;
+                padding-left: 25px;
+                display: block;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class=contact>
+        <div class="contact-inner">
+            <div class="left">
+            <div class="title">Get in <span>touch</span></div>
+            <p class="desktop">Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</p>
+            <p class="mobile">Enim tempor eget pharetra facilisis sed</p>
+            <form>  
+                <input type="text" placeholder="Contact name">
+                <input type="text" placeholder="Street">
+                <div class="flex"><input type="city" placeholder="City">
+                <input type="number" placeholder="Postcode"></div>
+                <input type="number" placeholder="Contact Phone">
+                <input type="email" placeholder="E-mail">
+                <input type="text" placeholder="Let's talk about your idea">
+            </form>
+            <table>
+                <table class="first"> 
+                    <tr> 
+                      <td id="gr"><img src="img/upload.png"><sup>Uploud Additional file</sup></td> 
+                    </tr> 
+                </table>
+            </table>
+            <div id="gr">Attach file. File size of your documents should not exceed 10MB</div>
+            <div class="chec">
+                <input id="agree" type="checkbox">
+                <label for="agree">I want to protect my data by signing an NDA</label>
+            </div>
+            <button class="butto">SUBMIT</button>
+            <div class="flex2">
+                <div class="icon"><img src="img/Frame 831.png"></div>
+                <div class="text-wrapper">
+                <div class="header">
+                    Phone
+                </div>
+                <div id="red">
+                   111 111 111
+                </div>
+                 </div>
+                <div class="icon"><img src="img/Frame 833.png"></div>
+                <div class="text-wrapper">
+                <div class="header">
+                    E-MAIL
+                </div>
+                <div id="red">
+                    info@company.com
+                </div>
+                </div>
+                <div class="icon"><img src="img/Frame 833.png"></div>
+                <div class="text-wrapper">
+                <div class="header">
+                    HELPDESK
+                </div>
+                <div id="red">
+                    https://helpdesk.com
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="right">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18783.254378264333!2d14.416549435430793!3d50.07860440685949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b939c0970798b%3A0x400af0f66164090!2sPrague%2C%20Czechia!5e0!3m2!1sen!2slt!4v1699882623108!5m2!1sen!2slt" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

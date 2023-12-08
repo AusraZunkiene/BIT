@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /* Pseudo elemento kūrimas */
+        /* h1::before {
+            content: "Pradžia";
+        }
+        h1::after {
+            content: "Pabaiga";
+        } */
+
+        h1::before {
+            /* Content savybė yra privaloma norint sukurti pseudo elementą */
+            content: "";
+            display: block;
+            width: 300px;
+            height: 300px;
+            background-color: tomato;
+        }
+        /* Kampų užlenkimas iš visų keturių kampų */
+        /* border-radius: 20px; */
+        /* Nurodant kiekvieną kampą individualiai */
+        /* 
+        border-top-left-radius: 20px;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 80px; 
+        border-bottom-left-radius: 50px; 
+        */
+        /* Kampų užlenkimai vienoje eilutėje */
+            border-radius: 20px 25px 80px 50px;
+            
+        .outer-shadow {
+            background-color:darkred;
+            /* Pirmasis skaičius nurodo poziciją iš kairės */
+            /* Antrasis skaičius nurodo poziciją iš viršaus */
+            /* Trečiasis skaičius nurodo šešėlio išplėtimas */
+            /* Ketvirtasis skaičius nurodo šešėlio išsiskaidymą */
+            /* Penktoji reikšmė yra spalva */
+            box-shadow: 40px 40px 118px 28px rgba(0, 0, 0, 0.455);
+        }
+        
+
+    </style>
+</body>
+</html>

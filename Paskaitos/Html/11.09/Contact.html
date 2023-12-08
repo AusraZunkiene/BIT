@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@100;200;300;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0 15px;
+            font-family: 'Inter', sans-serif;
+            background: url(img/Design_Contact\ Us.png) no-repeat center center;
+        }
+        .contact h1 {
+            color: black;
+            font-family:'Montserrat', sans-serif;
+            font-size: 46px;
+            margin: 0;
+        }
+        .contact h1 span {
+            color: #6DE1C2;
+        }
+        .contact p .destop {
+            line-height: 24px;
+            margin: 5px 0 20px;
+            font-family: 'Inter', sans-serif;
+        }
+        .contact p .mobile {
+            display: none;
+          
+        }
+        .contact p {
+            font-family:'Montserrat', sans-serif;
+        }
+        .contact {
+            position:relative;
+            background-color: white;
+            max-width: 1440px;
+            width: 100%;
+            margin: 100px auto;
+            border-radius: 40px;
+            padding: 50px 95px 40px;
+            overflow: hidden;
+        }
+        .contact::after {
+            content: "";
+            position:absolute;
+            top: 0;
+            right: 0;
+            background-color: #6DE1C2;
+            height: 100%;
+            width: 419px;
+        }
+        .contact-inner {
+            min-height: 550px;
+            display: flex;
+            position: relative;
+            z-index: 1;
+        }
+        .left {
+            width: 46%;
+            padding-right: 70px;
+        }
+        .right{
+            width: 54%;
+        }
+        .right iframe {
+            width: 100%;
+            height: 100%;
+        }
+        .contact input[type="text"],
+        .contact input[type="tel"], 
+        .contact input[type="email"] {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #737B7D;
+            padding: 15px 15px;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+        .contact .input-group {
+            display: flex;
+            gap: 20px;
+        }
+        .contact .file-upload {
+            height: 104px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px dashed #8E8E8E;
+            color: #8E8E8E;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .contact .file-upload-caption {
+            color: #8E8E8E;
+            font-size: 13px;
+            line-height: 160%;
+            margin-top: 7px;
+            font-family: 'Inter', sans-serif;
+        }
+        .contact .agreements {
+            color: #383c3e;
+            margin: 25px 0 20px;
+        }
+        .contact .agreements input {
+            margin-left: 0;
+        }
+        .contact .button {
+            width: 100%;
+            background: #0982FE;
+            color: white;
+            text-align: center;
+            padding: 17px 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 10px;
+        }
+        .contact-details {
+            display: flex;
+            margin-top: 20px;
+        }
+        .contact-details .box {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .contact-details .box img {
+            display: block;
+        }
+        .contact-details .value a,
+        .contact-details .value {
+            color:#DD5471;
+        }
+        .width-30 {
+            width: 30%;
+        }
+        .width-70 {
+            width: 70%;
+        }
+        @media screen and (max-width: 1440px) {
+            .contact {
+                padding: 30px;
+            }
+            .contact .contact-details {
+                flex-direction: column;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+            .contact {
+                margin: 0;
+                border-radius: 0;
+                padding: 15px 15px 0;
+            }
+            .contact::after {
+                width: 6px;
+            }
+            .contact h1 {
+                font-size: 32px;
+                text-align: center;
+            }
+            .contact-inner {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .contact .submit-button,
+            .contact .contact-details,
+            .contact .agreements {
+                padding: 0 33px;
+            }
+            .contact button{
+                margin: 0 33px;
+            }
+          
+            .contact .left,
+            .contact .right {
+                width: 100%;
+                padding: 0;
+            }
+            .contact .right iframe {
+                height: 415px;
+            }
+            .contact p.mobile {
+                display: block;
+                font-size: 18px;
+                text-align: center;
+            }
+            .contact p.destop {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contact">
+        <div class="contact-inner">
+            <div class="left">
+                <h1>Get in <span>touch</span></h1>
+                <p class="destop">Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</p>
+                <p class="mobile">Lorem Ipsum Dolor Sit Amet Consectetur.</p>
+                <form>
+                    <div class="input">
+                        <input type="text" placeholder="Contact Name">
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="Street">
+                    </div>
+                    <div class="input-group">
+                        <div class="input width-70">
+                        <input type="text" placeholder="City">
+                        </div>
+                        <div class="input width-30">
+                        <input type="text" placeholder="Pastcode">
+                        </div>
+                    </div>
+                    <div class="input">
+                        <input type="tel" placeholder="Contact Phone">
+                    </div>
+                    <div class="input">
+                        <input type="email" placeholder="E-mail">
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="Let's talk about tour idea">
+                    </div>
+                    <div class="file-upload">
+                        <span class="upload-icon">
+                            <img src="img/upload.svg">
+                        </span>
+                        <span>Upload Additional file</span>
+                    </div>
+                    <div class="file-upload-caption">Attach file. File size of your document  should not exceed 10MB</div>
+                    <div class="agreements">
+                        <input id="agree" type="checkbox">
+                        <label for="agree">I want to protect my data by signing an NDA</label>
+                    </div>
+                    <div class="submit-button">
+                        <button class="button">SUBMIT</button>
+                    </div>
+                </form>
+                <div class="contact-details">
+                    <div class="box">
+                        <div class="icon">
+                            <img src="img/Frame 831.svg">
+                        </div>
+                        <div class="text">
+                            <div class="label">
+                                <strong>Phone</strong>
+                            </div>
+                            <div class="value">11111111</div>
+                        </div>
+                    </div>
+                     <div class="box">
+                         <div class="icon">
+                            <img src="img/Frame 833.svg">
+                        </div>
+                        <div class="text">
+                            <div class="label">
+                                <strong>E-mail</strong>
+                        </div>
+                            <div class="value">info@company.com</div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon">
+                            <img src="img/Frame 833.svg">
+                        </div>
+                        <div class="text">
+                            <div class="label">
+                            <strong>HELDESK</strong>
+                        </div>
+                            <div class="value">
+                                <a href="#">https://helpdesk.com</a></div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            <div class="right">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d22500.792164188988!2d14.394235564838581!3d50.0748791682587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sHeadquarters%20Company%20s.%20r.%20o.%20Street.%2051%20100%2000%20Prague!5e0!3m2!1sen!2slt!4v1699869952181!5m2!1sen!2slt" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+    </div>
+</body>
+</html>

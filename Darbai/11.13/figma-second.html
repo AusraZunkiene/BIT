@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background-color: rgb(202, 202, 202);
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .page {
+        background-color: white;
+        width: 100%;
+        max-width: 1366px;
+        overflow: hidden;
+        display: flex;
+    }
+    .content {
+        background-color: rgba(0, 0, 0, 0.15);
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+        position: absolute;
+        width: 88%;
+        height: 97%;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    .left {
+        display: flex;
+        position: relative;
+        width: 40%;
+        height: 100%;
+    }
+    .content1 {
+        display: block;
+        gap: 24px;
+        padding: 50px;
+        font-weight: 500;
+        word-spacing: 4px;
+    }
+
+    /*tekstas po logo*/
+
+    .paragr {
+        color: white;
+        font-size: 18px;
+        line-height: 26px;
+        padding-top: 15px;
+    }
+
+    .right {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+    }
+
+    .tittle {
+        padding-bottom: 24px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .inpuut {
+        background-color: white;
+        border: 1px solid #E5E7EB;
+        width: 100%;
+        color: #9CA3AF;
+        border-radius: 6px;
+        display: flex;
+        height: 48px;
+        padding-top: 8px;
+    }
+    .inpuut input {
+        border:none;     
+        font-size: 14px; 
+        padding-left: 10px;
+    }
+    .rectang {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: #E5E7EB;
+        gap: 20px;
+        align-items: center;
+        padding: 10px;
+    }
+    .key {
+        padding-left: 5px;
+    }
+    .buttonicn {
+        padding-left: 5px;
+    }
+    .buttonicn1 {
+        margin-left: 110px;
+    }
+    .sign {
+        font-size: 16px;
+        color:#6B7280;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    span {
+        background-color: #FAF6F1;
+        color: #6D58BA;
+        margin-left: 8px;
+    }
+    .all-100{
+        width: 100%;
+        display: flex;
+        gap: 12px;
+        height: 48px;
+    }
+    .last-30 {
+        background-color: #F5F2FF;
+        font-size: 16px;
+        border: none;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #6D58BA;
+        border-radius: 6px;
+        width: 30%;
+    }
+
+    .send-70 {
+        background-color: white;
+        border: 1px solid #E5E7EB;
+        border-radius: 6px;
+        color: #9CA3AF;
+        font-weight: bold;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        letter-spacing: 1px;
+    }
+    .forget {
+        color:#6B7280;
+        font-weight: bold;
+        size: 14px;
+        line-height: 20px;
+    }
+    .confirm-100{
+        width: 100%;
+        display: flex;
+        gap: 12px;
+        height: 48px;
+    }
+    .arow-20 {
+        border-radius: 6px;
+        border: none;
+        width: 15%;
+    }
+    .conf-80 {
+        background-color: #724DFF;
+        width: 85%;
+        border-radius: 6px;
+        border: none;
+    }
+    .foot {
+        color: #6B7280;
+        font-weight: bold;
+    }
+    a {
+        text-decoration-line: none;
+    }
+    .last-30::placeholder {
+        color: #6D58BA;
+        padding-left: 25px;
+        font-size: 16px;
+    }
+    .conf-80::placeholder {
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        font-weight: bold;
+        padding-left: 100px;
+        padding-top: 5px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="left">
+            <img src="img/left (1).png">
+            <div class="content">
+                <div class="content1">
+                    <div class="logo"><img src="img/logo.png"></div>
+                    <div class="paragr">We are an experience maker, we help you to have a better experience in visual communication</div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="box">
+                <div class="tittle">Sign in to Pixelonium</div>
+                <div class="sign">Sign in <span>05311234567</span></div>
+                <div class="inpuut">
+                    <div class="buttonicn"><img src="img/lock-closed.png"></div>
+                    <input type="text" placeholder="Password">
+                    <div class="buttonicn1"><img src="img/eye.png"></div>
+                </div>
+                <div class="rectang">
+                    <div class="rectangle"><img src="img/Rectangle 1 (1).png"></div>
+                    <p>You have Enabled OTP Auth</p>
+                    <div class="rectangle"><img src="img/Rectangle 1 (1).png"></div>
+                </div>
+                <div class="all-100">
+                    <button class="send-70">
+                    <img class="key" src="img/Variant9.png">Enter Code
+                    </button>
+                    <input  class="last-30" type="text" placeholder="Send">
+                </div>
+                <div><p class="forget">Forget password? <a href="">Click here</a></p></div>
+                <div class="confirm-100">
+                    <button class="arow-20">
+                    <img class="arrow" src="img/arrow.png">
+                    </button>
+                    <input class="conf-80" type="text" placeholder="Confirm"></div>
+                </div>
+                <div class="foot"><p>Questions? Email us at <a href="">support@pixelonium.com</a></p></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
