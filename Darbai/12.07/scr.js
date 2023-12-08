@@ -59,40 +59,46 @@ let masyvasOne = [];
 let masyvasTwo =[];
 for (let i = 0; i < 100; i++) {
     let randomSkaicius = rand(100, 999);
-    masyvasOne.push(randomSkaicius);}
+    masyvasOne.push(randomSkaicius);
+    if (randomSkaicius[i] !== randomSkaicius[i+1]){
+        masyvasOne.push(randomSkaicius);
+    }
+}
     console.log(masyvasOne);
 for (let i = 0; i < 100; i++) {
     let randomSkaicius = rand(100, 999);
-    masyvasTwo.push(randomSkaicius);}
+    masyvasTwo.push(randomSkaicius);
+    if (randomSkaicius[i] !== randomSkaicius[i+1]){
+        masyvasTwo.push(randomSkaicius);
+    }}
     console.log(masyvasTwo);
 //Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 3 uždavinio masyve, bet nėra antrame 3 uždavinio masyve.
 
 console.log('5 užduotis');
 
-let uniqueString = [];
+let masyvasFive = [];
 for (let i = 0; i < 100; i++)
 {
-    if(first[i] !== second[i]) uniqueString.push(first[i]);
+    if(first[i] !== second[i]) masyvasFive.push(first[i]);
 }
-console.log(uniqueString);
+console.log(masyvasFive);
 //Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 4 uždavinio masyvuose.
 console.log('6 užduotis');
+let masyvasSix = [];
+masyvasSix = masyvasOne.filter(element => masyvasTwo.includes(element))
 
+console.log(masyvasSix);
 
 //Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 4 uždavinio masyvo reikšmės, o jo reikšmės būtų iš antrojo masyvo.
 console.log('7 užduotis');
 let paskutinisMasyvas = [];
-paskutinisMasyvas = masyvasOne.map((value) =>
+paskutinisMasyvas = masyvasOne.map((value, index) =>
 {
-    for (i = 0; i < masyvasOne[i]; i++){
+    for (i = 0; i < 90; i++){
     value = masyvasTwo[i];
-    }
-    return {value};
+    index = masyvasOne[i];}
+    return {value, index};
 })
 
-paskutinisMasyvas = "";
-for (let x of masyvasTwo) {
-  text += x + "<br>";
-}
 console.log(paskutinisMasyvas);
 
