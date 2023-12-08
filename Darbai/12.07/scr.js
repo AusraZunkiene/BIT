@@ -53,6 +53,11 @@ for (let i = 0; i < 200; i++) {
     IndexSum.push(first[i] + second[i] + third[i]);
 }
 console.log(IndexSum);
+let uniq = 0;
+for(i = 0; i < 200; i++){
+    if(IndexSum[i] !== IndexSum[i+1]) uniq++;
+}
+console.log(`Unikalių reikšmių: ${uniq}`);
 //Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai 100. Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
 console.log('4 užduotis');
 let masyvasOne = [];
@@ -82,6 +87,7 @@ for (let i = 0; i < 100; i++)
     if(first[i] !== second[i]) masyvasFive.push(first[i]);
 }
 console.log(masyvasFive);
+
 //Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 4 uždavinio masyvuose.
 console.log('6 užduotis');
 let masyvasSix = [];
@@ -94,7 +100,7 @@ console.log('7 užduotis');
 let paskutinisMasyvas = [];
 paskutinisMasyvas = masyvasOne.map((value, index) =>
 {
-    for (i = 0; i < 90; i++){
+    for (i = 0; i < 100; i++){
     value = masyvasTwo[i];
     index = masyvasOne[i];}
     return {value, index};
