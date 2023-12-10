@@ -54,7 +54,6 @@ console.log('Monetos užduotis');
     else if (kazioSuma >= 222) {console.log(`Laimėjo Kazys; (Kazio taškai ${kazioSuma}, Petro taškai ${petroSuma}).`) 
     break }
   }
-  console.log('Vinių užduotis:');
   /*Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija. Vinnies ilgis 8.5cm (pilnai sulenda į lentą).
 “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.
  “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.*/
@@ -141,11 +140,66 @@ console.log(`5 vinims įkalti reikėjo: ${all}.`);
 
 
 console.log('Vinių užduotis B');
-function newRand() {
-if (newrand !== 0.5){
-  return newrand;}
-  else {return 0;
+let stiprusKalimai1 = 85;
+let smugiuota1 = 0;
+while (stiprusKalimai1 >= 0) {
+  let smugis1 = rand(0, 1);
+  let stiprusSmugis1 = newrand(5, 20).toFixed(2);
+  if(smugis1 === 1) {stiprusKalimai1 -= stiprusSmugis1;
+smugiuota1++
   }
+  else {smugiuota1++
+      }
+  console.log(`Pirmas vinis:${smugis1} ${smugiuota1} ${stiprusKalimai1.toFixed(2)}`);
 }
 
-console.log(newRand(20, 50))
+let stiprusKalimai2 = 85;
+let smugiuota2 = 0;
+while (stiprusKalimai2 >= 0) {
+  let smugis2 = rand(0, 1);
+  let stiprusSmugis2 = newrand(5, 20).toFixed(2);
+  if(smugis2 === 1) {stiprusKalimai2 -= stiprusSmugis2;
+smugiuota2++
+  }
+  else {smugiuota2++
+      }
+  console.log(`Antras vinis:${smugis2} ${smugiuota2} ${stiprusKalimai2.toFixed(2)}`);
+}
+let stiprusKalimai3 = 85;
+let smugiuota3 = 0;
+while (stiprusKalimai3 >= 0) {
+  let smugis3 = rand(0, 1);
+  let stiprusSmugis3 = newrand(5, 20).toFixed(2);
+  if(smugis3 === 1) {stiprusKalimai3 -= stiprusSmugis3;
+smugiuota3++
+  }
+  else {smugiuota3++
+      }
+  console.log(`Trečias vinis:${smugis3} ${smugiuota3} ${stiprusKalimai3.toFixed(2)}`);
+}
+let stiprusKalimai4 = 85;
+let smugiuota4 = 0;
+while (stiprusKalimai4 >= 0) {
+  let smugis4 = rand(0, 1);
+  let stiprusSmugis4 = newrand(5, 20).toFixed(2);
+  if(smugis4 === 1) {stiprusKalimai4 -= stiprusSmugis4;
+smugiuota4++
+  }
+  else {smugiuota4++
+      }
+  console.log(`Ketvirtas vinis:${smugis4} ${smugiuota4} ${stiprusKalimai4.toFixed(2)}`);
+}
+let stiprusKalimai5 = 85;
+let smugiuota5 = 0;
+while (stiprusKalimai5 >= 0) {
+  let smugis5 = rand(0, 1);
+  let stiprusSmugis5 = newrand(5, 20).toFixed(2);
+  if(smugis5 === 1) {stiprusKalimai5 -= stiprusSmugis5;
+smugiuota5++
+  }
+  else {smugiuota5++;
+      }
+  console.log(`Penktas vinis:${smugis5} ${smugiuota5} ${stiprusKalimai5.toFixed(2)}`);
+}
+let allSmugiuota= smugiuota1 + smugiuota2 + smugiuota3 + smugiuota4 + smugiuota5;
+console.log(`Penkiems vinims įkalti reikia: ${allSmugiuota} bandymų.`);
