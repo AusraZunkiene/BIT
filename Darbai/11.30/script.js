@@ -27,7 +27,7 @@ let sk1 = rand(0, 99);
 console.log(sk1);
 
 if(sk1 <= 10)
-{let rez = sk**2; //čia reiktų = categoryOne Calculation(sk);arba šitą nutrint ir kelet consolėn prie Rezultatas: category...
+{let rez = sk1**2; //čia reiktų = categoryOne Calculation(sk);arba šitą nutrint ir kelet consolėn prie Rezultatas: category...
     console.log(`Skaičius: ${sk1}\t Kategorija: 1, \t Rezultatas: ${rez}`);
 }
 
@@ -136,25 +136,36 @@ console.log("3 užduotis");
 //Pvz.: s0 = 200, v1 = 80, v2 = 50, t = 2, s = 260 km. Niekada nepavys;
 //s0 = 20, v1 = 70, v2 = 80, t = 3, s = 10 km. Aplenkė.
 
+let
+    v1 = 110; 
+    v2 = 100; 
+    t = 3;  
 
-let s0 = 20; 
-let v1 = 70; 
-let v2 = 80; 
-let t = 10;  
-
-let s = s0 + (v2 - v1) * t;
-document.write(`Atstumas tarp automobilių po ${t} valandų yra: ${s} km.<br>`);
-
-
-if (s < 0) {
-    document.write ("Automobiliai susitiks");
-} else if (s == 0) {
-    document.write ("Automobiliai yra vienas šalia kito");
-} else if (v1 * t <= s0) {
-    document.write ("Antrasis automobilis niekada nepavys pirmojo");
-} else if (v2 * t < s0) {
-    document.write ("Antrasis automobilis aplenks pirmąjį");
+let s = (v1 - v2) * t;
+console.log(s)
+if (s === 0) {
+    console.log("Automobiliai susigretins");
+} else if (0 < s) {
+    console.log("Antrasis automobilis niekada nepavys pirmojo");
 } else {
-    document.write ("Antrasis automobilis pavys pirmąjį");
+    console.log("Antrasis automobilis aplenks pirmąjį");
 }
+console.log(`Atstumas tarp automobilių po ${t} valandų yra: ${s} km.<br>`);
 
+console.log("4 užduotis");
+//Skaičiai t1, t2, t3 reiškia vidutinę trijų iš eilės einančių dienų temperatūrą. Kelias dienas temperatūra buvo neigiama, o kelias - teigiama? Rezultatą išspausdinkite žodžiais. Šiuo atveju 0 skaitome, kaip teigiamą temperatūrą.
+//Pvz.: t1 = 2, t2 = -5, t3 = 8, Rezultatas: Dvi dienas teigiama, vieną - neigiama.
+
+let t1 = 3;
+    t2 = 5;
+    t3 = -5;
+let teigiama = 0;
+let neigiama = 0;
+if (t1 >= 0) teigiama++;
+else neigiama++;
+if (t2 >= 0) teigiama++;
+else neigiama++;
+if (t3 >= 0) teigiama++;
+else neigiama++;
+
+    console.log(`Rezultatas: ${teigiama} dienas teigiama, ${neigiama}- neigiama.`);
