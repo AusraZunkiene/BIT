@@ -1,6 +1,20 @@
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+console.log('Žvaigzdės užduotis');
+//Nupieškite kvadratą iš “*”, kurio kraštines sudaro n=10 “*” simbolių. Pasinaudokite ciklais. Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis.
+document.write("<br>1 užduotis:</br>");
+
+    let i = "";
+for(let i = 0; i < 100; i++) {
+    jes = ". *  ";
+    if ((i + 1) % 10 === 0) 
+    jes += '<br>';
+    document.write(jes);
+  }
+  //document.write(`<span style="color: red;">${jes[0]}</span>`);}
+
+
 /*  Metam monetą. Monetos kritimo rezultatą imituojam rand() funkcija, kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas. Suprogramuokite tris skirtingus scenarijus kai monetos metimą stabdome:
 a.Iškritus herbui;
 b.Tris kartus iškritus herbui;
