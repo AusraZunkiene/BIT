@@ -144,7 +144,7 @@ let stiprusKalimai1 = 85;
 let smugiuota1 = 0;
 while (stiprusKalimai1 >= 0) {
   let smugis1 = rand(0, 1);
-  let stiprusSmugis1 = newrand(5, 20).toFixed(2);
+  let stiprusSmugis1 = newrand(20, 30).toFixed(2);
   if(smugis1 === 1) {stiprusKalimai1 -= stiprusSmugis1;
 smugiuota1++
   }
@@ -157,7 +157,7 @@ let stiprusKalimai2 = 85;
 let smugiuota2 = 0;
 while (stiprusKalimai2 >= 0) {
   let smugis2 = rand(0, 1);
-  let stiprusSmugis2 = newrand(5, 20).toFixed(2);
+  let stiprusSmugis2 = newrand(20, 30).toFixed(2);
   if(smugis2 === 1) {stiprusKalimai2 -= stiprusSmugis2;
 smugiuota2++
   }
@@ -169,7 +169,7 @@ let stiprusKalimai3 = 85;
 let smugiuota3 = 0;
 while (stiprusKalimai3 >= 0) {
   let smugis3 = rand(0, 1);
-  let stiprusSmugis3 = newrand(5, 20).toFixed(2);
+  let stiprusSmugis3 = newrand(20, 30).toFixed(2);
   if(smugis3 === 1) {stiprusKalimai3 -= stiprusSmugis3;
 smugiuota3++
   }
@@ -181,7 +181,7 @@ let stiprusKalimai4 = 85;
 let smugiuota4 = 0;
 while (stiprusKalimai4 >= 0) {
   let smugis4 = rand(0, 1);
-  let stiprusSmugis4 = newrand(5, 20).toFixed(2);
+  let stiprusSmugis4 = newrand(20, 30).toFixed(2);
   if(smugis4 === 1) {stiprusKalimai4 -= stiprusSmugis4;
 smugiuota4++
   }
@@ -193,7 +193,7 @@ let stiprusKalimai5 = 85;
 let smugiuota5 = 0;
 while (stiprusKalimai5 >= 0) {
   let smugis5 = rand(0, 1);
-  let stiprusSmugis5 = newrand(5, 20).toFixed(2);
+  let stiprusSmugis5 = newrand(20, 30).toFixed(2);
   if(smugis5 === 1) {stiprusKalimai5 -= stiprusSmugis5;
 smugiuota5++
   }
