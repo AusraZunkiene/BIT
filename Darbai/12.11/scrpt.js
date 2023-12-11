@@ -53,31 +53,53 @@ console.log(masyvasPenktai);
 console.log('8 užduotis');
 masyvasPenktai.reverse();
 console.log(masyvasPenktai);
-/*
+console.log('9 užduotis');
 
-
-//9.
-
-// let max = -1000,
-// 	min = 1000;
-
-// for (let value of numbersArray) {
-// 	if (value > max) {
-// 		max = value;
-// 	}
-// 	if (value < min) {
-// 		min = value;
-// 	}
-// }
-// console.log(`minimali masyvo reiksme: ${min}`);
-// console.log(`maksimali masyvo reiksme: ${max}`);
-
-let min = Math.min(...numbersArray);
-let max = Math.max(...numbersArray);
+let min = Math.min(...masyvasPenktai);
+let max = Math.max(...masyvasPenktai);
 
 console.log(min);
-console.log(max);*/
+console.log(max);
+console.log('10 užduotis');
 
+let total = 0;
+for(let i = 0; i < masyvasPenktai.length; i++) {
+    total += masyvasPenktai[i];
+}
+let avg = total / masyvasPenktai.length;
+console.log(avg);
 
+/*1.Sukurti funkciją, kuri generuoja x kiekį atsitiktinių string'ų, sudarytą iš strLength simbolių. Generavimas nuo A iki Z. Sukurti masyvą iš 100 elementų, sudarytą iš String'ų, kurių ilgis yra 4 simboliai;
+2. Patikrinti, ar String masyve egzistuoja reikšmių, prasidedančių bei užsibaigiančių raide A. Jei taip - pranešti kokia šio elemento pozicija masyve bei  reikšmė;
+3. Išfiltruokite visas masyvo reikšmes, pasidedančias raidėmis: 'X', 'M', 'K'
+4. Išfiltruokite visas masyvo reikšmes, kurių viduriniai du simboliai yra vienodi. Sukurkite išfiltruotų reikšmių masyvą;
+5. Jei išfiltruotų reikšmių masyve reikšmių mažiau nei 3 - rikiuoti didėjančia, kitu atveju - rikiuoti mažėjančia tvarka.
+6. Kiekvienai stringų masyvo reikšmei pridėti po dar vieną atsitiktinę raidę gale;
+7. Kiekvieną stringų masyvo elementų reikšmę išrikiuoti pagal abėcėlę didėjančia tvarka
+8. Sukurkite naują masyvą atsitiktinėms Sring'ų reikšmėms generuoti. Sugeneruokite atsitiktines String reikšmes iš 4 simbolių tol, kol jame bus žodis XMAS; Išveskite, kiek kartų reikėjo generuoti reikšmes kol buvo gautas toks žodis.
+9. Išrikiuokite masyvą priešinga nei abecelės tvarka
+10. Atraskite, kurioje masyvo pozicijoje randasi žodis 'XMAS'
 
+*/
+console.log('Antra dalis: 1 užduotis');
+const randStringams = (length) => {
+    const arr = [];
+    let strngs = "";
+    for (let i = 0; i < length; i++) 
+    strngs += String.fromCharCode(rand(65, 90));
+    arr.push(strngs);
+    return arr, strngs;
+}
 
+const masyvasStringui1 = [];
+for (let i = 0; i < 100; i++) {
+	masyvasStringui1.push(randStringams(4));
+}
+console.log(masyvasStringui1);
+console.log('Antra dalis: 2 užduotis');
+for (let value of masyvasStringui1){
+    if (value.charAt(0) === 'A' && value.charAt(3) === 'A')
+    console.log(masyvasStringui1.indexOf(value), (value));
+}
+
+ 
