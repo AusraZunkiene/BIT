@@ -29,6 +29,11 @@ for (let i = 0; i < 100; i++) {
 	masyvasStringui.push(randStringui(4));
 }
 console.log(masyvasStringui);
+const masyvasStringui = [];
+for (let i = 0; i < 100; i++) {
+	masyvasStringui.push(randStringui(4));
+}
+console.log(masyvasStringui);
 
 
 
