@@ -100,8 +100,10 @@ console.log(masyvasSix);
 //Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 4 uždavinio masyvo reikšmės, o jo reikšmės būtų iš antrojo masyvo.
 console.log('7 užduotis');
 let paskutinisMasyvas = [];
-paskutinisMasyvas = masyvasOne.map((value, index) =>
-
-
+let i = 0;
+for(let index of first)
+{
+    paskutinisMasyvas[index] = second[i];
+    i++;
+}
 console.log(paskutinisMasyvas);
-
