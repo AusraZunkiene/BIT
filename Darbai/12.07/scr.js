@@ -64,21 +64,7 @@ console.log(`Unikalių reikšmių: ${uniq}`);
 console.log('4 užduotis');
 let masyvasOne = [];
 let masyvasTwo =[];
-for (let i = 0; i < 100; i++) {
-    let randomSkaicius = rand(100, 999);
-    masyvasOne.push(randomSkaicius);
-    if (randomSkaicius[i] !== randomSkaicius[i+1]){
-        masyvasOne.push(randomSkaicius);
-    }
-}
-    console.log(masyvasOne);
-for (let i = 0; i < 100; i++) {
-    let randomSkaicius = rand(100, 999);
-    masyvasTwo.push(randomSkaicius);
-    if (randomSkaicius[i] !== randomSkaicius[i+1]){
-        masyvasTwo.push(randomSkaicius);
-    }}
-    console.log(masyvasTwo);
+
 //Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 3 uždavinio masyve, bet nėra antrame 3 uždavinio masyve.
 
 console.log('5 užduotis');
