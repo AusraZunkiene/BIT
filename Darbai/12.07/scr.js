@@ -101,12 +101,7 @@ console.log(masyvasSix);
 console.log('7 užduotis');
 let paskutinisMasyvas = [];
 paskutinisMasyvas = masyvasOne.map((value, index) =>
-{
-    for (i = 0; i < 100; i++){
-    value = masyvasTwo[i];
-    index = masyvasOne[i];}
-    return {value, index};
-})
+
 
 console.log(paskutinisMasyvas);
 
