@@ -101,5 +101,54 @@ for (let value of masyvasStringui1){
     if (value.charAt(0) === 'A' && value.charAt(3) === 'A')
     console.log(masyvasStringui1.indexOf(value), (value));
 }
+console.log('Antra dalis: 3 užduotis');
+let arrayValue = [];
+for (let value of masyvasStringui1){
+    if (value.charAt(0) === 'X' || value.charAt(0) === 'M' || value.charAt(0) === 'K')
+    arrayValue.push(value);
+}
+console.log(arrayValue);
+console.log('Antra dalis: 5 užduotis');
+if( arrayValue.length > 3) arrayValue.sort();
+else arrayValue. reverse();
+console.log(arrayValue);
+console.log('Antra dalis: 4 užduotis');
+let arrayTwoValue = [];
+for (let value of masyvasStringui1){
+    if (value.charAt(1) === value.charAt(2))
+    arrayTwoValue.push(value);
+}
+console.log(arrayTwoValue);
+console.log('Antra dalis: 5 užduotis');
+if( arrayTwoValue.length >= 3) arrayTwoValue.sort();
+else arrayTwoValue.sort().reverse();
+console.log(arrayTwoValue);
+console.log('Antra dalis: 6 užduotis');
+const newLetter = [];
+for (let value of masyvasStringui1){
+    newLetter.push(value + randStringams(1))
+}
+console.log(newLetter);
+console.log('Antra dalis: 7 užduotis');
+let valueAbc = newLetter.map(value => value.split('').sort().join(''))
+console.log(valueAbc);
+console.log('Antra dalis: 8 užduotis');
 
- 
+const masyvasWord = [];
+let kiekKartuReikejo = 0;
+while (true) {
+;
+if (randStringams(4) === 'XMAS')
+{
+	masyvasWord.push(randStringams(4))
+    break
+}
+else {
+    masyvasWord.push(randStringams(4))
+    kiekKartuReikejo++;
+}
+}
+console.log(kiekKartuReikejo);
+console.log(masyvasWord);
+console.log('Antra dalis: 9 užduotis');
+console.log('Antra dalis: 10 užduotis');
