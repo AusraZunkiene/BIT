@@ -29,11 +29,54 @@ for (let i = 0; i < 100; i++) {
 	masyvasStringui.push(randStringui(4));
 }
 console.log(masyvasStringui);
-const masyvasStringui = [];
-for (let i = 0; i < 100; i++) {
-	masyvasStringui.push(randStringui(4));
-}
+console.log('3 užduotis');
+masyvasStringui.sort();
 console.log(masyvasStringui);
+console.log('4 užduotis');
+
+masyvasStringui.sort().reverse();
+console.log(masyvasStringui);
+console.log('5 užduotis');
+const masyvasPenktai = generuotiX(100, -100, 200);
+console.log(masyvasPenktai);
+console.log('6 užduotis');
+if (masyvasPenktai.includes(68)) {
+	console.log(`68 egzistuoja masyve`);
+} else {
+	console.log(`68 nėra masyve`);
+}
+console.log('7 užduotis');
+masyvasPenktai.sort((num1, num2) => {
+    return num1 - num2;
+});
+console.log(masyvasPenktai);
+console.log('8 užduotis');
+masyvasPenktai.reverse();
+console.log(masyvasPenktai);
+/*
+
+
+//9.
+
+// let max = -1000,
+// 	min = 1000;
+
+// for (let value of numbersArray) {
+// 	if (value > max) {
+// 		max = value;
+// 	}
+// 	if (value < min) {
+// 		min = value;
+// 	}
+// }
+// console.log(`minimali masyvo reiksme: ${min}`);
+// console.log(`maksimali masyvo reiksme: ${max}`);
+
+let min = Math.min(...numbersArray);
+let max = Math.max(...numbersArray);
+
+console.log(min);
+console.log(max);*/
 
 
 
