@@ -8,14 +8,14 @@ buttonElement.addEventListener('click', () => {
     person.lastName = document.getElementById("lastNameInput").value;
     person.age = document.getElementById("ageInput").value;
     person.nationality = document.getElementById("nationalityInput").value;
-    person.number = currentNumeration;
+    if (person.firstName.value === "" || person.lastName === "" || person.age === "" || person.nationality === "") document.getElementById("rezultatas0").innerHTML ="Visi laukai privalo būti užpildyti";  
+    else {person.number = currentNumeration;
     people.push(person);
     currentNumeration++
     console.log(person);
-
-    generateTableContent(people);
+    
+    generateTableContent(people);}
 });
-
 function generateTableContent(people)
 {
     let ObjektaiHTML = ``;
@@ -34,5 +34,6 @@ function generateTableContent(people)
 
 function myFunction() {
     let i = document.getElementById("cutInput").value;
-    document.getElementById("myTable").deleteRow(i);
-}
+    if (i < people.length)document.getElementById("myTable").deleteRow(i);
+    else document.getElementById("rezultatas").innerHTML ="Tokia numeracija lentelėje neegzistuoja";  
+    }
