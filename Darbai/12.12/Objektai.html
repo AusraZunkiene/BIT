@@ -18,6 +18,7 @@
         }
         .space-right {
            margin-right: 1 rem; 
+           font-size: 13px;
         }
         div label {
             display: flex;
@@ -25,12 +26,44 @@
             margin-bottom: 0.5rem;
         }
         form div {
-            width: 50%;
+            width: 300px;
         }
+        .two-columns {
+            display: flex;
+            gap: 300px;
+        }
+        button {
+            background-color: rgb(90, 127, 239);
+            border-radius: 3px;
+            color: white;
+            border-style: none;
+            padding: 7px 20px 7px 20px;
+            margin-left: 100px;
+        }
+        .last-column {
+            display: inline-block;
+        }
+        .space-left {
+            margin-right: 10px;
+            font-size: 13px;
+        }
+        input {
+            padding-left: 10px;
+            width: 200px;
+            height: 25px;
+            box-shadow: -0.5px -0.5px;
+            border: 1px solid black;
+            border-radius: 3px;
+            font-size: 10px;
+        }
+       .column {
+        display: block;
+        justify-content: space-between;
+       }
     </style>
 </head>
 <body>
-    <table>
+    <table id="myTable">
         <thead>
             <tr>
                 <th>#</th>
@@ -50,37 +83,49 @@
             </tr>
         </tbody>
     </table>
-    <form>
+    <div class="two-columns">
         <div>
-            <label>
-                <spa class="space-right">First Name</spa>
-                <input id="firstNameInput" type="text" placeholder="First Name">
-            </label>
+            <form>
+                <h2>Elementų pridėjimas</h2>
+                <div class="column">
+                    <div>
+                        <label>
+                            <span class="space-right">First Name</span>
+                            <input id="firstNameInput" type="text" placeholder="First Name">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <span class="space-right">Last Name</span>
+                            <input id="lastNameInput" type="text" placeholder="Last Name">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <span class="space-right">Age</span>
+                            <input id="ageInput"type="text" placeholder="Age">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <span class="space-right">Nationality</span>
+                            <input id="nationalityInput" type="text" placeholder="Nationality">
+                        </label>
+                    </div>
+                </div>
+            </form>
+            <div><button id="add-button">Submit</button></div>
         </div>
-        <div>
+        <div class="last-column">
+            <h2>Elementų pašalinimas</h2>
             <label>
-                <spa class="space-right">Last Name</spa>
-                <input id="lastNameInput"type="text" placeholder="Last Name">
+                <spa class="space-left">Person number</spa>
+                <input id="cutInput" type="number"
+                    placeholder="Person number">
             </label>
+            <button onclick="myFunction()">Submit</button>
         </div>
-        <div>
-            <label>
-                <spa class="space-right">Age</spa>
-                <input id="ageInput"type="text" placeholder="Age">
-            </label>
-        </div>
-        <div>
-            <label>
-                <spa class="space-right">Nationality</spa>
-                <input id="nationalityInput" type="text" placeholder="Nationality">
-            </label>
-        </div>
-    </form>
-    <div><button id="add-button">Add</button></div>
-    <h2>Pašalinimas</h2>
-    <input type="number"
-            placeholder="numeriukas">
-    <button>Pašalinti</button>
+    </div>
     <script src="scr.js"></script>
 </body>
 </html>
