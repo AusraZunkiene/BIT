@@ -154,3 +154,10 @@ console.log('Antra dalis: 9 užduotis');
 masyvasWord.sort().reverse();
 console.log(masyvasWord);
 console.log('Antra dalis: 10 užduotis');
+
+console.log(kiekKartuReikejo);
+console.log(masyvasWord);
+console.log('Antra dalis: 9 užduotis');
+masyvasWord.sort().reverse();
+console.log(masyvasWord);
+console.log('Antra dalis: 10 užduotis');
