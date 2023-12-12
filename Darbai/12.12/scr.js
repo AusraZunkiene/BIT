@@ -31,9 +31,9 @@ function generateTableContent(people)
     const tbody = document.querySelector('table tbody');
     tbody.innerHTML = ObjektaiHTML;
 }
-
 function myFunction() {
     let i = document.getElementById("cutInput").value;
     if (i < people.length)document.getElementById("myTable").deleteRow(i);
     else document.getElementById("rezultatas").innerHTML ="Tokia numeracija lentelėje neegzistuoja";  
-    }
+  }
+ 
