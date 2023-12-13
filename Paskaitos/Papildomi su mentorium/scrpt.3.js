@@ -46,5 +46,4 @@ function nullValues() {
 	height.value = "";
 	weight.value = "";
 	result.innerHTML = "";
-
 }
