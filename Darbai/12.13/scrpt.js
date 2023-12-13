@@ -1,5 +1,6 @@
-{
-    products: [
+const products =
+  
+[
       {
         id: 1,
         title: "iPhone 9",
@@ -360,5 +361,28 @@
         category: "home-decoration",
         thumbnail: "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
       }
-    ]
-  }
+    ];
+
+
+let textAll = "";
+let index = 0;
+for(let i = 0; i < products.length; i++){
+
+const text = `<div>
+<div style="display: flex; justify-content: space-between;
+align-items: center; padding: 20px; border-bottom: 2px solid rgb(215, 215, 215); color: black;">
+<img src="${products[index].thumbnail}" style="width: 150px; height: 150px;"></img>
+<div style="padding-left: 30px; padding-bottom: 30px; text-align: start;">
+<h5 style="color: rgb(115, 194, 246);">${products[index].title}</h5>
+<p>${products[index].description}</p>
+</div>
+<div>
+<h3>$${products[index].price}</h3>
+<button style="background-color: rgb(236, 190, 6);border-radius: 3px; width: 130px; padding-top: 8px; padding-bottom: 8px; border: none;">Add to Cart</button>
+</div>
+</div>`
+textAll += text
+index++
+document.getElementById("container").innerHTML = textAll;
+}
+ 
