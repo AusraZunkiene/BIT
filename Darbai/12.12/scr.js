@@ -2,76 +2,132 @@ const people = [];
 const possibleNationalities = ["Lithuanian", "Latvian", "German"];
 let currentNumeration = 1;
 
-const buttonElement = document.querySelector('#add-button');
+//Elementų apsirašymas
+const firstNameInput = document.getElementById("firstNameInput");
+const lastNameInput = document.getElementById("lastNameInput");
+const ageInput = document.getElementById("ageInput");
+const nationalityInput = document.getElementById("nationalityInput");
+const removeElementInput = document.querySelector("#number");
+
+//Button elemento gavimas:
+const addingButtonElement = document.querySelector("#add-button");
+// const addingButtonElement = document.getElementById('add-button');
+// const addingButtonElement = document.querySelectorAll('button');
+
+//Validacijos
 function validateName(name) {
-   // tikrinam ar vardas atitinka reikalavimuas, nėra skaičiu ir grazinti folse- validavimas su regexu
-    let isValid = true;
-    if(!name)
-    {
-        isValid = false;
-    }
-    //regex patikrinimas, ar bent vienas toks simbolis yra
-    if(/[0-9]/.test(name) || /[!@#$%^&*()?+-.,/{}]/.test(name))
-    {
-        isValid = false;
-    }
-    return isValid;
+	// boolean reiksme
+	let isValid = true;
+
+	//tikriname ar name reikšmė nėra undefined, null, false, arba tuščia: ""
+	if (!name) {
+		console.log("!name");
+		isValid = false;
+	}
+	// /[a-z][A-Z]/.test(name) - Regex patikrinimas, tikriname ar praeina testą
+	if (/[0-9]/.test(name) || /[!@#$%^&*()?/.,]/.test(name)) {
+		console.log("regex");
+		isValid = false;
+	}
+	return isValid;
 }
-function validateAge(age)
-{
-    let isValid = true;
-    if(!age) isValid = false;
-  
-    if(isNaN(parseInt(age))) isValid = false;
+function validateAge(age) {
+	let isValid = true;
 
-    if(age < 0 || age > 200) isValid = false;
+	if (!age) isValid = false;
 
-    if(age % 1 !== 0)  isValid = false;
-    
-    return isValid;
+	if (isNaN(parseInt(age))) isValid = false;
+
+	if (age < 0 || age > 200) isValid = false;
+
+	if (age % 1 !== 0) isValid = false;
+
+	return isValid;
 }
 function isValidNationality(nationality) {
-return possibleNationalities.include(nationality);
+	return possibleNationalities.includes(nationality);
 }
-buttonElement.addEventListener('click', () => {
-    const person = {};
-    person.firstName = document.getElementById("firstNameInput").value;
-    person.lastName = document.getElementById("lastNameInput").value;
-    person.age = document.getElementById("ageInput").value;
-    person.nationality = document.getElementById("nationalityInput").value;
-    person.number = currentNumeration;
+//reikšmių nusinulinimas
+function nullifyInputValues() {
+	firstNameInput.value = "";
+	lastNameInput.value = "";
+	ageInput.value = "";
+	nationalityInput.value = "";
+}
 
-    if (!validateName(person.firstName) ||
-        !validateName(person.lastName) ||
-        !validateName(person.age) ||
-        !isValidNationality(person.nationality))
-        {alert("Visi laukai privalo būti užpildyti"); 
-        return;}
+//pridejimas
+addingButtonElement.addEventListener("click", () => {
+	const person = {};
 
-    people.push(person);
-    currentNumeration++
-    console.log(person);
-    
-    generateTableContent(people);
+	//Objekto person laukui - priskiriama inpute įvesta reikšmė
+	person.firstName = firstNameInput.value;
+	person.lastName = lastNameInput.value;
+	person.age = ageInput.value;
+	person.nationality = nationalityInput.value;
+	person.number = currentNumeration;
+
+	nullifyInputValues();
+
+	console.log(person);
+
+	// Įvyksta patikrinimas ar įvestos reikšmės yra tuščios
+	if (
+		!validateName(person.firstName) ||
+		!validateName(person.lastName) ||
+		!validateAge(person.age) ||
+		!isValidNationality(person.nationality)
+	) {
+		alert("Prašome užpildyti visus laukus");
+		return;
+	}
+
+	//Naujai sukurtas objektas pridedamas prie masyvo
+	people.push(person);
+	//Numeracija padideja
+	currentNumeration++;
+	//Naujai pergeneruojama lentelė pagal visas masyvo reikšmes
+	generateTableContent(people);
 });
-function generateTableContent(people)
-{
-    let ObjektaiHTML = ``;
-    for(let person of people){
-        ObjektaiHTML += `<tr>
+
+//HTML contento generavimas
+function generateTableContent(people) {
+	//Dinaminio HTML kodas
+	let dynamicHTML = ``;
+
+	for (let person of people) {
+		//Įvyksta pridėjimas prie stringo, pridedame reikšmes dinamiškai:
+		dynamicHTML += `<tr>
         <td>${person.number}</td>
         <td>${person.firstName}</td>
         <td>${person.lastName}</td>
         <td>${person.age}</td>
         <td>${person.nationality}</td>
         </tr>`;
-    }
-    const tbody = document.querySelector('table tbody');
-    tbody.innerHTML = ObjektaiHTML;
+	}
+	//Gaunamas tbody elementas
+	const tbody = document.querySelector("table tbody");
+	//Jo reikšmė tampa dinaminio html kodas
+	tbody.innerHTML = dynamicHTML;
 }
-function myFunction() {
-    let i = document.getElementById("cutInput").value;
-    if (i < people.length)document.getElementById("myTable").deleteRow(i);
-    else document.getElementById("rezultatas").innerHTML ="Tokia numeracija lentelėje neegzistuoja";
-  }
- 
+
+const removingButtonElement = document.querySelector("#remove-button");
+
+removingButtonElement.addEventListener("click", () => {
+	let number = +removeElementInput.value; //is inputu visada ateina tekstas
+	removeElementInput.value = "";
+
+	console.log(number);
+	console.log(people[0].number);
+
+	//findIndex() gražina indeksą pagal elemento reikšmę. Jei toks elementas nebuvo rastas, gražina -1
+	let foundIndex = people.findIndex((person) => person.number === number);
+
+	if (foundIndex === -1) {
+		alert("Žmogaus su tokiu numeriu nėra");
+		return;
+	}
+
+	people.splice(foundIndex, 1);
+	console.log(people);
+	generateTableContent(people);
+});

@@ -30,7 +30,8 @@
         }
         .two-columns {
             display: flex;
-            gap: 300px;
+            gap: 200px;
+            margin-top: 100px;
         }
         button {
             background-color: rgb(90, 127, 239);
@@ -39,13 +40,6 @@
             border-style: none;
             padding: 7px 20px 7px 20px;
             margin-left: 100px;
-        }
-        .last-column {
-            display: inline-block;
-        }
-        .space-left {
-            margin-right: 10px;
-            font-size: 13px;
         }
         input {
             padding-left: 10px;
@@ -56,14 +50,13 @@
             border-radius: 3px;
             font-size: 10px;
         }
-       .column {
-        display: block;
-        justify-content: space-between;
-       }
+        #number {
+            margin-left: 30px;
+        }
     </style>
 </head>
 <body>
-    <table id="myTable">
+    <table>
         <thead>
             <tr>
                 <th>#</th>
@@ -73,59 +66,69 @@
                 <th>Nationality</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>John</td>
-                <td>Doe</td>
-                <td>36</td>
-                <td>British</td>
-            </tr>
-        </tbody>
+        <tbody></tbody>
     </table>
     <div class="two-columns">
         <div>
+            <h2>Elementų pridėjimas</h2>
             <form>
-                <h2>Elementų pridėjimas</h2>
-                <div class="column">
-                    <div>
-                        <label>
-                            <span class="space-right">First Name</span>
-                            <input id="firstNameInput" type="text" placeholder="First Name">
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <span class="space-right">Last Name</span>
-                            <input id="lastNameInput" type="text" placeholder="Last Name">
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <span class="space-right">Age</span>
-                            <input id="ageInput"type="text" placeholder="Age">
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <span class="space-right">Nationality</span>
-                            <input id="nationalityInput" type="text" placeholder="Nationality">
-                        </label>
-                    </div>
+                <div>
+                    <label>
+                        <span class="space-right">First Name</span>
+                        <input
+                            type="text"
+                            placeholder="First Name"
+                            id="firstNameInput"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <span class="space-right">Last Name</span>
+                        <input
+                            type="text"
+                            placeholder="Last Name"
+                            id="lastNameInput"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <span class="space-right">Age</span>
+                        <input
+                            type="text"
+                            placeholder="Age"
+                            id="ageInput"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <span class="space-right">Nationality</span>
+                        <input
+                            type="text"
+                            placeholder="Nationality"
+                            id="nationalityInput"
+                        />
+                    </label>
                 </div>
             </form>
-            <div><button id="add-button">Submit</button></div>
-            <p id="rezultatas0"></p>
+            <div>
+                <!-- Mygtuko funkcionalumas pasinaudojant elementu JS'e -->
+                <button id="add-button">Add</button>
+            </div>
         </div>
-        <div class="last-column">
+       <div>
             <h2>Elementų pašalinimas</h2>
             <label>
-                <spa class="space-left">Person number</spa>
-                <input id="cutInput" type="number"
-                    placeholder="Person number">
+                <span class="space-right">Person number</span>
+                <input
+                    type="number"
+                    placeholder="Person number"
+                    id="number"
+                />
             </label>
-            <button onclick="myFunction()">Submit</button>
-            <p id="rezultatas"></p>
+            <button id="remove-button">Remove</button>
         </div>
     </div>
     <script src="scr.js"></script>
