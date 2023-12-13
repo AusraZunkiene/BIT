@@ -38,8 +38,8 @@ if(bmi > 30){
 }
 
 function showResult(value, color) {
-    result.style.backgroundColor = color
-    return result.innerHTML = value
+    result.style.backgroundColor = color;
+    return result.innerHTML = value;
 }
 reset.addEventListener("click", nullValues);
 function nullValues() {
