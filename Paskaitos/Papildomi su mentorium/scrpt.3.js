@@ -41,3 +41,10 @@ function showResult(value, color) {
     result.style.backgroundColor = color
     return result.innerHTML = value
 }
+reset.addEventListener("click", nullValues);
+function nullValues() {
+	height.value = "";
+	weight.value = "";
+	result.innerHTML = "";
+
+}
