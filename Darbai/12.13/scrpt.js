@@ -384,7 +384,7 @@ align-items: center; padding-top: 10px; padding-bottom:30px; border-bottom: 2px 
 </div>
 <div style="padding-bottom: 20px">
 <div style="display: flex; gap: 5px;">
-<h3 style="color: orange;">$${products[index].price - ((products[index].price * products[index].discountPercentage)/ 100).toFixed(2)}</h3>
+<h3 style="color: rgb(227, 88, 28)">$${products[index].price - ((products[index].price * products[index].discountPercentage)/ 100).toFixed(2)}</h3>
 <h3 style=" font-size: 15px; color: grey;
 text-decoration: line-through;
 font-weight: semi-bold;">$${products[index].price}</h3>
