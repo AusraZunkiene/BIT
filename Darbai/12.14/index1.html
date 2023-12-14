@@ -23,8 +23,6 @@
 		<div class="container">
 			<form>
 				<div class="row mb-5">
-					<!-- - 12 vienoje eiluteje, tie columnai kelsis i sekancia eilute -->
-
 					<div class="col-4">
 						<label for="title">Pavadinimas:</label>
 						<input
@@ -117,12 +115,6 @@
 
 		<script src="script1.js"></script>
 		<script>
-			//CRUD:
-			//CREATE - Sukurti įrašą. Good
-			//READ - Peržiūrėti įrašą. Good
-			//UPDATE - Atnaujinti įrašą.
-			//DELETE - Ištrinti įrašą. Good
-
 			let editMode = false;
 			let currentProduct;
 
@@ -134,23 +126,6 @@
 				categoryInputElement = document.getElementById("category"),
 				submitButtonElement = document.getElementById("submit");
 
-			//Sis budas - suveikia
-			// generateTableContent()
-			// function generateTableContent()
-			// {
-
-			// }
-			// Sitas budas - nesuveikia
-			// getTableContents()
-			// const getTableContents = ()=>{
-
-			// }
-
-			//Automatinis funkcijos iškvietimas apskliaudus funkciją ir už jos padėjus skliaustelius
-
-			// (()=>{
-			//     console.log('funkcija')
-			// })()
 
 			const getTableContents = () => {
 				let dynamicHTML = ``;
@@ -180,7 +155,6 @@
 			getTableContents();
 
 			const createNewRecord = (event) => {
-				//Prevencija nuo iprastinio elgesio.
 				event.preventDefault();
 				const newProduct = {
 					id: products[products.length - 1].id + 1,
