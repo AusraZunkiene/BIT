@@ -2,7 +2,7 @@ const height = document.querySelector(".height"),
 weight = document.querySelector(".weight"),
 calculate =  document.querySelector(".btn"),
 result =  document.querySelector(".result"),
-reset =  document.querySelector(".reset")
+reset =  document.querySelector(".resetas")
 
 calculate.addEventListener("click", calBMI);
  
@@ -35,15 +35,20 @@ if(bmi > 30){
     showResult(`Obese: <span>${bmi}</span>`, "red")
 }
 }
+resetFunction();
 }
 
 function showResult(value, color) {
     result.style.backgroundColor = color;
     return result.innerHTML = value;
 }
-reset.addEventListener("click", nullValues);
-function nullValues() {
+function resetFunction(){
+    document.getElementById("resetas").innerHTML = '<button onclick="resetNullFunction()">Reset</button>';
+}
+
+function resetNullFunction() {
 	height.value = "";
 	weight.value = "";
 	result.innerHTML = "";
+    resetas.innerHTML = "";
 }
