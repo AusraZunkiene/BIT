@@ -1,5 +1,4 @@
-const products =
-  
+const products = 
 [
       {
         id: 1,
@@ -362,9 +361,7 @@ const products =
         thumbnail: "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
       }
     ];
- 
-//discountPercentage: 12.96,
-
+  
 
 let textAll = "";
 let index = 0;
@@ -375,11 +372,23 @@ const text = `<div>
 align-items: center; padding-top: 10px; padding-bottom:30px; border-bottom: 2px solid rgb(215, 215, 215); color: black;">
 <div>
 <img src="${products[index].thumbnail}" style="position: relative; width: 150px; height: 150px;"></img>
-<input style="position: absolute; margin-left: -30px; background-color: rgb(227, 88, 28); border: none; color: white; width: 30px; padding: 5px; font-size: 10px;"placeholder="-${products[index].discountPercentage.toFixed(0)}%"></input>
+<span style="position: absolute; width: 30px; height: 15px; margin-left: -35px; background-color: rgb(227, 88, 28); border: none; color: white;  padding: 3px; font-size: 12px;">-${products[index].discountPercentage.toFixed(0)}%</input>
 </div>
 <div style="padding-left: 30px; padding-bottom: 30px; text-align: start; width: 60%">
 <h5 style="color: rgb(115, 194, 246);">${products[index].title}</h5>
-<div id="rating_bar"></div>
+<div class="rating" style="width: 180px;">
+
+<i style="cursor: pointer;
+color: #dabd18b2;"class="rating__star fa fa-star"></i>
+<i style="cursor: pointer;
+color: #dabd18b2;" class="rating__star fa fa-star"></i>
+<i style="cursor: pointer;
+color: #dabd18b2;" class="rating__star fa fa-star"></i>
+<i style="cursor: pointer;
+color: #dabd18b2;" class="rating__star fa fa-star"></i>
+<i style="cursor: pointer;
+color: #dabd18b2;" class="rating__star fa fa-star"></i>
+</div>
 <p>${products[index].description}</p>
 </div>
 <div style="padding-bottom: 20px">
