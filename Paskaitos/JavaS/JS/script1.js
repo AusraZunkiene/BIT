@@ -1,5 +1,4 @@
 const products =
-  
 [
       {
         id: 1,
@@ -362,38 +361,3 @@ const products =
         thumbnail: "https://i.dummyjson.com/data/products/30/thumbnail.jpg"
       }
     ];
- 
-//discountPercentage: 12.96,
-
-
-let textAll = "";
-let index = 0;
-for(let i = 0; i < products.length; i++){
-//for(const product of products) ir tada product.id
-const text = `<div>
-<div style="display: flex; justify-content: space-between;
-align-items: center; padding-top: 10px; padding-bottom:30px; border-bottom: 2px solid rgb(215, 215, 215); color: black;">
-<div>
-<img src="${products[index].thumbnail}" style="position: relative; width: 150px; height: 150px;"></img>
-<input style="position: absolute; margin-left: -30px; background-color: rgb(227, 88, 28); border: none; color: white; width: 30px; padding: 5px; font-size: 10px;"placeholder="-${products[index].discountPercentage.toFixed(0)}%"></input>
-</div>
-<div style="padding-left: 30px; padding-bottom: 30px; text-align: start; width: 60%">
-<h5 style="color: rgb(115, 194, 246);">${products[index].title}</h5>
-<div id="rating_bar"></div>
-<p>${products[index].description}</p>
-</div>
-<div style="padding-bottom: 20px">
-<div style="display: flex; gap: 5px;">
-<h3 style="color: rgb(227, 88, 28)">$${products[index].price - ((products[index].price * products[index].discountPercentage)/ 100).toFixed(2)}</h3>
-<h3 style=" font-size: 15px; color: grey;
-text-decoration: line-through;
-font-weight: semi-bold;">$${products[index].price}</h3>
-</div>
-<button style="background-color: rgb(236, 190, 6);border-radius: 3px; width: 130px; padding-top: 8px; padding-bottom: 8px; border: none;">Add to Cart</button>
-</div>
-</div>`
-textAll += text
-index++
-document.getElementById("container").innerHTML = textAll;
-}
- 
