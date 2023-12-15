@@ -144,22 +144,24 @@ for( value of masyvaiVisi[i]) {
 document.write("<br></br>");
 document.write("9 užduotis:");
 document.write("<br></br>");
-let naujasMasyvas = [];
-for(let i = 0; i < 3; i++){
-naujasMasyvas.push(rand(10, 33));
-}
-console.log(naujasMasyvas);
+
+let pirmas = rand(10, 33);
+let antras = rand(10, 33);
+let trecias = rand(10, 33);
 let masyviukas = [];
 let skaiciukas = 0;
-while(skaiciukas = 3){
-
-for(let i = 2; i < 33; i++){
-if(naujasMasyvas[0] / i == 1)
-masyviukas.push()
-skaiciukas++
-else skaiciukas = 0;
-}
-}
+let i = 2;
+/*while(true){
+if(skaiciukas === 3){
+break}
+else {if(pirmas / i == 1 || antras / i == 1 || trecias / i == 1)
+  {masyviukas.push(rand(10, 33));
+  skaiciukas++
+  i++}
+  else {masyviukas.push(rand(10, 33))
+     skaiciukas = 0 
+     i++}
+     return masyviukas;*/
 
 
 

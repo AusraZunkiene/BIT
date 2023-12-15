@@ -152,7 +152,6 @@ console.log('Antra dalis: 8 užduotis');
 const masyvasWord = [];
 let kiekKartuReikejo = 0;
 while (true) {
-;
 if (randStringams(4) === 'XMAS')
 {
 	masyvasWord.push(randStringams(4))
