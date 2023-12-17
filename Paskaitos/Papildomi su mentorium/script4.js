@@ -145,13 +145,52 @@ document.write("<br></br>");
 document.write("9 užduotis:");
 document.write("<br></br>");
 
-let pirmas = rand(10, 33);
-let antras = rand(10, 33);
-let trecias = rand(10, 33);
-let masyviukas = [];
-let skaiciukas = 0;
-let i = 2;
 
+let masyviukas = [];
+let i = 2;
+let masyvasIsTriju = [];
+
+for(let i = 0; i < 6; i++){
+let skaiciukas = rand(10, 33);
+masyvasIsTriju.push(skaiciukas);}
+console.log(masyvasIsTriju);
+let naujutis = masyvasIsTriju.slice(-3);
+console.log(naujutis);
+
+console.log(naujutis[0]);
+
+
+/*
+let kiekPaskutiniu = 0;
+let numeris = naujutis[0];
+while(kiekPaskutiniu === 3){
+ for (let i = 2; i <= numeris; i++) {
+      if (numeris % i === 0) {
+        masyvasIsTriju.push(rand(10, 33));
+        kiekPaskutiniu = 0;
+      }
+    else {masyvasIsTriju.push(rand(10, 33));
+        kiekPaskutiniu++;}}
+  }
+  return numberDivision;
+}
+   for (i = 2; i <= n - 1; i++)
+        if (n % i == 0) {
+while(true){
+  if(naujutis[0])
+}while(true){
+if(masyvasIsTriju.slice(-3)){
+break}
+arr.splice(i, 1);
+		i--;
+else {if(pirmas / i == 1 || antras / i == 1 || trecias / i == 1)
+  {masyviukas.push(rand(10, 33));
+  skaiciukas++
+  i++}
+  else {masyviukas.push(rand(10, 33))
+     skaiciukas = 0 
+     i++}
+     return masyviukas;*/
 
 
 
