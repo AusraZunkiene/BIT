@@ -145,54 +145,31 @@ document.write("<br></br>");
 document.write("9 užduotis:");
 document.write("<br></br>");
 
-
-let masyviukas = [];
-let i = 2;
 let masyvasIsTriju = [];
 
-for(let i = 0; i < 6; i++){
-let skaiciukas = rand(10, 33);
-masyvasIsTriju.push(skaiciukas);}
-console.log(masyvasIsTriju);
-let naujutis = masyvasIsTriju.slice(-3);
-console.log(naujutis);
-
-console.log(naujutis[0]);
 
 
-/*
-let kiekPaskutiniu = 0;
-let numeris = naujutis[0];
-while(kiekPaskutiniu === 3){
- for (let i = 2; i <= numeris; i++) {
-      if (numeris % i === 0) {
-        masyvasIsTriju.push(rand(10, 33));
-        kiekPaskutiniu = 0;
-      }
-    else {masyvasIsTriju.push(rand(10, 33));
-        kiekPaskutiniu++;}}
+/*let rezas1 = fourthFunction(masyvasIsTriju[0]);
+let rezas2 = fourthFunction(masyvasIsTriju[1]);
+let rezas3 = fourthFunction(masyvasIsTriju[2]);
+console.log(rezas1);
+console.log(rezas2);
+console.log(rezas3);
+let masuviusk = []; 
+//if(rezas1 !== 0 && rezas2 !== 0 && rezas3 !== 0) console.log('nelygu'); ;*/
+
+/*let pridedaJeiTiesa = 0;
+let i = 0;
+while(pridedaJeiTiesa = 3){
+  for (let i = 0; i < masyvasIsTriju.lengt; i++){
+  if (fourthFunction(masyvasIsTriju[i] !== 0)){
+    masyvasIsTriju.push(rand(10, 33))
   }
-  return numberDivision;
+  else{pridedaJeiTiesa++}
 }
-   for (i = 2; i <= n - 1; i++)
-        if (n % i == 0) {
-while(true){
-  if(naujutis[0])
-}while(true){
-if(masyvasIsTriju.slice(-3)){
-break}
-arr.splice(i, 1);
-		i--;
-else {if(pirmas / i == 1 || antras / i == 1 || trecias / i == 1)
-  {masyviukas.push(rand(10, 33));
-  skaiciukas++
-  i++}
-  else {masyviukas.push(rand(10, 33))
-     skaiciukas = 0 
-     i++}
-     return masyviukas;*/
-
-
+}
+console.log(masyvasIsTriju);
+console.log(pridedaJeiTiesa);*/
 
 // 10. Sugeneruokite masyvą iš 10 elementų, kurie yra masyvai iš 10 elementų, kurie yra atsitiktiniai skaičiai nuo 1 iki 100. Jeigu tokio didelio masyvo (ne atskirai mažesnių) pirminių skaičių vidurkis mažesnis už 70, suraskite masyve mažiausią skaičių (nebūtinai pirminį) ir prie jo pridėkite 3. Vėl paskaičiuokite masyvo pirminių skaičių vidurkį ir jeigu mažesnis nei 70 viską kartokite. 
 document.write("<br></br>");
