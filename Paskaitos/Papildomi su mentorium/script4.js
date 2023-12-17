@@ -156,7 +156,7 @@ for (let i = 1; i < number; ++i) {
       }}
   return numberDivision;
 }
-let rezas1 = ninethFunction(23);
+let rezas1 = ninethFunction(7);
 console.log(rezas1)
 
 
@@ -180,29 +180,17 @@ for(let i = 0; i < 3; i++){
     }*/
    
 
-/* let masyvaskhh = 0;
-  while(masyvaskhh === 3){
-  for(let i = 0; i < masyvasIsTriju; i++){
-    if(fourthFunction(masyvasIsTriju(i)) !== 0) {masyvasIsTriju.push(rand(10, 33)); console.log(masyvasIsTriju); console.log('1'); masyvaskhh = 0;}
-    else {console.log('0'); masyvaskhh++; console.log(masyvasIsTriju)}
-  }
-  } ;*/
-
-/*let pridedaJeiTiesa = 0;
-let i = 0;
-while(pridedaJeiTiesa = 3){
-  for (let i = 0; i < masyvasIsTriju.lengt; i++){
-  if (fourthFunction(masyvasIsTriju[i] !== 0)){
-    masyvasIsTriju.push(rand(10, 33))
-  }
-  else{pridedaJeiTiesa++}
-}
-}
-console.log(masyvasIsTriju);
-console.log(pridedaJeiTiesa);*/
-
 // 10. Sugeneruokite masyvą iš 10 elementų, kurie yra masyvai iš 10 elementų, kurie yra atsitiktiniai skaičiai nuo 1 iki 100. Jeigu tokio didelio masyvo (ne atskirai mažesnių) pirminių skaičių vidurkis mažesnis už 70, suraskite masyve mažiausią skaičių (nebūtinai pirminį) ir prie jo pridėkite 3. Vėl paskaičiuokite masyvo pirminių skaičių vidurkį ir jeigu mažesnis nei 70 viską kartokite. 
 document.write("<br></br>");
 document.write("10 užduotis:");
 document.write("<br></br>");
- 
+let pirmasDidisisMasyvas = [];
+ for(let i = 0; i < 10; i++) {
+  let kitiMasyvai = [];
+  for (let j = 0; j < 10; j++){
+    kitiMasyvai.push(rand(1, 100));
+  }
+  pirmasDidisisMasyvas.push(kitiMasyvai);
+ }
+ console.log(pirmasDidisisMasyvas);
+
