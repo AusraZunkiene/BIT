@@ -36,7 +36,6 @@ for (let i = 0; i < 32; i++) {
 let randStringas = rand(0, 1);
 let randNumber = String.fromCharCode(rand(48, 57));
 let randLetter = String.fromCharCode(rand(97, 122));
-console.log(randStringas)
 if(randStringas === 1) {
   allNumber.push(randNumber); skaicius++}
 else {strng += randLetter; skaicius = 0;}
@@ -127,8 +126,7 @@ document.write(masyvaiVisi.join('<br>'));
 document.write("<br></br>");
 document.write("8 užduotis:");
 document.write("<br></br>");
-console.log(masyvaiVisi[0]);
-console.log(masyvaiVisi[0].length);
+
 
 let allTotal = [];
 for(let i = 0; i < masyvaiVisi.length; i++){
@@ -145,18 +143,50 @@ document.write("<br></br>");
 document.write("9 užduotis:");
 document.write("<br></br>");
 
+function ninethFunction(x) {
+  let number = x;
+  let numberDivision = 0;
+for (let i = 1; i < number; ++i) {
+      if (x % i === 0) {
+          number = x / i;
+          if (number != i) {
+            numberDivision++;
+          }
+          numberDivision++;
+      }}
+  return numberDivision;
+}
+let rezas1 = ninethFunction(23);
+console.log(rezas1)
+
+
+
+
 let masyvasIsTriju = [];
 
+for(let i = 0; i < 3; i++){
+  let skaiciukas = rand(10, 33);
+  masyvasIsTriju.push(skaiciukas);}
+  console.log(masyvasIsTriju);
 
+  /*let trisKartusPirminis = 0;
+  while(true){
+    if (trisKartusPirminis === 3) {break}
+    for(let i = 0; i < masyvasIsTriju.length; i++){
+      if(ninethFunction(masyvasIsTriju[i]) > 2) {masyvasIsTriju.push(rand(1, 33));
+        i--; console.log(masyvasIsTriju); trisKartusPirminis = 0;}
+      else {trisKartusPirminis++;  console.log(trisKartusPirminis);}
+    }
+    }*/
+   
 
-/*let rezas1 = fourthFunction(masyvasIsTriju[0]);
-let rezas2 = fourthFunction(masyvasIsTriju[1]);
-let rezas3 = fourthFunction(masyvasIsTriju[2]);
-console.log(rezas1);
-console.log(rezas2);
-console.log(rezas3);
-let masuviusk = []; 
-//if(rezas1 !== 0 && rezas2 !== 0 && rezas3 !== 0) console.log('nelygu'); ;*/
+/* let masyvaskhh = 0;
+  while(masyvaskhh === 3){
+  for(let i = 0; i < masyvasIsTriju; i++){
+    if(fourthFunction(masyvasIsTriju(i)) !== 0) {masyvasIsTriju.push(rand(10, 33)); console.log(masyvasIsTriju); console.log('1'); masyvaskhh = 0;}
+    else {console.log('0'); masyvaskhh++; console.log(masyvasIsTriju)}
+  }
+  } ;*/
 
 /*let pridedaJeiTiesa = 0;
 let i = 0;
