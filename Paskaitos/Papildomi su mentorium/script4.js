@@ -151,17 +151,7 @@ let trecias = rand(10, 33);
 let masyviukas = [];
 let skaiciukas = 0;
 let i = 2;
-/*while(true){
-if(skaiciukas === 3){
-break}
-else {if(pirmas / i == 1 || antras / i == 1 || trecias / i == 1)
-  {masyviukas.push(rand(10, 33));
-  skaiciukas++
-  i++}
-  else {masyviukas.push(rand(10, 33))
-     skaiciukas = 0 
-     i++}
-     return masyviukas;*/
+
 
 
 
