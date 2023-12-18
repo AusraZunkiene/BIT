@@ -168,8 +168,7 @@
 					<tbody id="dynamic-Two-data">
 					</tbody>
 				</table>
-				<hr>
-					<br>
+				
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -344,7 +343,7 @@
 				  brandTwoInputValue = brandTwoInput.value,
 				  categoryTwoInputValue = categoryTwoInput.value;
 			const filteredArray = products.filter((product) =>
-					product.title.toLowerCase().includes(titleTwoInputValue.toLowerCase())
+					product.title.toLowerCase().includes(titleTwoInputValue.toLowerCase()) 
 				);
 		
 				showFiltered(filteredArray);
@@ -352,7 +351,7 @@
 				console.log(filteredArray);	
 		
 		
-		}
+		};
 		submitButtonTwoElement.onclick = filteringTable;
 		</script>
 	</body>
