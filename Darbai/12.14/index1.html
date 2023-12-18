@@ -20,7 +20,9 @@
 		<title>Document</title>
 	</head>
 	<body>
+		
 		<div class="container">
+			<h3>Produktų pridėjimas, ištrinimas, atnaujinimas</h3>
 			<form>
 				<div class="row mb-5">
 					<div class="col-4">
@@ -84,7 +86,90 @@
 					</div>
 				</div>
 			</form>
-
+			<hr>
+			<h3>Filtravimas</h3>
+			<div class="container">
+				<form>
+					<div class="row mb-5">
+						<div class="col-4">
+							<label for="title">Pavadinimas:</label>
+							<input
+								type="text"
+								id="titleTwo"
+								name="titleTwo"
+								class="form-control-sm"
+							/>
+						</div>
+						<div class="col-4">
+							<label for="price">Kaina:</label>
+							<input
+								type="text"
+								id="priceTwo"
+								name="priceTwo"
+								class="form-control-sm"
+							/>
+						</div>
+						<div class="col-4">
+							<label for="stock">Kiekis:</label>
+							<input
+								type="text"
+								id="stockTwo"
+								name="stockTwo"
+								class="form-control-sm"
+							/>
+						</div>
+						<div class="col-4 mt-2">
+							<label for="brand">Prekinis ženklas:</label>
+							<input
+								type="text"
+								id="brandTwo"
+								name="brandTwo"
+								class="form-control-sm"
+							/>
+						</div>
+						<div class="col-4 mt-2">
+							<label for="category">Kategorija:</label>
+							<select
+								name="categoryTwo"
+								id="categoryTwo"
+								class="form-control-sm"
+							>
+								<option>smartphones</option>
+								<option>laptops</option>
+								<option>fragrances</option>
+								<option>skincare</option>
+								<option>groceries</option>
+								<option>home-decoration</option>
+							</select>
+						</div>
+						<div class="col-4 mt-2">
+							<button
+								class="btn btn-primary mt-4"
+								id="submitTwo"
+							>
+								Submit
+							</button>
+						</div>
+					</div>
+				</form>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Prekės pavadinimas</th>
+							<th>Kaina</th>
+							<th>Kiekis</th>
+							<th>Prekinis ženklas</th>
+							<th>Kategorija</th>
+							<th>Ištrynimas</th>
+							<th>Atnaujinimas</th>
+						</tr>
+					</thead>
+					<tbody id="dynamic-Two-data">
+					</tbody>
+				</table>
+				<hr>
+					<br>
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -112,7 +197,6 @@
 				</tbody>
 			</table>
 		</div>
-
 		<script src="script1.js"></script>
 		<script>
 			let editMode = false;
@@ -219,6 +303,57 @@
 				currentProduct = elementIndex;
 				editMode = true;
 			};
+
+		const dynamicTwoInput = document.querySelector('#dynamic-Two-data'),
+			titleTwoInput = document.querySelector('#titleTwo'),
+			priceTwoInput = document.querySelector('#priceTwo'),
+			stockTwoInput = document.querySelector('#stockTwo'),
+			brandTwoInput = document.querySelector('#brandTwo'),
+			categoryTwoInput = document.querySelector('#categoryTwo'),
+			submitButtonTwoElement = document.querySelector("#submitTwo");
+
+		function showFiltered(product) {
+			let dynamicHTML = "";
+			for (const product of products) {
+				dynamicHTML += `<tr>
+						<td>${product.id}</td>
+						<td>${product.title}</td>
+						<td>${product.price}</td>
+						<td>${product.stock}</td>
+						<td>${product.brand}</td>
+						<td>${product.category}</td>
+						<td>
+                            <button 
+                            class="btn btn-danger" onclick="deleteProduct(${product.id})">Ištrinti</button>
+                        </td>
+                        <td>
+                            <button 
+                            class="btn btn-success" onclick="setEdit(${product.id})">Atnaujinti</button>
+                        </td>
+                        </tr>`
+			}
+		
+			dynamicTwoInput.innerHTML = dynamicHTML;
+		}
+		const filteringTable = (event) => {
+				event.preventDefault();
+			const dynamicTwoInputValue = dynamicTwoInput.value,
+				  titleTwoInputValue = titleTwoInput.value,
+				  priceTwoInputValue = priceTwoInput.value,
+				  stockTwoInputValue = stockTwoInput.value,
+				  brandTwoInputValue = brandTwoInput.value,
+				  categoryTwoInputValue = categoryTwoInput.value;
+			const filteredArray = products.filter((product) =>
+					product.title.toLowerCase().includes(titleTwoInputValue.toLowerCase())
+				);
+		
+				showFiltered(filteredArray);
+
+				console.log(filteredArray);	
+		
+		
+		}
+		submitButtonTwoElement.onclick = filteringTable;
 		</script>
 	</body>
 </html>
