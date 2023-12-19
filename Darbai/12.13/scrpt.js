@@ -376,7 +376,7 @@ align-items: center; padding-top: 10px; padding-bottom:30px; border-bottom: 2px 
 </div>
 <div style="padding-left: 30px; padding-bottom: 30px; text-align: start; width: 60%">
 <h5 style="color: rgb(115, 194, 246);">${products[index].title}</h5>
-<div class="rating" style="width: 180px;">
+<span class="rating" style="width: 180px;">
 
 <i style="cursor: pointer;
 color: #dabd18b2;"class="rating__star fa fa-star"></i>
@@ -388,7 +388,7 @@ color: #dabd18b2;" class="rating__star fa fa-star"></i>
 color: #dabd18b2;" class="rating__star fa fa-star"></i>
 <i style="cursor: pointer;
 color: #dabd18b2;" class="rating__star fa fa-star"></i>
-</div>
+</span>
 <p>${products[index].description}</p>
 </div>
 <div style="padding-bottom: 20px">
