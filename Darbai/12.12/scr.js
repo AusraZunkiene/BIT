@@ -91,7 +91,7 @@ addingButtonElement.addEventListener("click", () => {
 	localStorage.setItem("Objektai", JSON.stringify(people));
 	
 });
-console.log(people)
+
 
 
 
@@ -138,4 +138,4 @@ removingButtonElement.addEventListener("click", () => {
 
 });
 
-
+	

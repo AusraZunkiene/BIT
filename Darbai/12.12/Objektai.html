@@ -30,7 +30,7 @@
         }
         .two-columns {
             display: flex;
-            gap: 200px;
+            gap: 50px;
             margin-top: 100px;
         }
         button {
@@ -70,7 +70,7 @@
     </table>
     <div class="two-columns">
         <div>
-            <h2>Elementų pridėjimas</h2>
+            <h2>Add person</h2>
             <form>
                 <div>
                     <label>
@@ -119,7 +119,7 @@
             </div>
         </div>
        <div>
-            <h2>Elementų pašalinimas</h2>
+            <h2>Remove person</h2>
             <label>
                 <span class="space-right">Person number</span>
                 <input
@@ -129,6 +129,18 @@
                 />
             </label>
             <button id="remove-button">Remove</button>
+        </div>
+        <div>
+            <h2>Update person</h2>
+            <label>
+                <span class="space-right">Person number</span>
+                <input
+                    type="number"
+                    placeholder="Person number"
+                    id="number"
+                />
+            </label>
+            <button id="remove-button">Update</button>
         </div>
     </div>
     <script src="scr.js"></script>
