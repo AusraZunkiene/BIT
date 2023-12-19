@@ -1,5 +1,5 @@
 const people = [];
-const possibleNationalities = ["Lithuanian", "Latvian", "German"];
+const possibleNationalities = ["Lithuanian", "Latvian", "German", "British", "Spanish", "Indian", "Japanese"];
 let currentNumeration = 1;
 
 //Elementų apsirašymas
@@ -65,10 +65,10 @@ addingButtonElement.addEventListener("click", () => {
 	person.age = ageInput.value;
 	person.nationality = nationalityInput.value;
 	person.number = currentNumeration;
-
+	
 	nullifyInputValues();
 
-	console.log(person);
+	
 
 	// Įvyksta patikrinimas ar įvestos reikšmės yra tuščios
 	if (
@@ -80,18 +80,26 @@ addingButtonElement.addEventListener("click", () => {
 		alert("Prašome užpildyti visus laukus");
 		return;
 	}
-
+	
 	//Naujai sukurtas objektas pridedamas prie masyvo
 	people.push(person);
 	//Numeracija padideja
 	currentNumeration++;
 	//Naujai pergeneruojama lentelė pagal visas masyvo reikšmes
 	generateTableContent(people);
+	console.log(people);
+	localStorage.setItem("Objektai", JSON.stringify(people));
+
 });
+console.log(people)
+
+const arrayFromStorage = JSON.parse(localStorage.getItem("Objektai"));
+generateTableContent(arrayFromStorage);
 
 //HTML contento generavimas
 function generateTableContent(people) {
 	//Dinaminio HTML kodas
+	
 	let dynamicHTML = ``;
 
 	for (let person of people) {
@@ -107,7 +115,8 @@ function generateTableContent(people) {
 	//Gaunamas tbody elementas
 	const tbody = document.querySelector("table tbody");
 	//Jo reikšmė tampa dinaminio html kodas
-	tbody.innerHTML = dynamicHTML;
+	tbody.innerHTML += dynamicHTML;
+	
 }
 
 const removingButtonElement = document.querySelector("#remove-button");
@@ -115,9 +124,6 @@ const removingButtonElement = document.querySelector("#remove-button");
 removingButtonElement.addEventListener("click", () => {
 	let number = +removeElementInput.value; //is inputu visada ateina tekstas
 	removeElementInput.value = "";
-
-	console.log(number);
-	console.log(people[0].number);
 
 	//findIndex() gražina indeksą pagal elemento reikšmę. Jei toks elementas nebuvo rastas, gražina -1
 	let foundIndex = people.findIndex((person) => person.number === number);
@@ -130,4 +136,7 @@ removingButtonElement.addEventListener("click", () => {
 	people.splice(foundIndex, 1);
 	console.log(people);
 	generateTableContent(people);
+
 });
+
+
