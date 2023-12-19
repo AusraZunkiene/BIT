@@ -160,8 +160,6 @@ let rezas1 = ninethFunction(7);
 console.log(rezas1)
 
 
-
-
 let masyvasIsTriju = [];
 
 for(let i = 0; i < 3; i++){
@@ -193,4 +191,6 @@ let pirmasDidisisMasyvas = [];
   pirmasDidisisMasyvas.push(kitiMasyvai);
  }
  console.log(pirmasDidisisMasyvas);
+
+ 
 
