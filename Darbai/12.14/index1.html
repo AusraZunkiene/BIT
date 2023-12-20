@@ -264,7 +264,6 @@
 
 			const updateProduct = (event) => {
 				event.preventDefault();
-				console.log("Veikiu!");
 				products[currentProduct].title = titleInputElement.value;
 				products[currentProduct].price = priceInputElement.value;
 				products[currentProduct].stock = stockInputElement.value;
@@ -305,17 +304,15 @@
 				editMode = true;
 			};
 
-		const dynamicTwoInput = document.querySelector('#dynamic-Two-data'),
-			titleTwoInput = document.querySelector('#titleTwo'),
-			priceTwoInput = document.querySelector('#priceTwo'),
-			stockTwoInput = document.querySelector('#stockTwo'),
-			brandTwoInput = document.querySelector('#brandTwo'),
-			categoryTwoInput = document.querySelector('#categoryTwo'),
-			submitButtonTwoElement = document.querySelector("#submitTwo");
+		const dynamicTwoInput = document.getElementById('dynamic-Two-data'),
+			titleTwoInput = document.getElementById('titleTwo'),
+			brandTwoInput = document.getElementById('brandTwo'),
+			categoryTwoInput = document.getElementById('categoryTwo'),
+			submitButtonTwoElement = document.getElementById("submitTwo");
 
-		function showFiltered(product) {
-			let dynamicHTML = "";
-			for (const product of products) {
+		function showFiltered(val) {
+			let dynamicHTML = ``;
+			for (const product of val) {
 				dynamicHTML += `<tr>
 						<td>${product.id}</td>
 						<td>${product.title}</td>
@@ -324,35 +321,31 @@
 						<td>${product.brand}</td>
 						<td>${product.category}</td>
 						<td>
-                            <button 
+							<button 
                             class="btn btn-danger" onclick="deleteProduct(${product.id})">Ištrinti</button>
                         </td>
                         <td>
                             <button 
                             class="btn btn-success" onclick="setEdit(${product.id})">Atnaujinti</button>
                         </td>
-                        </tr>`
+					</tr>`;    
 			}
 		
 			dynamicTwoInput.innerHTML = dynamicHTML;
 		}
 		const filteringTable = (event) => {
 				event.preventDefault();
-			const dynamicTwoInputValue = dynamicTwoInput.value,
-				  titleTwoInputValue = titleTwoInput.value,
-				  priceTwoInputValue = priceTwoInput.value,
-				  stockTwoInputValue = stockTwoInput.value,
-				  brandTwoInputValue = brandTwoInput.value,
-				  categoryTwoInputValue = categoryTwoInput.value;
-			const filteredArray = products.filter((product) =>
-					product.title.toLowerCase().includes(titleTwoInputValue.toLowerCase()) 
+		const titleTwoInputValue = titleTwoInput.value.toLowerCase();
+		const brandTwoInputValue = brandTwoInput.value.toLowerCase();
+		const categoryTwoInputValue = categoryTwoInput.value.toLowerCase();
+			
+		const filteredArray = products.filter((product) =>
+			product.title.toLowerCase().includes(titleTwoInputValue) &&
+            product.brand.toLowerCase().includes(brandTwoInputValue) &&
+            product.category.toLowerCase().includes(categoryTwoInputValue)
 				);
 		
 				showFiltered(filteredArray);
-
-				console.log(filteredArray);	
-		
-		
 		};
 		submitButtonTwoElement.onclick = filteringTable;
 		</script>
