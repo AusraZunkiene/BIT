@@ -152,7 +152,7 @@
 				</tbody>
 			</table>
 		</div>
-		<dialog
+		<dialog 
 			id="productInfo"
 			style="width: 70%"
 		>
@@ -180,7 +180,7 @@
 							minima inventore nisi eaque ad!</span
 						>
 					</div>
-					<button type="button" id="close" onclick="return closewindow()">Close</button>
+					<button type="button" id="close" class="button-close-modal">Close</button>
 				</div>
 			</div>
 		</dialog>
@@ -236,6 +236,7 @@
 			};
 
 			getTableContents();
+			
 
 			const showModal = (id) => {
 				let elementIndex = products.findIndex((value) => value.id === id);
@@ -262,9 +263,26 @@
 							>${product.description}</span
 						>
 					</div>
-					<button type="button" id="close" onclick="return closewindow()">Close</button>
+					<button type="button" id="close" class="button-close-modal">Close</button>
 
 			</div>`
+			document.addEventListener(
+			"click",
+			function(event) {
+				
+				if (
+				event.target.matches(".button-close-modal") ||
+				!event.target.closest(modalElement)
+				) {
+				closeModal()
+				}
+			},
+			false
+			)
+
+			function closeModal() {
+				document.getElementById("productInfo").style.display = "none"
+			}
 			}
 			
 
