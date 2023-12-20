@@ -20,9 +20,11 @@ else if(start === flip) {
 }
 else result.innerHTML = `${inputVal.toUpperCase()} is not a palindrome`
 }*/
-
-    if(inputVal == inputVal.split('').reverse().join(''))
+if (!/^[A-Za-z]+$/.test(inputVal)){
+    alert("Įvedėte ne raides")
+    }
+else if(inputVal == inputVal.split('').reverse().join(''))
     result.innerHTML = `${inputVal.toUpperCase()} is a palindrome`
-    else result.innerHTML = `${inputVal.toUpperCase()} is not a palindrome`;
+else result.innerHTML = `${inputVal.toUpperCase()} is not a palindrome`;
   
 }
