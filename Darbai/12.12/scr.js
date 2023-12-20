@@ -1,10 +1,16 @@
-const people = [];
+if(!localStorage.getItem("people")){
+	localStorage.setItem('people', JSON.stringify([]));
+}
+
 const possibleNationalities = ["Lithuanian", "Latvian", "German", "British", "Spanish", "Indian", "Japanese"];
-let currentNumeration = 1;
+const people = JSON.parse(localStorage.getItem("people"));
+generateTableContent(people);
 
 
-const arrayFromStorage = JSON.parse(localStorage.getItem("Objektai"));
-generateTableContent(arrayFromStorage);
+if (!localStorage.getItem("currentNumeration"))
+	localStorage.setItem("currentNumeration", "1");
+let currentNumeration = +localStorage.getItem("currentNumeration");
+
 
 
 const firstNameInput = document.getElementById("firstNameInput");
@@ -14,6 +20,12 @@ const nationalityInput = document.getElementById("nationalityInput");
 const removeElementInput = document.querySelector("#number");
 
 const addingButtonElement = document.querySelector("#add-button");
+
+const idInputUpdate = document.getElementById("idInputUpdate");
+const firstNameInputUpdate = document.getElementById("firstNameInputUpdate");
+const lastNameInputUpdate = document.getElementById("lastNameInputUpdate");
+const ageInputUpdate = document.getElementById("ageInputUpdate");
+const nationalityInputUpdate = document.getElementById("nationalityInputUpdate");
 
 function validateName(name) {
 
@@ -86,19 +98,16 @@ addingButtonElement.addEventListener("click", () => {
 	people.push(person);
 	
 	currentNumeration++;
+	localStorage.setItem("currentNumeration", "" + currentNumeration);
+
 
 	generateTableContent(people);
-	localStorage.setItem("Objektai", JSON.stringify(people));
-	
+	localStorage.setItem("people", JSON.stringify(people));
 });
-
-
-
 
 
 function generateTableContent(people) {
 
-	
 	let dynamicHTML = ``;
 
 	for (let person of people) {
@@ -133,9 +142,42 @@ removingButtonElement.addEventListener("click", () => {
 	}
 
 	people.splice(foundIndex, 1);
-	console.log(people);
 	generateTableContent(people);
+	localStorage.setItem('people', JSON.stringify(people));
 
 });
+
+document.querySelector('[value="Update"]').addEventListener('click', (event) => {
+	event.preventDefault();
+	const foundIndex = people.findIndex(
+		(val) => val.number === +idInputUpdate.value);
+	if(foundIndex === -1){
+		alert('Žmogaus su tokiu numeriu nėra');
+		return}
+	
+	const person = people[foundIndex];
+	if (
+			!validateName(person.firstName) ||
+			!validateName(person.lastName) ||
+			!validateAge(person.age) ||
+			!isValidNationality(person.nationality)
+	) {
+			alert("Prašome užpildyti visus laukus");
+			return;
+	}
+	people[foundIndex] = {
+			number: person.number,
+			firstName: firstNameInputUpdate.value,
+			lastName: lastNameInputUpdate.value,
+			age: ageInputUpdate.value,
+			nationality: nationalityInputUpdate.value,
+		};
+		generateTableContent(people);
+		firstNameInputUpdate.value = "";
+		lastNameInputUpdate.value = "";
+		ageInputUpdate.value = "";
+		nationalityInputUpdate.value = "";
+		localStorage.setItem('people', JSON.stringify(people));
+	});
 
 	
