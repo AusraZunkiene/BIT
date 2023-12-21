@@ -37,7 +37,6 @@
 			<form>
 				<h2>Produktų pridėjimas</h2>
 				<div class="row mb-2">
-					<!-- - 12 vienoje eiluteje, tie columnai kelsis i sekancia eilute -->
 
 					<div class="col-4">
 						<label for="title">Pavadinimas:</label>
@@ -231,8 +230,6 @@
 						<td>Apple</td>
 						<td>Maistas</td>
 					</tr>
-					<!-- +
-                    dinaminis turinys -->
 				</tbody>
 			</table>
 		</div>
@@ -242,11 +239,6 @@
 		></dialog>
 
 		<script>
-			//CRUD:
-			//CREATE - Sukurti įrašą. Good
-			//READ - Peržiūrėti įrašą. Good
-			//UPDATE - Atnaujinti įrašą. Good
-			//DELETE - Ištrinti įrašą. Good
 			if (!localStorage.getItem("products"))
 				localStorage.setItem("products", "[]");
 
@@ -431,7 +423,6 @@ const getTableContents = (productsArray) => {
 			};
 
 			const createNewRecord = (event) => {
-				//Prevencija nuo iprastinio elgesio.
 				event.preventDefault();
 				const newProduct = {
 					id: currentId,
@@ -453,8 +444,6 @@ const getTableContents = (productsArray) => {
 			};
 
 			submitButtonElement.onclick = createNewRecord;
-
-			//Elemento ištrynimas
 			const deleteProduct = (id) => {
 				let elementIndex = products.findIndex((value) => value.id === id);
 				products.splice(elementIndex, 1);
@@ -463,10 +452,9 @@ const getTableContents = (productsArray) => {
 			};
 
 			const updateProduct = (event) => {
-				//Page reload prevencija
+	
 				event.preventDefault();
-				//Pagal currentProduct indeksą, gautą iš atnaujinimo režimo funkcijos,
-				//Pakeiciame reiksmes i naujas, gautas is inputu.
+	
 				products[currentProduct].title = titleInputElement.value;
 				products[currentProduct].price = +priceInputElement.value;
 				products[currentProduct].stock = +stockInputElement.value;
@@ -477,10 +465,10 @@ const getTableContents = (productsArray) => {
 				products[currentProduct].discountPercentage = +discountElement.value;
 				products[currentProduct].description = descriptionElement.value;
 
-				//Atnaujiname table su pakeistais duomenimis
+			
 				getTableContents(products);
 
-				//resetinam state atgal
+			
 				currentProduct = undefined;
 				editMode = false;
 				submitButtonElement.onclick = createNewRecord;
@@ -488,7 +476,6 @@ const getTableContents = (productsArray) => {
 				submitButtonElement.classList.remove("btn-success");
 				submitButtonElement.classList.add("btn-primary");
 
-				//resetinam inputu reiksmes i tuscias
 				titleInputElement.value = "";
 				priceInputElement.value = "";
 				stockInputElement.value = "";
@@ -501,13 +488,12 @@ const getTableContents = (productsArray) => {
 				localStorage.setItem("products", JSON.stringify(products));
 			};
 
-			//Elemento atnaujinimo režimo ijungimas
+		
 			const setEdit = (id) => {
 				let elementIndex = products.findIndex((value) => value.id === id);
 
 				const product = products[elementIndex];
 
-				//inputu uzpildymas duomenimis
 				titleInputElement.value = product.title;
 				priceInputElement.value = product.price;
 				stockInputElement.value = product.stock;
