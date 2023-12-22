@@ -46,7 +46,7 @@ function getRandNumber(min, max){
     return Math.floor(Math.random() * (max + min + 1))+min;
 }
 consolse.log(getRandNumber(0, 10));
-
+// ... išskaido masyvą po vieną elementą.
 function getQueValue(arr){
 return [...new Set(arr)]
 
