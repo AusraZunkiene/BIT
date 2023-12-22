@@ -118,6 +118,9 @@ seventhArr.push(rand(0, 10));
 }
   masyvaiVisi.push(seventhArr);
 
+
+if (masyvaiVisi.slice(-1, -1) !== 0)
+masyvaiVisi.push(0);
 }
 document.write(masyvaiVisi.join('<br>'));
 
