@@ -1,21 +1,23 @@
-const selectorius = document.querySelector('.dogs');
+const selectorius = document.querySelector('#dogs');
+const selectoriusFoto = document.querySelector('#foto');
+const selectoriusName = document.querySelector('#name');
 fetch("https://dog.ceo/api/breeds/list/all")
 	.then((atsakymas) => atsakymas.json()) 
     .then((atsakymas) => {
-     console.log(atsakymas.message)
      let dynamicHTML = ``;
-     for(let i=0; i < 98; i++){
-        dynamicHTML += `<select><option>${Object.keys(atsakymas.message)[i]}</option></`}
-     document.write(dynamicHTML);
+     for(let array in atsakymas.message){
+        if(atsakymas.message[array].length > 0) {
+            for(let value of atsakymas.message[array])
+        dynamicHTML += `<option>${value}-${array}</option>`}
+            else { dynamicHTML += `<option>${array}</option>`}}
+       selectorius.innerHTML+= dynamicHTML;
    
-
 });
 
-/*fetch("https://dog.ceo/api/breed/hound/images")
+fetch("https://dog.ceo/api/breed/hound/images")
 	.then((atsakymas) => atsakymas.json()) 
-    .then((atsakymas) => {console.log(atsakymas.message[1]);
-
-
-document.write (`<img src="${atsakymas.message[1]}"/>`)     
+    .then((atsakymas) => {console.log(atsakymas)
+    selectoriusFoto.innerHTML =`<img src="https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg">`     
 });
-*/
+
+
