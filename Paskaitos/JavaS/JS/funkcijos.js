@@ -138,7 +138,6 @@ function countAverageSpecial(array, callback) {
 	let average = sum / array.length;
 	return average;
 }
-console.log('fetch');
 fetch("https://dog.ceo/api/breeds/image/random")
 	.then((atsakymas) => atsakymas.json()) //1. gaunamas atsakymas is serverio. Atsakymas konvertuojamas i teksta
 	.then((atsakymas) => {
