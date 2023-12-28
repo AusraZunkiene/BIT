@@ -8,7 +8,7 @@ fetch("https://dog.ceo/api/breeds/list/all")
      for(let array in atsakymas.message){
         if(atsakymas.message[array].length > 0) {
             for(let value of atsakymas.message[array])
-        dynamicHTML += `<option>${value}-${array}</option>`}
+        dynamicHTML += `<option>${value}  ${array}</option>`}
             else { dynamicHTML += `<option>${array}</option>`}}
        selectorius.innerHTML+= dynamicHTML;
    
