@@ -1,4 +1,4 @@
-const selectorius = document.querySelector('#dogs');
+/*const selectorius = document.querySelector('#dogs');
 const selectoriusFoto = document.querySelector('#foto');
 const selectoriusName = document.querySelector('#name');
 fetch("https://dog.ceo/api/breeds/list/all")
@@ -19,5 +19,6 @@ fetch("https://dog.ceo/api/breed/hound/images")
     .then((atsakymas) => {console.log(atsakymas)
     selectoriusFoto.innerHTML =`<img src="https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg">`     
 });
+*/
 
 
