@@ -2,3 +2,63 @@ body {
     font-family: 'Single Day', cursive;
     margin: 0;    ;
 }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav {
+    background-color: rgb(24, 78, 74);
+}
+
+.nav-container{
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-container input,
+.nav-container select {
+    background-color: rgb(132, 240, 152);
+    border: 0;
+    padding: 0.5rem;
+    border-radius: 6px;
+    color: beige;
+    width: 15%;
+}
+
+.nav-container button{
+    background-color: rgb(206, 232, 17);
+    border: 0;
+    border-radius: 4px;
+    color: beige;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.nav-container button:hover{
+    background-color: rgb(233, 204, 13) ;
+}
+
+.drinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.drink {
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 1px 2px 10px rgb(183, 181, 181);
+}
+
+.drink img {
+    width: 100%;
+
+}
+
+.drink .drink-title{
+    text-align: center;
+}
