@@ -19,7 +19,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list")
 
 fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
 .then((response) => response.json())
-.then((response) => console.log(response));
+.then((response) => createRandom(response));
 
 
 function selectCategory(category) {
@@ -55,15 +55,15 @@ function selectIngredientCategory(category) {
 }
 
 
-/*luckyButtonElement.addEventListener('click', () => { 
+luckyButtonElement.addEventListener('click', () => { 
     createRandom});
 
-const createRandom = () => {
+    function createRandom(response) {
     let dynamicHTML = ``;
-					dynamicHTML += `  <div class="drink"><img src="${response.strDrinkThumb}">
-                    <h2 class="drink-title">${response.strDrink}</h2></div>`;
+					dynamicHTML += `<div class="drink"><img src="${response.drinks.strDrinkThumb}">
+                    <h2 class="drink-title">${response.drinks.strDrink}</h2></div>`;
                     drinksElement.innerHTML = dynamicHTML;
-}*/
+}
 
 
 
