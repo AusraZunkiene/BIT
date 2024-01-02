@@ -169,7 +169,11 @@ const showButton = document.querySelector(".drinks");
 const closeButton = document.querySelector("dialog button");
 
 showButton.addEventListener("click", () => {
-  dialog.showModal();
+  dialog.showModal(
+
+
+    ``
+  );
 });
 
 
