@@ -164,7 +164,7 @@ async function initialization() {
 	// 2. dinaminis gerimu atvaizdavimas
 }
 initialization();
-/*const dialog = document.querySelector("dialog");
+const dialog = document.querySelector("dialog");
 const showButton = document.querySelector(".drinks");
 const closeButton = document.querySelector("dialog button");
 
@@ -179,7 +179,7 @@ showButton.addEventListener("click", () => {
 
 closeButton.addEventListener("click", () => {
   dialog.close();
-});*/
+});
 
 
 
