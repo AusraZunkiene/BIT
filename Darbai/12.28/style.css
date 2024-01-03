@@ -64,9 +64,8 @@ nav {
 }
 
 .drinks {
-    margin-left:20%;
+    margin-left: 20%;
     padding: 1px 16px;
-    height:1000px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
@@ -85,7 +84,7 @@ nav {
     border-radius: 10px 10px 0px 0px;
 }
 
-.drink .drinkTitle{
+.drink h2 {
     text-align: center;
 }
 
@@ -102,12 +101,13 @@ dialog {
 
 dialog img {
     width: 100%;
+    height: 70%;
 }
 
 .pav {
     text-align: center;
 }
 
-table{
+table {
     text-align: left;
 }
