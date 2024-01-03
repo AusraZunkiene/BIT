@@ -23,12 +23,12 @@ nav {
     display: grid;
 }
 
-#coctail-name-filter{
+#coctailNameFilter{
     background-color: rgb(224, 156, 136);
     border: 0;
     padding: 0.5rem;
     border-radius: 6px;
-    width: 76%;
+    width: 75%;
     margin-bottom: 20px;
 }
 
@@ -85,7 +85,7 @@ nav {
     border-radius: 10px 10px 0px 0px;
 }
 
-.drink .drink-title{
+.drink .drinkTitle{
     text-align: center;
 }
 
