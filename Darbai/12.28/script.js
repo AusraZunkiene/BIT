@@ -188,16 +188,26 @@ async function luckyButton() {
 	document.querySelector("#modal-ingredient").innerText = drink.strIngredient1 +":";
 	document.querySelector("#modal-ingredient1").innerText = drink.strMeasure1;
 	if(drink.strIngredient2 && drink.strMeasure2){	
-	document.querySelector("#modal1-ingredient").innerText = drink.strIngredient2 +":";
-	document.querySelector("#modal1-ingredient1").innerText = drink.strMeasure2;}
+		document.querySelector("#modal1-ingredient").innerText = drink.strIngredient2 +":";
+		document.querySelector("#modal1-ingredient1").innerText = drink.strMeasure2;}
 	if(drink.strIngredient3 && drink.strMeasure3){		
-	document.querySelector("#modal3-ingredient").innerText = drink.strIngredient3 +":";
-	document.querySelector("#modal3-ingredient1").innerText = drink.strMeasure3;}
+		document.querySelector("#modal3-ingredient").innerText = drink.strIngredient3 +":";
+		document.querySelector("#modal3-ingredient1").innerText = drink.strMeasure3;}
 	if(drink.strIngredient4 && drink.strMeasure4){		
 		document.querySelector("#modal4-ingredient").innerText = drink.strIngredient4 +":";
 		document.querySelector("#modal4-ingredient1").innerText = drink.strMeasure4;}
-	
-
+	if(drink.strIngredient5 && drink.strMeasure5){		
+		document.querySelector("#modal5-ingredient").innerText = drink.strIngredient5 +":";
+		document.querySelector("#modal5-ingredient1").innerText = drink.strMeasure5;}
+	if(drink.strIngredient6 && drink.strMeasure6){		
+		document.querySelector("#modal6-ingredient").innerText = drink.strIngredient6 +":";
+		document.querySelector("#modal6-ingredient1").innerText = drink.strMeasure6;}
+	if(drink.strIngredient7 && drink.strMeasure7){		
+		document.querySelector("#modal7-ingredient").innerText = drink.strIngredient7 +":";
+		document.querySelector("#modal7-ingredient1").innerText = drink.strMeasure7;}
+	if(drink.strIngredient8 && drink.strMeasure8){		
+		document.querySelector("#modal8-ingredient").innerText = drink.strIngredient8 +":";
+		document.querySelector("#modal8-ingredient1").innerText = drink.strMeasure8;}
 	dialog.showModal(drink);
 }
 
