@@ -83,6 +83,7 @@ async function fillSelectsElements() {
 	fillSelects(allIngredients.drinks, ingredientSelectElement, "strIngredient1");
 
 }
+
 /* Pakeitėm į automatinį gavimą.
 async function fillSelectsElements() {
 	await fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")
@@ -101,7 +102,19 @@ async function fillSelectsElements() {
 */
 
 const drinksArray = [];
-//pasidaryt kaip per paskaita
+
+async function getAllDrinks(){
+	const categoryDrinksUrls = [];
+	for(const category of selectValues.categories) {
+		let dynamicUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category.replaceAll(" ","_")}`;
+		categoryDrinksUrls.push(dynamicUrl);
+	}
+	const allPromises = categoryDrinksUrls.map((url) => fetch(url).then((response) => response.json()));
+	const allValues = await Promise.all(allPromises);
+	allValues.forEach((value)=>drinksArray.push(...value.drinks));
+} 
+
+/*Pasidarome keitimą funkcijos 
 async function getAllDrinks() {
 	for(const category of selectValues.categories) {
 		let dynamicUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category.replaceAll(" ","_")}`;
@@ -110,6 +123,7 @@ async function getAllDrinks() {
 	for (const drink of answerFromServer.drinks) drinksArray.push(drink);
 	}
 }
+*/
 
 function generateDrinksHTML(drinks) {
 	let dynamicHTML = "";
@@ -125,34 +139,69 @@ function generateDrinksHTML(drinks) {
 
 async function filter() {
 	const searchvalue = cocktailNameFilterElement.value; 
-		//category = categorySelectElement.value, 
-		//glass = glassSelectElement.value,
-		//ingredient = ingredientSelectElement.value;
+		category = categorySelectElement.value, 
+		glass = glassSelectElement.value,
+		ingredient = ingredientSelectElement.value;
 	let filterArray = [...drinksArray];
-	if(searchvalue) {
+	if (searchvalue) {
 		filterArray = filterArray.filter((drinkObj)=>
 		drinkObj.strDrink.toLowerCase().includes(searchvalue.toLowerCase()));
 	}
+	if (category !== "Pasirinkite kategoriją"){
+		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category.replaceAll(" ","_")}`);
+		const drinksOfCategory = await promise.json();
+		filterArray = filterArray.filter((drink)=> drinksOfCategory.drinks.some((drinkOfCategory) => drink.idDrink === drinkOfCategory.idDrink));
+	}
+	if (glass !== "Pasirinkite stiklinės tipą") {
+		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${glass.replaceAll(" ", "_")}`);
+		const drinksOfGlass = await promise.json();
+		filterArray = filterArray.filter((drink) => drinksOfGlass.drinks.some((drinkOfGlass) => drink.idDrink === drinkOfGlass.idDrink));
+	}
+	if (ingredient !== "Pasirinkite ingredientą") {
+		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient.replaceAll(" ", "_")}`);
+		const drinksOfIngredient = await promise.json();
+		filterArray = filterArray.filter((drink) => drinksOfIngredient.drinks.some((drinksOfIngredient) => drink.idDrink === drinksOfIngredient.idDrink));
+	}
 	generateDrinksHTML(filterArray);
-	cocktailNameFilterElement.value = "";
-}
+};
 
 async function initialization() {
 	await fillSelectsElements();
 	await getAllDrinks();
-	buttonSearch.addEventListener("click", filter);
 	generateDrinksHTML(drinksArray); 
+	buttonSearch.addEventListener("click", filter);
 }
 initialization();
 
 
 async function luckyButton() {
-	const response = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php");
-	const answerFromServer = await response.json();
-	dialog.showModal(answerFromServer.drinks);
+	const promise = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php");
+	const response = await promise.json();
+	const drink = response.drinks[0];
+	let dynamicIngr= "";
+	document.querySelector(".pav").innerText = drink.strDrink;
+	document.querySelector("#modal-glass").innerText = drink.strGlass;
+	document.querySelector(".modal-img").src = drink.strDrinkThumb;
+	document.querySelector("#modal-category").innerText = drink.strCategory;
+	document.querySelector("#modal-alcohol").innerText = drink.strAlcoholic;
+	document.querySelector("#modal-recipe").innerText = drink.strInstructions;
+	document.querySelector("#modal-ingredient").innerText = drink.strIngredient1 +":";
+	document.querySelector("#modal-ingredient1").innerText = drink.strMeasure1;
+	if(drink.strIngredient2 && drink.strMeasure2){	
+	document.querySelector("#modal1-ingredient").innerText = drink.strIngredient2 +":";
+	document.querySelector("#modal1-ingredient1").innerText = drink.strMeasure2;}
+	if(drink.strIngredient3 && drink.strMeasure3){		
+	document.querySelector("#modal3-ingredient").innerText = drink.strIngredient3 +":";
+	document.querySelector("#modal3-ingredient1").innerText = drink.strMeasure3;}
+	if(drink.strIngredient4 && drink.strMeasure4){		
+		document.querySelector("#modal4-ingredient").innerText = drink.strIngredient4 +":";
+		document.querySelector("#modal4-ingredient1").innerText = drink.strMeasure4;}
+	
+
+	dialog.showModal(drink);
 }
 
-luckyButtonElement.addEventListener('click', luckyButton)
+luckyButtonElement.addEventListener('click', luckyButton);
 
 
 
@@ -162,6 +211,7 @@ const closeButton = document.querySelector("dialog button");
 
 showButton.addEventListener("click", () => {
   dialog.showModal();
+ 
 });
 
 closeButton.addEventListener("click", () => {

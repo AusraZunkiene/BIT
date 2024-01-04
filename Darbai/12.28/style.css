@@ -101,7 +101,7 @@ dialog {
 
 dialog img {
     width: 100%;
-    height: 70%;
+    height: 60%;
 }
 
 .pav {
@@ -110,4 +110,49 @@ dialog img {
 
 table {
     text-align: left;
+}
+table td {
+    padding-left: 25px;
+    font-size: 12px;
+}
+
+.recipe {
+    display: flex;
+    font-size: 14px;
+    gap: 20px;
+}
+.recipe h3{
+   margin-top: 8px;
+}
+
+#modal-recipe {
+    font-size: 12px;
+}
+
+#modal-ingredient,
+#modal1-ingredient,
+#modal3-ingredient,
+#modal4-ingredient,
+#modal5-ingredient,
+#modal6-ingredient,
+#modal7-ingredient,
+#modal8-ingredient,
+#modal9-ingredient,
+#modal10-ingredient,
+#modal11-ingredient,
+#modal12-ingredient,
+#modal13-ingredient,
+#modal14-ingredient,
+#modal5-ingredient
+  {
+    font-weight: bold;
+}
+
+#modal-ingredient-all {
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 0;
+}
+.next {
+    margin-top: 20px;
 }

@@ -26,31 +26,109 @@
 		/>
 	</head>
 	<body>
-        <dialog>
-            <img src="https://www.thecocktaildb.com/images/media/drink/yqvvqs1475667388.jpg" alt=""/>
-            <h2 class="pav">Pavadinimas</h2>
+        <dialog class="modal">
+            <img  class="modal-img" src="https://www.thecocktaildb.com/images/media/drink/yqvvqs1475667388.jpg" alt=""/>
+            <h2 class="pav"></h2>
             <table>
                 <tr>
                     <th>Category:</th>
-                    <td>Pavadinimas</td>
+                    <td id="modal-category"></td>
                 </tr>
                 <tr>
                     <th>Alcohol:</th>
-                    <td>Pavadinimas</td>
+                    <td id="modal-alcohol"></td>
                 </tr>
                 <tr>
                     <th>Glass:</th>
-                    <td>Pavadinimas</td>
+                    <td id="modal-glass"></td>
                 </tr>
-                <tr>
-                    <th>Ingredients:</th>
-                    <td>Pavadinimas</td>
-                </tr>
+			</table>
+			<table class="next">
+				<tr>
+					<td id="modal-ingredient-all">Ingredients:</td>
+					<td id="modal-ingredient"></td>
+					<td id="modal-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal1-ingredient"></td>
+					<td id="modal1-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal2-ingredient"></td>
+					<td id="modal2-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal3-ingredient"></td>
+					<td id="modal3-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal4-ingredient"></td>
+					<td id="modal4-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal5-ingredient"></td>
+					<td id="modal5-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal6-ingredient"></td>
+					<td id="modal6-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal7-ingredient"></td>
+					<td id="modal7-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal4-ingredient"></td>
+					<td id="modal4-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal4-ingredient"></td>
+					<td id="modal4-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal4-ingredient"></td>
+					<td id="modal4-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal4-ingredient"></td>
+					<td id="modal4-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal4-ingredient"></td>
+					<td id="modal4-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal4-ingredient"></td>
+					<td id="modal4-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal4-ingredient"></td>
+					<td id="modal4-ingredient1"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id="modal4-ingredient"></td>
+					<td id="modal4-ingredient1"></td>
+				</tr>
             </table>
-            <h3>Recipe:</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-            </p>
+			<div class="recipe">
+            	<h3>Recipe:</h3>
+            	<p id="modal-recipe">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			</div>
             <hr />
             <button autofocus>Uždaryti</button>
         </dialog>
@@ -65,7 +143,7 @@
 					<option>Pasirinkite kategoriją</option>
 				</select>
 				<select id="glassTypeSelect">
-					<option>Pasirinkinte stiklinės tipą</option>
+					<option>Pasirinkite stiklinės tipą</option>
 				</select>
 				<select id="ingredientSelect">
 					<option>Pasirinkite ingredientą</option></select>
