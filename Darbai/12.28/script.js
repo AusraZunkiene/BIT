@@ -134,6 +134,7 @@ async function filter() {
 		drinkObj.strDrink.toLowerCase().includes(searchvalue.toLowerCase()));
 	}
 	generateDrinksHTML(filterArray);
+	cocktailNameFilterElement.value = "";
 }
 
 async function initialization() {
