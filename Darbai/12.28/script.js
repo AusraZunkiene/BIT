@@ -185,9 +185,49 @@ async function luckyButton() {
 	document.querySelector("#modal-category").innerText = drink.strCategory;
 	document.querySelector("#modal-alcohol").innerText = drink.strAlcoholic;
 	document.querySelector("#modal-recipe").innerText = drink.strInstructions;
+	
+	for(let i = 2; i <= 15; i++)
+    {
+        const strIng = drink[`strIngredient${i}`]
+        const strMea = drink[`strMeasure${i}`]
+
+        if(strIng && strMea) {
+            dynamicIngr += `<div id="modal-ingredient2">
+			<table>
+				<tr>
+					  <th>${strIng}:</th>
+					  <td>${strMea}</td>
+				</tr>
+			</table>
+		</div>
+		`;
+        }
+    }
+    document.querySelector("#modal-ingredient2").innerHTML = dynamicIngr;
+    // document.querySelector("#modal-ingredients").innerText = 
+
+	/*Reikia prasukti ciklą
+
+	<div class="spaces">
+				<b>Ingredients</b>
+				<div class="Ingredients" id="modal-ingredient2">
+				  <p><i><b>Vodka:</b></i> <span>1 oz</span></p>
+				  <p><b>Vodka:</b> <span>1 oz</span></p>
+				  <p><b>Vodka:</b> <span>1 oz</span></p>
+				</div>
+			</div>
+
+	for(let i = 2; i <= 15; i++){
+		const strIng = drink[`strIngredient${i}`];
+		const strMea = drink[`strMeasure1${i}`];
+	if(strIng !== strMea);
+	dynamicIngr += `<td>${strIng}</td><td>${strMea}</td>`;
+	}	
+		document.querySelector("#modal1-ingredient").innerText = dynamicIngr;
+
 	document.querySelector("#modal-ingredient").innerText = drink.strIngredient1 +":";
 	document.querySelector("#modal-ingredient1").innerText = drink.strMeasure1;
-	if(drink.strIngredient2 && drink.strMeasure2){	
+	if(drink.strIngredient2 && drink.strMeasure2){		
 		document.querySelector("#modal1-ingredient").innerText = drink.strIngredient2 +":";
 		document.querySelector("#modal1-ingredient1").innerText = drink.strMeasure2;}
 	if(drink.strIngredient3 && drink.strMeasure3){		
@@ -207,7 +247,7 @@ async function luckyButton() {
 		document.querySelector("#modal7-ingredient1").innerText = drink.strMeasure7;}
 	if(drink.strIngredient8 && drink.strMeasure8){		
 		document.querySelector("#modal8-ingredient").innerText = drink.strIngredient8 +":";
-		document.querySelector("#modal8-ingredient1").innerText = drink.strMeasure8;}
+		document.querySelector("#modal8-ingredient1").innerText = drink.strMeasure8;}*/
 	dialog.showModal(drink);
 }
 

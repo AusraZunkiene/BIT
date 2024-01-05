@@ -108,11 +108,11 @@ dialog img {
     text-align: center;
 }
 
-table {
+.table {
     text-align: left;
 }
-table td {
-    padding-left: 25px;
+.table td {
+    padding-left: 50px;
     font-size: 12px;
 }
 
@@ -128,24 +128,20 @@ table td {
 #modal-recipe {
     font-size: 12px;
 }
-
-#modal-ingredient,
-#modal1-ingredient,
-#modal3-ingredient,
-#modal4-ingredient,
-#modal5-ingredient,
-#modal6-ingredient,
-#modal7-ingredient,
-#modal8-ingredient
-  {
-    font-weight: bold;
+#modal-ingredient2 {
+    margin-left: 17px;
 }
 
-#modal-ingredient-all {
-    font-weight: bold;
-    font-size: 15px;
-    padding-left: 0;
+#modal-ingredient2 th,
+#modal-ingredient2 td{
+    font-size: 12px;
 }
-.next {
-    margin-top: 20px;
+
+.ingr {
+    display: flex;
+    margin: 20px 0;
+
+}
+.name {
+    font-weight: bold;
 }
