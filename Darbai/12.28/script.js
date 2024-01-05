@@ -129,7 +129,7 @@ function generateDrinksHTML(drinks) {
 	let dynamicHTML = "";
 
 	for (let drink of drinks) {
-		dynamicHTML += `<div class="drink">
+		dynamicHTML += `<div class="drink" onclick="openModal(${drink.idDrink})">
 		<img src="${drink.strDrinkThumb}" alt=""/>
 		<h2 class="drink-title">${drink.strDrink}</h2>
 		</div>`;
@@ -175,6 +175,7 @@ initialization();
 
 
 async function luckyButton() {
+
 	const promise = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php");
 	const response = await promise.json();
 	const drink = response.drinks[0];
@@ -186,12 +187,12 @@ async function luckyButton() {
 	document.querySelector("#modal-alcohol").innerText = drink.strAlcoholic;
 	document.querySelector("#modal-recipe").innerText = drink.strInstructions;
 	
-	for(let i = 2; i <= 15; i++)
+	for(let i = 1; i <= 15; i++)
     {
         const strIng = drink[`strIngredient${i}`];
         const strMea = drink[`strMeasure${i}`];
 
-        if(strIng !== null && strMea !== null) {
+        if(strIng && strMea) {
             dynamicIngr += `<div id="modal-ingredient2">
 			<table>
 				<tr>
@@ -209,10 +210,43 @@ async function luckyButton() {
 
 luckyButtonElement.addEventListener('click', luckyButton);
 
+async function openModal(id) {
+
+	const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
+	const response = await promise.json();
+	const drink = response.drinks[0];
+	let dynamicIngr= "";
+	document.querySelector(".pav").innerText = drink.strDrink;
+	document.querySelector("#modal-glass").innerText = drink.strGlass;
+	document.querySelector(".modal-img").src = drink.strDrinkThumb;
+	document.querySelector("#modal-category").innerText = drink.strCategory;
+	document.querySelector("#modal-alcohol").innerText = drink.strAlcoholic;
+	document.querySelector("#modal-recipe").innerText = drink.strInstructions;
+	
+	for(let i = 1; i <= 15; i++)
+    {
+        const strIng = drink[`strIngredient${i}`];
+        const strMea = drink[`strMeasure${i}`];
+
+        if(strIng && strMea) {
+            dynamicIngr += `<div id="modal-ingredient2">
+			<table>
+				<tr>
+					  <th>${strIng}:</th>
+					  <td>${strMea}</td>
+				</tr>
+			</table>
+		</div>
+		`;
+        }
+    }
+    document.querySelector("#modal-ingredient2").innerHTML = dynamicIngr;
+	dialog.showModal(drink);
+}
 
 
 const dialog = document.querySelector("dialog");
-const showButton = document.querySelector(".drinks");
+const showButton = document.querySelector(".drink");
 const closeButton = document.querySelector("dialog button");
 
 showButton.addEventListener("click", () => {
