@@ -1,4 +1,6 @@
 const cocktailNameFilterElement = document.querySelector('#coctailNameFilter'),
+	lettersElement = document.querySelector('.allABC'),
+	letterButton = document.querySelector('.allLetters'),
 	categorySelectElement = document.querySelector('#categorySelect'),
 	glassSelectElement = document.querySelector('#glassTypeSelect'),
 	ingredientSelectElement = document.querySelector('#ingredientSelect'),
@@ -138,7 +140,7 @@ function generateDrinksHTML(drinks) {
 }
 
 async function filter() {
-	const searchvalue = cocktailNameFilterElement.value; 
+	const searchvalue = cocktailNameFilterElement.value,
 		category = categorySelectElement.value, 
 		glass = glassSelectElement.value,
 		ingredient = ingredientSelectElement.value;
@@ -164,6 +166,32 @@ async function filter() {
 	}
 	generateDrinksHTML(filterArray);
 };
+
+
+function generateLetters(letter) {
+	let dynamicHTML = "";
+	
+	for (let i = 66; i <= 90; i++) {
+		letter = String.fromCharCode(i);
+		dynamicHTML += `
+		<button class="allLetters">${letter}</button>`}
+	lettersElement.innerHTML += dynamicHTML;
+
+}
+generateLetters()
+
+letterButton.addEventListener("click", getDrinksByLetters());
+
+	async function getDrinksByLetters(i) {
+		let filterArray = [...drinksArray];
+		const response = await fetch(
+			`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${i}`
+		);
+		const value = await response.json();
+		filterArray = filterArray.filter((drinkObj)=>
+		drinkObj.strDrink.includes(generateLetters(letter).toLowerCase()));
+		generateDrinksHTML(filterArray);
+	}
 
 async function initialization() {
 	await fillSelectsElements();
