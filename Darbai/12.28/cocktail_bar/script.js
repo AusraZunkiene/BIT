@@ -6,6 +6,7 @@ const cocktailNameFilterElement = document.querySelector('#coctailNameFilter'),
 	ingredientSelectElement = document.querySelector('#ingredientSelect'),
 	luckyButtonElement = document.querySelector('#lucky'),
 	buttonSearch = document.querySelector('#search'),
+	alcoSelectElement = document.querySelector('#modal-alcohol9'),
 	drinksElement = document.querySelector(".drinks");
 
 /*fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")
@@ -165,33 +166,26 @@ async function filter() {
 		filterArray = filterArray.filter((drink) => drinksOfIngredient.drinks.some((drinksOfIngredient) => drink.idDrink === drinksOfIngredient.idDrink));
 	}
 	generateDrinksHTML(filterArray);
+	 localStorage.setItem('filterArray', JSON.stringify(filterArray));
 };
 
 
-function generateLetters(letter) {
+async function generateLetters() {
 	let dynamicHTML = "";
-	
-	for (let i = 66; i <= 90; i++) {
-		letter = String.fromCharCode(i);
+	for (let i = 65; i <= 90; i++) {
+		const letter = String.fromCharCode(i);
 		dynamicHTML += `
 		<button class="allLetters">${letter}</button>`}
-	lettersElement.innerHTML += dynamicHTML;
-
+	lettersElement.innerHTML = dynamicHTML;
 }
 generateLetters()
 
-letterButton.addEventListener("click", getDrinksByLetters());
-
-	async function getDrinksByLetters(i) {
-		let filterArray = [...drinksArray];
-		const response = await fetch(
-			`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${i}`
-		);
-		const value = await response.json();
-		filterArray = filterArray.filter((drinkObj)=>
-		drinkObj.strDrink.includes(generateLetters(letter).toLowerCase()));
-		generateDrinksHTML(filterArray);
-	}
+async function generateAlco() {
+	const drinkStr =  alcoSelectElement.innerText;
+	const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${drinkStr.replaceAll(" ","_")}`);
+	const drinkAlco = await promise.json();
+	generateDrinksHTML(drinkAlco.drinks); 
+}
 
 async function initialization() {
 	await fillSelectsElements();
@@ -212,7 +206,7 @@ async function luckyButton() {
 	document.querySelector("#modal-glass").innerText = drink.strGlass;
 	document.querySelector(".modal-img").src = drink.strDrinkThumb;
 	document.querySelector("#modal-category").innerText = drink.strCategory;
-	document.querySelector("#modal-alcohol").innerText = drink.strAlcoholic;
+	alcoSelectElement.innerText = drink.strAlcoholic;
 	document.querySelector("#modal-recipe").innerText = drink.strInstructions;
 	
 	for(let i = 1; i <= 15; i++)
@@ -236,6 +230,10 @@ async function luckyButton() {
 	dialog.showModal(drink);
 }
 
+
+
+
+
 luckyButtonElement.addEventListener('click', luckyButton);
 
 async function openModal(id) {
@@ -248,7 +246,7 @@ async function openModal(id) {
 	document.querySelector("#modal-glass").innerText = drink.strGlass;
 	document.querySelector(".modal-img").src = drink.strDrinkThumb;
 	document.querySelector("#modal-category").innerText = drink.strCategory;
-	document.querySelector("#modal-alcohol").innerText = drink.strAlcoholic;
+	alcoSelectElement.innerText = drink.strAlcoholic;
 	document.querySelector("#modal-recipe").innerText = drink.strInstructions;
 	
 	for(let i = 1; i <= 15; i++)

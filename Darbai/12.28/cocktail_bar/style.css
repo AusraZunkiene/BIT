@@ -64,12 +64,13 @@ nav {
 .allABC{
     width: 80%;
     margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 .allLetters{
     border: none;
   background-color: inherit;
-  padding: 6px;
+  padding: 1px;
   font-size: 12px;
   cursor: pointer;
   display: inline-block;
@@ -218,7 +219,6 @@ dialog img {
         font-size: 10px;
     }
     .allLetters{
-      padding: 2px;
       font-size: 8px;
     }
 }
@@ -244,7 +244,6 @@ dialog img {
          height: 40%;
     }
     .allLetters{
-        padding: 2px;
         font-size: 6px;
       }
     table {
