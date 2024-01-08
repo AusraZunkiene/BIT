@@ -42,13 +42,11 @@ nav {
     width: 80%;
     margin-bottom: 20px;
 }
-
 .buttonsTwo {
     display: flex;
-    gap: 20px;
-}
+    gap: 20px;}
 
-.nav-container button{
+.buttonTwo {
     width: 40%;
     height: 150%;
     background-color: rgb(75, 13, 29);
@@ -59,9 +57,23 @@ nav {
     cursor: pointer;
 }
 
-.nav-container button:hover{
+.buttonTwo:hover{
     background-color: rgb(242, 233, 225);
     color: brown;
+}
+.allABC{
+    width: 80%;
+    margin-top: -10px;
+}
+
+.allLetters{
+    border: none;
+  background-color: inherit;
+  padding: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  display: inline-block;
+  color: rgb(64, 42, 7);
 }
 
 .drinks {
@@ -147,12 +159,12 @@ dialog img {
 }
 
 @media screen and (max-width: 1100px) {
-    .buttonTwo{
+    .buttonsTwo{
         display: grid;
         gap: 20px;
         width: 180%;
     }
-    .nav-container button{
+    .buttonTwo{
         font-size: 12px;
     }
     .nav-container{
@@ -161,7 +173,7 @@ dialog img {
   }
 
 @media screen and (max-width: 990px) {
-    .buttonTwo{
+    .buttonsTwo{
         gap: 20px;
         width: 120%;
     }
@@ -205,6 +217,10 @@ dialog img {
     #search, #lucky{
         font-size: 10px;
     }
+    .allLetters{
+      padding: 2px;
+      font-size: 8px;
+    }
 }
 
 @media screen and (max-width: 680px) {
@@ -227,6 +243,10 @@ dialog img {
          width: 70%;
          height: 40%;
     }
+    .allLetters{
+        padding: 2px;
+        font-size: 6px;
+      }
     table {
          font-size: 10px;
     }
