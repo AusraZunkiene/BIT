@@ -211,21 +211,18 @@ async function luckyButton() {
 	document.querySelector('#modal-alcohol').onclick = async() => {
 	
 		if(alcoSelectElement.innerText === "Alcoholic") {
-		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic`);
-		const drinkAlco = await promise.json();
-		const drinksAl = drinkAlco.drinks;
-		generateDrinksHTML(drinksAl);
-		dialog.close();
+			const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic`);
+			const drinkAlco = await promise.json();
+			const drinksAl = drinkAlco.drinks;
+			generateDrinksHTML(drinksAl);
+			dialog.close();
 		}
-		
-
-	if(alcoSelectElement.innerText === "Non_Alcoholic") {
-		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic`);
-		const drinkAlco = await promise.json();
-		const drinksAl = drinkAlco.drinks;
-		generateDrinksHTML(drinksAl);
-		dialog.close();}}
-	
+		if(alcoSelectElement.innerText === "Non alcoholic") {
+			const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic`);
+			const drinkAlco = await promise.json();
+			const drinksAl = drinkAlco.drinks;
+			generateDrinksHTML(drinksAl);
+			dialog.close();}}
 	document.querySelector("#modal-recipe").innerText = drink.strInstructions;
 	
 	for(let i = 1; i <= 15; i++)
@@ -269,20 +266,19 @@ async function openModal(id) {
 	document.querySelector('#modal-alcohol').onclick = async() => {
 	
 		if(alcoSelectElement.innerText === "Alcoholic") {
-		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic`);
-		const drinkAlco = await promise.json();
-		const drinksAl = drinkAlco.drinks;
-		generateDrinksHTML(drinksAl);
-		dialog.close();
+			const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic`);
+			const drinkAlco = await promise.json();
+			const drinksAl = drinkAlco.drinks;
+			generateDrinksHTML(drinksAl);
+			dialog.close();
 		}
-		
 
-	if(alcoSelectElement.innerText === "Non_Alcoholic") {
-		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic`);
-		const drinkAlco = await promise.json();
-		const drinksAl = drinkAlco.drinks;
-		generateDrinksHTML(drinksAl);
-		dialog.close();}}
+		if(alcoSelectElement.innerText === "Non alcoholic") {
+			const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic`);
+			const drinkAlco = await promise.json();
+			const drinksAl = drinkAlco.drinks;
+			generateDrinksHTML(drinksAl);
+			dialog.close();}}
 	document.querySelector("#modal-recipe").innerText = drink.strInstructions;
 	
 	for(let i = 1; i <= 15; i++)
