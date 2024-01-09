@@ -1,6 +1,8 @@
+if(!localStorage.getItem("filterArray")){
+	localStorage.setItem('filterArray', JSON.stringify(filterArray));
+}
 const cocktailNameFilterElement = document.querySelector('#coctailNameFilter'),
-	lettersElement = document.querySelector('.allABC'),
-	letterButton = document.querySelector('.allLetters'),
+	letterElement = document.querySelector('.allLetters'),
 	categorySelectElement = document.querySelector('#categorySelect'),
 	glassSelectElement = document.querySelector('#glassTypeSelect'),
 	ingredientSelectElement = document.querySelector('#ingredientSelect'),
@@ -9,6 +11,8 @@ const cocktailNameFilterElement = document.querySelector('#coctailNameFilter'),
 	alcoSelectElement = document.querySelector('#modal-alcohol'),
 	drinksElement = document.querySelector(".drinks");
 
+const filterArray = JSON.parse(localStorage.getItem("filterArray"));
+generateDrinksHTML(filterArray);
 /*fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")
 .then((response) => response.json())
 .then((response) => selectCategory(response));
@@ -169,24 +173,20 @@ async function filter() {
 	 localStorage.setItem('filterArray', JSON.stringify(filterArray));
 };
 
-
-async function generateLetters() {
-	let dynamicHTML = "";
-	for (let i = 65; i <= 90; i++) {
-		const letter = String.fromCharCode(i);
-		dynamicHTML += `
-		<button class="allLetters">${letter}</button>`}
-	lettersElement.innerHTML = dynamicHTML;
+function generateAbcLetters() {
+    for (let i = 65; i <= 90; i++) {
+        const letter = String.fromCharCode(i);
+        const createLetters = document.createElement('button');
+        createLetters.textContent = letter;
+		createLetters.addEventListener('click', async() => {
+			const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`);
+			const drinkAlco = await promise.json();
+			const drinksAl = drinkAlco.drinks;
+			generateDrinksHTML(drinksAl);})
+       letterElement.appendChild(createLetters);
+    }
 }
-generateLetters()
-
-// async function generateAlco(drinkStr) {
-// 	const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${drinkStr.replaceAll(" ", "_")}`);
-// 	const drinkAlco = await promise.json();
-// 	const drinks = drinkAlco;
-// 	generateDrinksHTML(drinks);	
-// }
-
+    generateAbcLetters();
 
 async function initialization() {
 	await fillSelectsElements();
@@ -245,9 +245,6 @@ async function luckyButton() {
     document.querySelector("#modal-ingredient2").innerHTML = dynamicIngr;
 	dialog.showModal(drink);
 }
-
-
-
 
 
 luckyButtonElement.addEventListener('click', luckyButton);

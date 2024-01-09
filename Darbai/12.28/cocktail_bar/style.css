@@ -61,20 +61,23 @@ nav {
     background-color: rgb(242, 233, 225);
     color: brown;
 }
-.allABC{
-    width: 80%;
-    margin-top: -10px;
-    margin-bottom: 10px;
-}
 
 .allLetters{
+    width: 80%;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline;
+    color: rgb(64, 42, 7);
+}
+.allLetters button{
     border: none;
-  background-color: inherit;
-  padding: 1px;
-  font-size: 12px;
-  cursor: pointer;
-  display: inline-block;
-  color: rgb(64, 42, 7);
+    font-family: 'Single Day', cursive;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #c8e7f0;
+    color: rgb(64, 42, 7);
 }
 
 .drinks {
@@ -161,12 +164,29 @@ dialog img {
 .name {
     font-weight: bold;
 }
-
+@media screen and (max-width: 1300px){
+    .allLetters{
+        font-size: 10px;
+        width: 80%;
+        display: inline;
+        margin-left: 3px;
+        margin-top: -15px;
+    }
+}
 @media screen and (max-width: 1100px) {
     .buttonsTwo{
         display: grid;
         gap: 20px;
         width: 180%;
+    }
+    .allLetters{
+        width: 80%;
+        display: inline;
+    }
+    .allLetters button{
+        font-size: 10px;
+       
+        margin-left: 3px;
     }
     .buttonTwo{
         font-size: 12px;
@@ -180,6 +200,13 @@ dialog img {
     .buttonsTwo{
         gap: 20px;
         width: 120%;
+    }
+    .allLetters{
+        font-size: 10px;
+        width: 80%;
+        display: inline;
+        margin-left: 5px;
+        margin-top: -10px;
     }
     .drink h2 {
         font-size: 17px;
@@ -222,7 +249,10 @@ dialog img {
         font-size: 10px;
     }
     .allLetters{
-      font-size: 8px;
+        font-size: 10px;
+        width: 80%;
+        display: inline;
+        margin-left: 5px;
     }
 }
 
@@ -247,7 +277,10 @@ dialog img {
          height: 40%;
     }
     .allLetters{
-        font-size: 6px;
+        font-size: 8px;
+        width: 80%;
+        display: inline;
+        margin-left: 5px;
       }
     table {
          font-size: 10px;
