@@ -1,6 +1,6 @@
-if(!localStorage.getItem("filterArray")){
-	localStorage.setItem('filterArray', JSON.stringify(filterArray));
-}
+// if(!localStorage.getItem("filterArray")){
+// 	localStorage.setItem('filterArray', JSON.stringify(filterArray));
+// }
 const cocktailNameFilterElement = document.querySelector('#coctailNameFilter'),
 	letterElement = document.querySelector('.allLetters'),
 	categorySelectElement = document.querySelector('#categorySelect'),
@@ -11,8 +11,10 @@ const cocktailNameFilterElement = document.querySelector('#coctailNameFilter'),
 	alcoSelectElement = document.querySelector('#modal-alcohol'),
 	drinksElement = document.querySelector(".drinks");
 
-const filterArray = JSON.parse(localStorage.getItem("filterArray"));
-generateDrinksHTML(filterArray);
+// const filterArray = JSON.parse(localStorage.getItem("filterArray"));
+// generateDrinksHTML(filterArray);
+
+
 /*fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")
 .then((response) => response.json())
 .then((response) => selectCategory(response));
@@ -153,24 +155,27 @@ async function filter() {
 	if (searchvalue) {
 		filterArray = filterArray.filter((drinkObj)=>
 		drinkObj.strDrink.toLowerCase().includes(searchvalue.toLowerCase()));
+		localStorage.setItem('searchvalue', JSON.stringify(searchvalue));
 	}
 	if (category !== "Pasirinkite kategoriją"){
 		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category.replaceAll(" ","_")}`);
 		const drinksOfCategory = await promise.json();
 		filterArray = filterArray.filter((drink)=> drinksOfCategory.drinks.some((drinkOfCategory) => drink.idDrink === drinkOfCategory.idDrink));
+		localStorage.setItem('category', JSON.stringify(category));
 	}
 	if (glass !== "Pasirinkite stiklinės tipą") {
 		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${glass.replaceAll(" ", "_")}`);
 		const drinksOfGlass = await promise.json();
 		filterArray = filterArray.filter((drink) => drinksOfGlass.drinks.some((drinkOfGlass) => drink.idDrink === drinkOfGlass.idDrink));
+		localStorage.setItem('glass', JSON.stringify(glass));
 	}
 	if (ingredient !== "Pasirinkite ingredientą") {
 		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient.replaceAll(" ", "_")}`);
 		const drinksOfIngredient = await promise.json();
 		filterArray = filterArray.filter((drink) => drinksOfIngredient.drinks.some((drinksOfIngredient) => drink.idDrink === drinksOfIngredient.idDrink));
+		localStorage.setItem('ingredient', JSON.stringify(ingredient));
 	}
 	generateDrinksHTML(filterArray);
-	 localStorage.setItem('filterArray', JSON.stringify(filterArray));
 };
 
 function generateAbcLetters() {
