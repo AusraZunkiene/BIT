@@ -100,9 +100,8 @@ nav {
 .drink h2 {
     text-align: center;
 }
-a:link {
-    text-decoration: none;
-    color: brown;
+#modal-alcohol {
+    color:rgb(224, 156, 136);
 }
 
 ::backdrop {
