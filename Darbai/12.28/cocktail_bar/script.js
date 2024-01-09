@@ -6,7 +6,7 @@ const cocktailNameFilterElement = document.querySelector('#coctailNameFilter'),
 	ingredientSelectElement = document.querySelector('#ingredientSelect'),
 	luckyButtonElement = document.querySelector('#lucky'),
 	buttonSearch = document.querySelector('#search'),
-	alcoSelectElement = document.querySelector('#modal-alcohol9'),
+	alcoSelectElement = document.querySelector('#modal-alcohol'),
 	drinksElement = document.querySelector(".drinks");
 
 /*fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")
@@ -180,12 +180,13 @@ async function generateLetters() {
 }
 generateLetters()
 
-async function generateAlco() {
-	const drinkStr =  alcoSelectElement.innerText;
-	const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${drinkStr.replaceAll(" ","_")}`);
-	const drinkAlco = await promise.json();
-	generateDrinksHTML(drinkAlco.drinks); 
-}
+// async function generateAlco(drinkStr) {
+// 	const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${drinkStr.replaceAll(" ", "_")}`);
+// 	const drinkAlco = await promise.json();
+// 	const drinks = drinkAlco;
+// 	generateDrinksHTML(drinks);	
+// }
+
 
 async function initialization() {
 	await fillSelectsElements();
@@ -207,6 +208,24 @@ async function luckyButton() {
 	document.querySelector(".modal-img").src = drink.strDrinkThumb;
 	document.querySelector("#modal-category").innerText = drink.strCategory;
 	alcoSelectElement.innerText = drink.strAlcoholic;
+	document.querySelector('#modal-alcohol').onclick = async() => {
+	
+		if(alcoSelectElement.innerText === "Alcoholic") {
+		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic`);
+		const drinkAlco = await promise.json();
+		const drinksAl = drinkAlco.drinks;
+		generateDrinksHTML(drinksAl);
+		dialog.close();
+		}
+		
+
+	if(alcoSelectElement.innerText === "Non_Alcoholic") {
+		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic`);
+		const drinkAlco = await promise.json();
+		const drinksAl = drinkAlco.drinks;
+		generateDrinksHTML(drinksAl);
+		dialog.close();}}
+	
 	document.querySelector("#modal-recipe").innerText = drink.strInstructions;
 	
 	for(let i = 1; i <= 15; i++)
@@ -247,6 +266,23 @@ async function openModal(id) {
 	document.querySelector(".modal-img").src = drink.strDrinkThumb;
 	document.querySelector("#modal-category").innerText = drink.strCategory;
 	alcoSelectElement.innerText = drink.strAlcoholic;
+	document.querySelector('#modal-alcohol').onclick = async() => {
+	
+		if(alcoSelectElement.innerText === "Alcoholic") {
+		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic`);
+		const drinkAlco = await promise.json();
+		const drinksAl = drinkAlco.drinks;
+		generateDrinksHTML(drinksAl);
+		dialog.close();
+		}
+		
+
+	if(alcoSelectElement.innerText === "Non_Alcoholic") {
+		const promise = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic`);
+		const drinkAlco = await promise.json();
+		const drinksAl = drinkAlco.drinks;
+		generateDrinksHTML(drinksAl);
+		dialog.close();}}
 	document.querySelector("#modal-recipe").innerText = drink.strInstructions;
 	
 	for(let i = 1; i <= 15; i++)
@@ -283,6 +319,3 @@ showButton.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   dialog.close();
 });
-
-
- 
