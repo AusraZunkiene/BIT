@@ -9,24 +9,27 @@ async function register() {
 		headers: {
 			"Content-Type": "application/json",
 		},
-		body: JSON.stringify({
-			username: "usernameField.value",
-			email: "emailField.value",
-			password: "passwordField.value",
+			body: JSON.stringify({
+			username: "Justinas",
+			email: "justinas@bit.lt",
+			password: "123321",
 		}),
 	});
-
+	
 	const response = await promise.text();
 	console.log(response);
 }
-registerButton.onclick = register;
-const
-async function login(){
-	const promise = await fetch("http:/localhost:3000/login"){
-		method: "POST",
-		headers: {
-			"Content-Type: "
-		}
-	}
-}
+	
+	register();
+// }
+// registerButton.onclick = register;
+// const
+// async function login(){
+// 	const promise = await fetch("http:/localhost:3000/login"){
+// 		method: "POST",
+// 		headers: {
+// 			"Content-Type: "
+// 		}
+// 	}
+// }
 
