@@ -105,6 +105,7 @@ nav {
 }
 #modal-alcohol {
     color:rgb(224, 156, 136);
+    cursor: pointer;
 }
 
 ::backdrop {
