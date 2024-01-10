@@ -50,24 +50,25 @@ server.get("/users/:id", (req, res) => {
 	}
 });
 
+server.post("/prisijungimas", (req, res) => {
+    //1. Validuojame, ar req.body turi tokius laukus username, password
+    const username = req.body.username,
+        password = req.body.password;
+		
+    if(!username) res.send("Prašome įvesti teisingą vardą");
+    if(!password) res.send("Prašome įvesti slaptažodį");
+    //2. Patikrinti, ar vartotojas su tokiu username egzistuoja
+    const selectedUser = users.find((user)=>user.username === username);
+    //a. jei ne, tada siusti "Vartotojas neegzistuoja"
+    if(!selectedUser) res.send("Toks vartotojas neegzistuoja")
+	//b. toliau daromas tikrinimas
+	//3. Ar slaptazodis atitinka.
+	//Jei atitinka - tada siunciame atsakyma is serverio.
+	//"Sekmingai prisijungete prie sistemos"
+    if(selectedUser.password === password)
+    	res.send("Sėkmingai prisijungėte prie sistemos");
+});
+
 server.listen(3000, () => {
 	console.log("Aplikacija pasileido");
 });
-
-// server.post("/prisijungimas", (req, res) => {
-//     //1. Validuojame, ar req.body turi tokius laukus username, password
-//     const username = req.body.username,
-//         password = res.body.password;
-//     if(!username) res.send("Prašome įvesti teisingą vardą");
-//     if(!password) req.send("Prašome įvesti slaptažodį");
-//     //2. Patikrinti, ar vartotojas su tokiu username egzistuoja
-//     const selectedUser = users.find((user)=>user.username === username);
-//     //a. jei ne, tada siusti "Vartotojas neegzistuoja"
-//     if(!selectedUser) res.send("Toks vartotojas neegzistuoja")
-// 	//b. toliau daromas tikrinimas
-// 	//3. Ar slaptazodis atitinka.
-// 	//Jei atitinka - tada siunciame atsakyma is serverio.
-// 	//"Sekmingai prisijungete prie sistemos"
-//     if(selectedUser.password === password)
-//     res.send("Sėkmingai prisijungėte prie sistemos");
-// });
