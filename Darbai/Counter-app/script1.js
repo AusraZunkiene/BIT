@@ -4,12 +4,12 @@ const reset = document.querySelector(".reset")
 const add = document.querySelector(".add")
 
 subtract.addEventListener("click",
-function(){count.innerHTML--})
+function(){count.innerHTML--});
 
 add.addEventListener("click",
-function(){count.innerHTML++})
+function(){count.innerHTML++});
 
 reset.addEventListener("click",
-function(){count.innerHTML = 0})
+function(){count.innerHTML = 0});
 
 

@@ -14,8 +14,7 @@ for (let i = 0; i < wordValue.length; i++) {
         vowe1Count++
     }
     
-   result.innerHTML = `${word.value.toUpperCase()} has ${vowe1Count}vowels`
-            
+   result.innerHTML = `${word.value.toUpperCase()} has ${vowe1Count}vowels`          
     
 }
 
