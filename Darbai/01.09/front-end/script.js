@@ -27,7 +27,7 @@ const loginUsernameElement = document.querySelector("#login-username"),
 	loginButton = document.querySelector("#login-button");
 
 async function login() {
-	const promise = await fetch("http://localhost:3000/prisijungimas", {
+ fetch("http://localhost:3000/prisijungimas", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -36,27 +36,13 @@ async function login() {
 			username: loginUsernameElement.value,
 			password: loginPasswordElement.value,
 		}),
-	});
-	const response = await promise.text();
+	})
+		.then((response) => response.json())
+		.then((response) => window.location.href = response.url)
+		.catch((err)=> console.log(err));
+
+	//window.location.href = "http://127.0.0.1:5500/BIT/Darbai/01.09/front-end/todos.html";
 }
 loginButton.onclick = login;
 
-// async function login() {
-// 	fetch("http://localhost:3000/prisijungimas", {
-// 		method: "POST",
-// 		headers: {
-// 			"Content-Type": "application/json",
-// 		},
-// 		body: JSON.stringify({
-// 			username: loginUsernameElement.value,
-// 			password: loginPasswordElement.value,
-// 		}),
-// 	})
-// 		.then((response) => response.json())
-// 		.then((response) => (window.location.href = response.url))
-// 		.catch((err) => console.log(err));
-
-// 	// window.location.href = "http://127.0.0.1:5500/front-end/todos.html";
-// }
-// 
 
