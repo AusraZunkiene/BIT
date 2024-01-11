@@ -16,17 +16,25 @@ for(const dropZone of dropZones)
         event.preventDefault();
     })
     dropZone.addEventListener("dragenter", (event)=>{
-        if(event.target.classList.contains("dropzone")){
+        if(event.target.parentElement.classList.contains(todo-list)){
+            event.target.parentElement.classList.add(dragover);
+        }
+        else if(event.target.classList.contains("dropzone")){
             event.target.classList.add("dragover");
         }
     });
     dropZone.addEventListener("dragleave", (event)=>{
-        if(event.target.classList.contains("dropzone")){
+        if(event.target.parentElement.classList.contains(todo-list)){
+            event.target.parentElement.classList.remove(dragover);}
+        else if(event.target.classList.contains("dropzone")){
             event.target.classList.remove("dragover");
         }
     });
-    dropZone.addEventListener("drop", (event)=>{
+    dropZone.addEventListener("drop", (event)=> {
         event.preventDefault();
+        if(event.target.parentElement.classList.contains(todo-list)){
+            event.target.parentElement.classList.remove(dragover);
+        document.querySelector(".all-todos").appendChild(dragElement)}
         if(event.target.classList.contains("dropzone")){
             event.target.classList.remove("dragover");
             event.target.appendChild(dragElement)

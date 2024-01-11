@@ -41,6 +41,7 @@ server.get("/users", (req, res) => {
 });
 
 server.get("/users/:id", (req, res) => {
+	console.log(isNaN(+req.params.id));
 	if (isNaN(+req.params.id)) {res.send("ID privalo buti skaicius");}
 	const selectedUser = users.find((user) => user.id === +req.params.id);
 	if (!selectedUser) {
@@ -55,12 +56,12 @@ server.post("/prisijungimas", (req, res) => {
     const username = req.body.username,
         password = req.body.password;
 		
-    if(!username) res.send("Prašome įvesti teisingą vardą");
-    if(!password) res.send("Prašome įvesti slaptažodį");
+    if(!username) return res.send("Prašome įvesti teisingą vardą");
+    if(!password) return res.send("Prašome įvesti slaptažodį");
     //2. Patikrinti, ar vartotojas su tokiu username egzistuoja
-    const selectedUser = users.find((user)=>user.username === username);
+    const selectedUser = users.find((user)=>user.username.toLowerCase() === username.toLowerCase());
     //a. jei ne, tada siusti "Vartotojas neegzistuoja"
-    if(!selectedUser) res.send("Toks vartotojas neegzistuoja")
+    if(!selectedUser) return res.send("Toks vartotojas neegzistuoja")
 	//b. toliau daromas tikrinimas
 	//3. Ar slaptazodis atitinka.
 	//Jei atitinka - tada siunciame atsakyma is serverio.

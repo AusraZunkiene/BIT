@@ -20,13 +20,11 @@ async function register() {
 	console.log(response);
 }
 	
-	register();
-
 registerButton.onclick = register;
 
 const loginUsernameElement = document.querySelector("#login-username"),
-loginPasswordElement = document.querySelector("#login-password"),
-loginButton = document.querySelector("#login-button");
+	loginPasswordElement = document.querySelector("#login-password"),
+	loginButton = document.querySelector("#login-button");
 
 async function login() {
 	const promise = await fetch("http://localhost:3000/prisijungimas", {
@@ -40,9 +38,9 @@ async function login() {
 		}),
 	});
 	const response = await promise.text();
-	console.log(response);
 }
 loginButton.onclick = login;
+
 // async function login() {
 // 	fetch("http://localhost:3000/prisijungimas", {
 // 		method: "POST",
