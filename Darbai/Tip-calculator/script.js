@@ -88,6 +88,7 @@ function ShowTextArea() {
         commentTextArea.style.display = (selectedTip === "0") ? "block" : "none";
         calculate.innerText = (selectedTip === "0") ? 'Submit & Calculate' : 'Calculate';
     }
+    
 }
 ShowTextArea();
 
