@@ -6,10 +6,12 @@ const texts = {
 };
 
 const todoMoveButtons = document.querySelectorAll(".todo-move"),
-	todoDeleteButtons = document.querySelectorAll(".todo-delete");
+	todoDeleteButtons = document.querySelectorAll(".todo-delete"),
+	todoUpdateButtons = document.querySelectorAll(".todo-update");
 
 const doneListElement = document.querySelector(".done-list"),
-	todoListElement = document.querySelector(".all-todos");
+	todoListElement = document.querySelector(".all-todos"),
+	todoUpdateElement = document.querySelector(".all-todos");
 
 function moveFromTodoToDone(event) {
 	const targetId = event.target.attributes.todomove.value;
@@ -36,5 +38,12 @@ for (const deleteButton of todoDeleteButtons) {
 		const targetId = event.target.attributes.tododelete.value;
 		const deleteTarget = document.querySelector(`[todo-id="${targetId}"]`);
 		deleteTarget.remove();
+	};
+}
+for (const updateButton of todoUpdateButtons) {
+	updateButton.onclick = (event) => {
+		const targetId = event.target.attributes.tododelete.value;
+		const updateTarget = document.querySelector(`[todo-id="${targetId}"]`);
+		event.target.innerText = texts.moveElementText.todo;
 	};
 }
