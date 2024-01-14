@@ -61,14 +61,14 @@ server.post("/prisijungimas", (req, res) => {
     //2. Patikrinti, ar vartotojas su tokiu username egzistuoja
     const selectedUser = users.find((user)=>user.username.toLowerCase() === username.toLowerCase());
     //a. jei ne, tada siusti "Vartotojas neegzistuoja"
-    if(!selectedUser) return res.status(404).json({message:"Toks vartotojas neegzistuoja"})
+    if(!selectedUser) return res.status(404).json({message:"Toks vartotojas neegzistuoja"});
 	//b. toliau daromas tikrinimas
 	//3. Ar slaptazodis atitinka.
 	//Jei atitinka - tada siunciame atsakyma is serverio.
 	//"Sekmingai prisijungete prie sistemos"
     if(selectedUser.password === password)
     	//res.send("Sėkmingai prisijungėte prie sistemos");
-	res.status(200).json({url:"http://127.0.0.1:5500/BIT/Darbai/01.09/front-end/todos.html"})
+	res.status(200).json({url:"http://127.0.0.1:5500/BIT/Darbai/01.09/front-end/todos.html"});
 });
 
 // CRUD

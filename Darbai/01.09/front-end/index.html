@@ -50,24 +50,30 @@
 			</div>
 			<h2 class="mt-4">Prisijungimas</h2>
 			<hr />
-			<input
-				type="text"
-				class="form-control mb-2"
-				placeholder="Username"
-				id="login-username"
-			/>
-			<input
-				type="password"
-				class="form-control mb-2"
-				placeholder="Password"
-				id="login-password"
-			/>
-			<div
-				class="btn btn-primary"
-				id="login-button"
+			<form
+				action="http://localhost:3000/prisijungimas"
+				method="post"
 			>
-				Login
-			</div>
+				<input
+					type="text"
+					class="form-control mb-2"
+					placeholder="Username"
+					id="login-username"
+					name="username"
+				/>
+				<input
+					type="password"
+					class="form-control mb-2"
+					placeholder="Password"
+					id="login-password"
+					name="password"
+				/>
+				<input
+					type="submit"
+					value="Login"
+					class="btn btn-primary"
+				/>
+			</form>
 		</div>
 
 		<script src="script.js"></script>
