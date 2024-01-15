@@ -61,16 +61,22 @@
 			}
 			.all-todos {
 				height: 100%;
+				overflow-y: scroll;
+			}
+			.done-list {
+				overflow-y: scroll;
 			}
 			.actions i {
 				cursor: pointer;
 				transition: all;
 				transition-duration: 0.2s;
-
 			}
 			.actions i:hover {
 				filter: brightness(80%);
 				scale: 1.05;
+			}
+			.lists {
+				max-height: 80vh;
 			}
 		</style>
 	</head>
@@ -79,9 +85,7 @@
 			<h3>Todos</h3>
 			<hr />
 			<div class="lists d-flex justify-content-between">
-				<div
-					class="todo-list d-flex flex-column justify-content-between"
-				>
+				<div class="todo-list d-flex flex-column justify-content-between">
 					<div class="all-todos dropzone">
 						<div
 							class="todo justify-content-between draggable"
@@ -92,7 +96,7 @@
 								type="checkbox"
 								name="todo"
 							/>
-							<span>Go to work</span>
+							<span class="todo-text">Go to work</span>
 							<div class="dropdown">
 								<i
 									class="bi bi-three-dots"
@@ -120,7 +124,7 @@
 										<a
 											class="dropdown-item text-white todo-update"
 											href="#"
-											todo-update="1"
+											todoupdate="1"
 											>Update</a
 										>
 									</li>
@@ -136,24 +140,36 @@
 							type="text"
 							class="form-control"
 							style="width: 70%"
+							id="todo-input"
 						/>
 						<div
 							class="btn btn-primary"
 							style="width: 30%"
+							id="todo-submit"
 						>
 							Add
 						</div>
 					</div>
 				</div>
 				<div class="actions d-flex flex-column justify-content-center">
-					<i class="bi bi-arrow-right-square-fill text-primary"></i>
-					<i class="bi bi-arrow-left-square-fill text-primary"></i>
-					<i class="bi bi-trash-fill text-danger"></i>
+					<i
+						class="bi bi-arrow-right-square-fill text-primary"
+						id="moveToDone"
+					></i>
+					<i
+						class="bi bi-arrow-left-square-fill text-primary"
+						id="moveToTodo"
+					></i>
+					<i
+						class="bi bi-trash-fill text-danger"
+						id="deleteTodoBtn"
+					></i>
 				</div>
 				<div class="done-list dropzone"></div>
 			</div>
 		</div>
 		<script src="./scripts/drag.js"></script>
-		<script src="./scripts/moveTodo.js"></script>
+		<script src="./scripts/todoSialogActions.js"></script>
+		<script src="./scripts/buttonActions.js"></script>
 	</body>
 </html>
