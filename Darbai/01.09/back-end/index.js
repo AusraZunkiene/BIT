@@ -154,7 +154,7 @@ server.put("/todos/:id", (req, res) => {
 		return res.status(404).json({ message: "Toks vartotojas neegzistuoja" });
 
 	const existingTodo = todos.findIndex((currentTodo) => currentTodo.id === id);
-	todos[existingTodo] = { ...todos[existingTodo], todo, username, done };
+	todos[existingTodo] = { ...todos[existingTodo], todo: todo || todos[existingTodo].todo, username, done };
 	if (!existingTodo)
 		res.status(404).json({ message: "Toks irašas buvo nerastas" });
 	else res.status(201).json(todos[existingTodo]);
