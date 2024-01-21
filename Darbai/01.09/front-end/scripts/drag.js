@@ -1,7 +1,5 @@
 let dragElement;
 
-
-
 const dropZones = document.querySelectorAll(".dropzone");
 
 function addDragFunctionalityToAllElements() {
