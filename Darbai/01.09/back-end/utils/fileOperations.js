@@ -1,4 +1,4 @@
-const fs = require("fs"); //failu sistemos modulis
+const fs = require("fs"); //failų sistemos modulis
 
 async function writeFile(obj) {
 	await fs.writeFile("./data.json", JSON.stringify(obj), (err) => {

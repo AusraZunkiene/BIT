@@ -48,7 +48,7 @@ function updateTodo(event) {
 		id: targetId,
 		todo: updateTarget.innerText,
 	});
-	//Siusti uzklausa i serveri
+	//Siųsti užklausą į serverį
 }
 
 function addClickListenersToTodoDialogButtons(a) {
@@ -84,7 +84,7 @@ function addClickListenersToTodoDialogButtons(a) {
 }
 // addClickListenersToTodoDialogButtons();
 async function addNewTodo() {
-	//atsakymas is serverio
+	//atsakymas iš serverio
 	const inputValue = todoInputElement.value;
 	todoInputElement.value = "";
 

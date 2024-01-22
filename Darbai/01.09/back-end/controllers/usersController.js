@@ -4,7 +4,6 @@ const router = express.Router();
 const { writeFile } = require("../utils/fileOperations");
 
 router.post("/register", async (req, res) => {
-	// console.log(req.body);
 	try {
 		const username = req.body.username;
 		const email = req.body.email;
@@ -57,18 +56,18 @@ router.post("/login", (req, res) => {
 			.json({ message: "Prašome teisingai įvesti vartotojo vardą" });
 	if (!password)
 		return res.status(400).json({ message: "Prašome įvesti slaptažodį" });
-	//2. Patikrinti, ar vartotojas su tokiu username egzistuoja,
+	//2. Patikrinti, ar vartotojas su tokiu username egzistuoja
 	const selectedUser = data.users.find(
 		(user) => user.username.toLowerCase() === username.toLowerCase() //slug
 	); //undefined - jei nerandamas
-	//a. jei ne, tada siusti "Vartotojas neegzistuoja"
+	//a. jei ne, tada siųsti "Vartotojas neegzistuoja"
 	if (!selectedUser)
 		return res.status(404).json({ message: "Toks vartotojas neegzistuoja" });
 
 	//b. toliau daromas tikrinimas
 	//3. Ar slaptazodis atitinka.
-	//Jei atitinka - tada siunciame atsakyma is serverio.
-	//"Sekmingai prisijungete prie sistemos"
+	//Jei atitinka - tada siunčiame atsakymą iš serverio.
+	//"Sėkmingai prisijungėte prie sistemos"
 	if (selectedUser.password === password) {
 		req.session.loggedIn = true;
 		req.session.username = selectedUser.username;

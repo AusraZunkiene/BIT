@@ -51,7 +51,7 @@ async function updateTodoApi(todo) {
 	const result = await promise.json();
 	if (!promise.ok) {
 		//2xx
-		console.error("Atsakymas iš endpoint /todos/45, buvo nesekmingas");
+		console.error("Atsakymas iš endpoint /todos/45, buvo nesėkmingas");
 	} else {
 		return result;
 	}
@@ -65,7 +65,7 @@ async function deleteTodo(id) {
 	const response = await promise.json();
 
 	if (!promise.ok) {
-		console.error("Nepavyko istrinti todo iraso");
+		console.error("Nepavyko ištrinti todo įrašo");
 	} else {
 		return response;
 	}

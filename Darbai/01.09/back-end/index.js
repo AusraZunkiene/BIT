@@ -4,7 +4,7 @@ const todosController = require("./controllers/todosController");
 const initialize = require("./middlewares/init");
 
 const server = express();
-//MVC - MODEL, VIEW, CONTROLLER struktura
+//MVC - MODEL, VIEW, CONTROLLER struktūra
 
 initialize(server);
 
