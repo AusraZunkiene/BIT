@@ -8,7 +8,7 @@ nav {
     border-left: 2px solid white;
     margin-top: 2px;
   }  
-  .img {
+  .imgs {
     font-size: 24px;
     color: white;
     text-decoration: none;
@@ -19,7 +19,7 @@ nav {
   }
   .text {
     font-size: 24px;
-    font-weight: 300;
+    font-weight: 400;
     color: white;
     text-decoration: none;
   }
@@ -29,11 +29,11 @@ nav {
   .text:hover {
     text-decoration: underline;
   }
-  .img:hover {
+  .imgs:hover {
     color: rgb(128, 124, 124);
     text-decoration: none;
   }
-  .img:visited {
+  .imgs:visited {
     color: white;
   }
   #button {
@@ -45,6 +45,7 @@ nav {
     width: 230px;
     font-size: 24px;
     height: 50px;
+    font-weight: 400;
     text-align: center;
   }
   #button1 {
@@ -56,6 +57,7 @@ nav {
     font-size: 24px;
     height: 50px;
     text-align: center;
+    font-weight: 400;
     border: none;
     transition: all;
     transition-duration: 0.2s;
@@ -204,6 +206,7 @@ footer .footer-links a {
     color: white;
     text-decoration: none;
     list-style: none;
+    font-weight: 400;
 }
 footer .footer-links a:hover {
     text-decoration: underline;
@@ -215,14 +218,13 @@ footer .footer-links ul {
 .footer-logo img {
     width: 30px;
 }
-footer .copyright {
-    padding-top: 15%;
-    padding-left: 15%; 
-    font-size: 16px;
-    line-height: 30px;
-    font-weight: 300;
-    width: 28vw;
+.copy {
+  padding-top: 150px;
+  margin-left: 150px;
+  font-size: 20px;
+  line-height: 34px;
 }
+
 .copyright img {
   width: 44px;
 }

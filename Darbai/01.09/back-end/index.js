@@ -133,7 +133,7 @@ server.get("/user/session-check", (req, res) => {
 	}
 });
 
-//Naujo todo pridejimas
+//Naujo todo pridėjimas
 server.post("/todos", (req, res) => {
 	// Naujo todo pridejimas
 
@@ -157,7 +157,7 @@ server.post("/todos", (req, res) => {
 		.status(201)
 		.json({ message: "Naujas todo buvo sėkmingai pridėtas", newTodo });
 });
-//Visu todo'su gavimas
+//Visų todo'su gavimas
 server.get("/todos", (req, res) => {
 	res.status(200).json(data.todos);
 });
@@ -176,8 +176,8 @@ server.put("/todos/:id", (req, res) => {
 	const id = +req.params.id;
 	if (isNaN(id))
 		return res.status(400).json({ message: "Įveskite tinkamą id" });
-	const { username, todo, done } = req.body;
-	console.log(username, todo);
+	const { todo, done } = req.body;
+	const username = req.session.username;
 	const existingUser = data.users.find(
 		(user) => user.username.toLowerCase() === username.toLowerCase()
 	);
@@ -190,7 +190,8 @@ server.put("/todos/:id", (req, res) => {
 
 	data.todos[existingTodo] = {
 		...data.todos[existingTodo],
-		todo: todo || data.todos[existingTodo].todo,
+		todo,
+		//todo: todo || data.todos[existingTodo].todo,
 		username,
 		done,
 	};
@@ -199,7 +200,7 @@ server.put("/todos/:id", (req, res) => {
 		res.status(404).json({ message: "Todo irašas buvo nerastas" });
 	else res.status(201).json(data.todos[existingTodo]);
 });
-//Todo istrynimas pagal id
+//Todo ištrynimas pagal id
 server.delete("/todos/:id", (req, res) => {
 	const id = +req.params.id;
 	if (isNaN(id))
