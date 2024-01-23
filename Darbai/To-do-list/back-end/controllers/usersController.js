@@ -1,7 +1,8 @@
 const express = require("express");
 const data = require("../data.json");
 const router = express.Router();
-const { writeFile } = require("../utils/fileOperations");
+const FileIO = require("../utils/fileOperations");
+const dataFile = new FileIO("../data.json");
 
 router.post("/register", async (req, res) => {
 	try {
@@ -15,7 +16,7 @@ router.post("/register", async (req, res) => {
 			password: password,
 		});
 		data.userId++;
-		await writeFile(data);
+		await dataFile.writeFile(data);
 		req.session.loggedIn = true;
 		req.session.username = username;
 		req.session.userId = data.users[data.users.length - 1].id;
@@ -34,7 +35,7 @@ router.get("/:id", (req, res) => {
 	//Jei yra gaunami duomenys, juos reikėtų validuoti.
 	console.log(isNaN(+req.params.id));
 	if (isNaN(+req.params.id)) {
-		return res.send("ID privalo buti skaicius");
+		return res.send("ID privalo būti skaičius");
 	}
 
 	const selectedUser = data.users.find((user) => user.id === +req.params.id);
@@ -56,18 +57,18 @@ router.post("/login", (req, res) => {
 			.json({ message: "Prašome teisingai įvesti vartotojo vardą" });
 	if (!password)
 		return res.status(400).json({ message: "Prašome įvesti slaptažodį" });
-	//2. Patikrinti, ar vartotojas su tokiu username egzistuoja
+	//2. Patikrinti, ar vartotojas su tokiu username egzistuoja,
 	const selectedUser = data.users.find(
 		(user) => user.username.toLowerCase() === username.toLowerCase() //slug
 	); //undefined - jei nerandamas
-	//a. jei ne, tada siųsti "Vartotojas neegzistuoja"
+	//a. jei ne, tada siusti "Vartotojas neegzistuoja"
 	if (!selectedUser)
 		return res.status(404).json({ message: "Toks vartotojas neegzistuoja" });
 
 	//b. toliau daromas tikrinimas
 	//3. Ar slaptazodis atitinka.
-	//Jei atitinka - tada siunčiame atsakymą iš serverio.
-	//"Sėkmingai prisijungėte prie sistemos"
+	//Jei atitinka - tada siunciame atsakyma is serverio.
+	//"Sekmingai prisijungete prie sistemos"
 	if (selectedUser.password === password) {
 		req.session.loggedIn = true;
 		req.session.username = selectedUser.username;
