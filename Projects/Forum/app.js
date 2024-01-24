@@ -28,6 +28,14 @@ app.get("/", (req, res) => {
 
 app.get('/register', (req, res)=>{res.render('register');}
 )
+app.get('/login', (req, res)=>{res.render('login');}
+)
+app.get('/about', (req, res)=>{res.render('about');}
+)
+app.get('/news', (req, res)=>{res.render('news');}
+)
+app.get('/theme', (req, res)=>{res.render('theme');}
+)
 
 app.listen(3000, ()=>{
     console.log("Serveris paleistas, jo adresas: http://localhost/");

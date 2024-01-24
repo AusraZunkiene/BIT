@@ -5,18 +5,145 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: rgb(247, 229, 207);
 }
 
 .container{
     max-width: 1000px;
     margin: 0 auto;
 }
+.background{
+    background-image: url("./pexels-samuel-jerónimo-8911759.jpg");
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
 
 nav{
-    background-color: #2E3532;
+    background-color: #50685e;
+    color: white;
+    padding: 20px;
+}
+
+.navas{
+   display: flex;
+   justify-content: space-between;
+}
+
+.three{
+    display: flex;
+    gap: 40px;
+}
+.two{
+    display: flex;
+    gap: 30px;
+    
+}
+.two a{
+    color:rgb(223, 176, 22);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.two a:hover{
     color: white;
 }
 
 a{
     color: white;
+   text-decoration: none;
 }
+a:hover{
+    color:rgb(223, 176, 22);
+}
+
+.register{
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   padding-top: 20px;
+}
+.box{
+    border: 1px solid black;
+    background-color: rgb(251, 245, 238);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+    width: 30%;
+    align-content: center;
+    margin: 20px auto;
+}
+
+input {
+    border-radius: 4px;
+    width: 40%;
+    height: 80%;
+}
+.inputAll{
+    display: grid;
+    gap: 20px;
+    padding-top: 20px;
+    justify-content: space-between;
+}
+
+.space{
+    padding-right: 20px;
+}
+button{
+    width: 250px;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid rgb(74, 10, 10);
+    background-color: #9ac4b4;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.section{
+    border: 1px solid black;
+    background-color: rgb(251, 245, 238);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 80%;
+    height: 90%;
+    border-radius: 4px;
+}
+.news{
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+    padding: 20px;
+}
+.section2{
+    border: 1px solid black;
+    background-color: rgb(251, 245, 238);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 80%;
+    height: 90%;
+    border-radius: 4px;
+}
+.sectionTitle{
+    background-color: #50685e;
+    font-size: 40px;
+    font-weight: 400;
+    padding: 20px;
+}
+.second{
+    margin-top: 40px;
+}
+
+.allFoto{
+    display: flex;
+    width: 100%;
+    padding: 20px 0;
+}
+.foto{
+    border: 1px solid black;
+    
+}
+
+
+
