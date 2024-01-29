@@ -18,3 +18,4 @@ function result()
     }
     document.write("Iš 5 galimų, teisingai atsakėte: "+score);
 }
+
