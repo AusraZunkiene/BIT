@@ -8,27 +8,31 @@
 </head>
 <body>
     <%- include('./components/nav-bar') %>
-    <div class="box">  
-        <div class="register">  
-            <h2>Sveiki atvykę į registraciją!</h2>
+    <div class="box">
+        <div class="register">    
+            <h2>Login!</h2>
             <div class="inputAll">
-                <label>
-                    <span class="space">Vartotojo vardas:</span>
-                    <input
-                        type="text"
-                        id="firstNameInput"
-                    />
-                </label>
-                <label>
-                    <span class="space">Slaptažodis:</span>
-                    <input
-                        type="text"
-                        id="firstNameInput"
-                    />
-                </label>
-                <button>Sukurti mano paskyrą</button>
+                <div>
+                    <label>
+                        <span class="space">Username</span>
+                        <input
+                            type="text"
+                            id="username"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <span class="space">Password</span>
+                        <input
+                            type="password"
+                            id="password"
+                        />
+                    </label>
+                </div>
+                <button class="register-button">Login</button>
             </div>
         </div>
-    </div>
+</div>
 </body>
 </html>

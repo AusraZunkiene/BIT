@@ -9,49 +9,48 @@
 <body>
     <%- include('./components/nav-bar') %>
     <div class="container">    
-        <div class="allFoto">
-            <div class="foto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quod, sed ducimus, aliquid provident eveniet quia aspernatur deserunt commodi inventore illum facilis eius voluptas doloremque saepe accusamus. Deleniti quis itaque, labore dolore id ipsum in saepe a ipsam. Ut nesciunt molestias perspiciatis voluptate exercitationem, quidem quae amet ab optio aspernatur?</div>
-            <div class="foto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem inventore, cumque magnam accusamus non labore excepturi incidunt, eveniet accusantium sunt doloremque nostrum. Neque autem nihil, veritatis omnis quaerat aspernatur ipsa quidem aliquam error asperiores quam ut placeat. Sapiente, nostrum suscipit. Impedit iste officia perspiciatis! Facere eius necessitatibus laborum qui illo!</div>
-            <div class="foto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem in tempora quis omnis enim totam esse sit. Sit inventore maxime minima dolor ullam? Nobis recusandae officiis iure eaque dolores excepturi debitis quia esse deserunt officia at, odio quo dolorem corrupti vel consectetur rerum amet hic assumenda. Quam distinctio asperiores at.</div>
-        </div>
         <div class="section">
-            <div class="sectionTitle">Naujausios temos</div>
-            <div class="news">
-                <div><img src="../public/knyga-5936787c1627b.jpg" width="300px" height="200px"></div>
-                <div>
-                    <h3>Temos pavadinimas</h3>
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae excepturi est consectetur corrupti, hic nesciunt eaque obcaecati harum nulla tenetur.</div>
-                </div>
-            </div>
-            <hr>
-            <div class="news">
-                <div><img src="../public/knyga-5936787c1627b.jpg" width="300px" height="200px"></div>
-                <div>
-                    <h3>Temos pavadinimas</h3>
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo delectus perspiciatis eius culpa eligendi distinctio nam animi quia obcaecati repudiandae facere, debitis est magni, id odio, eos ducimus porro veniam vitae placeat quaerat tenetur? Molestiae blanditiis aliquam rem! Illum dolorum at dolores, sunt assumenda distinctio earum nihil animi sapiente nemo..</div>
-                </div>
+            <div class="sectionTitle">General discussion</div>
+            <div class="container gap-from-top">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="col-6">Topics</th>
+                            <th class="col-1">Replies</th>
+                            <th class="col-1">Views</th>
+                            <th class="col-4">Last post</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%- include('./components/table.ejs') %> <%-
+                        include('./components/table.ejs') %> <%-
+                        
+                        include('./components/table.ejs') %>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="section second">
-            <div class="sectionTitle">Archyvas</div>
-            <div class="news">
-                <div><img src="../public/knyga-5936787c1627b.jpg" width="300px" height="200px"></div>
-                <div>
-                    <h3>Temos pavadinimas</h3>
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae excepturi est consectetur corrupti, hic nesciunt eaque obcaecati harum nulla tenetur.</div>
-                </div>
-            </div>
-            <hr>
-            <div class="news">
-                <div><img src="../public/knyga-5936787c1627b.jpg" width="300px" height="200px"></div>
-                <div>
-                    <h3>Temos pavadinimas</h3>
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo delectus perspiciatis eius culpa eligendi distinctio nam animi quia obcaecati repudiandae facere, debitis est magni, id odio, eos ducimus porro veniam vitae placeat quaerat tenetur? Molestiae blanditiis aliquam rem! Illum dolorum at dolores, sunt assumenda distinctio earum nihil animi sapiente nemo..</div>
-                </div>
+            <div class="sectionTitle">The archives</div>
+            <div class="container gap-from-top">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="col-6">Topics</th>
+                            <th class="col-1">Replies</th>
+                            <th class="col-1">Views</th>
+                            <th class="col-4">Last post</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%- include('./components/table.ejs') %> <%-
+                        include('./components/table.ejs') %> <%-
+                        
+                        include('./components/table.ejs') %>
+                    </tbody>
+                </table>
             </div>
         </div>
-        
-        
     </div>
 </body>
 </html>

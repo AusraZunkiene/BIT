@@ -10,39 +10,55 @@
     <%- include('./components/nav-bar') %>
     <div class="box">
         <div class="register">    
-            <h2>Sveiki atvykę į registraciją!</h2>
+            <h2>Registration!</h2>
             <div class="inputAll">
-                <label>
-                    <span class="space">Vartotojo vardas:</span>
-                    <input
-                        type="text"
-                        id="firstNameInput"
-                    />
-                </label>
-                <label>
-                    <span class="space">El.pašto adresas:</span>
-                    <input
-                        type="email"
-                        id="firstNameInput"
-                    />
-                </label>
-                <label>
-                    <span class="space">Gimimo data:</span>
-                    <input
-                        type="data"
-                        id="birth-date"
-                    />
-                </label>
-                <label>
-                    <span class="space">Slaptažodis:</span>
-                    <input
-                        type="text"
-                        id="firstNameInput"
-                    />
-                </label>
-                <button>Sukurti mano paskyrą</button>
+                <div>
+                    <label>
+                        <span class="space">Username</span>
+                        <input
+                            type="text"
+                            id="username"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <span class="space">Email</span>
+                        <input
+                            type="email"
+                            id="email"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <span class="space">Birth date</span>
+                        <input
+                            type="date"
+                            id="birth-date"
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <span class="space">Password</span>
+                        <input
+                            type="password"
+                            id="password"
+                        />
+                    </label>
+                </div>
+                <div class="photo">
+                        <input
+                            type="file"
+                            id="profile-photo"
+                            accept=".jpeg, .png, .gif, .bmp"
+                        />
+                </div>
+                <button class="register-button">Register</button>
             </div>
         </div>
 </div>
+<script src="/public/register.js"></script>
 </body>
 </html>
