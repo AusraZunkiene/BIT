@@ -9,7 +9,11 @@
 <body>
     <%- include('./components/nav-bar') %>
     <div class="box">
-        <div class="register">    
+        <div class="register"> 
+            <form
+				action="/api/user/login"
+				method="post"
+			>   
             <h2>Login!</h2>
             <div class="inputAll">
                 <div>
@@ -17,7 +21,7 @@
                         <span class="space">Username</span>
                         <input
                             type="text"
-                            id="username"
+                            name="loginName"
                         />
                     </label>
                 </div>
@@ -26,12 +30,20 @@
                         <span class="space">Password</span>
                         <input
                             type="password"
-                            id="password"
+                            name="password"
                         />
                     </label>
                 </div>
+                <div>
+					<a
+						href="/register"
+						class="standart-link"
+						>Still don't have an account?</a
+					>
+				</div>
                 <button class="register-button">Login</button>
             </div>
+        </form>
         </div>
 </div>
 </body>

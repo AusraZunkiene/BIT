@@ -289,6 +289,9 @@ tr a {
 	font-size: 12px;
 	margin-top: 0.5rem;
 }
+.register a {
+    color: #50685e;
+}
 
 
 

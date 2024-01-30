@@ -3,11 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-	res.render("index", {
-		title: "Forumo aplikacija",
-		username: "Justelio19",
-		list: ["Product1", "Product2", "Milk", "Choclate"],
-	});
+	res.render("news");
 });
 
 router.get("/register", (req, res) => {
