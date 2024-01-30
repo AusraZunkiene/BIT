@@ -1,13 +1,19 @@
+<!-- HEADER -->
 <div class="background"></div>
     <nav>
         <div class="container navas">
                 <div class="three">
-                    <a href="/news">Home</a>
+                    <a href="/">Home</a>
+					<a
+					href="/my-profile"
+					class="<%= activeTab === 'Profile' ? 'active-nav-item' : '' %>"
+					>My profile</a
+				>
                     <a href="/forums">Forums</a>
                 </div>
                 <div class="two"> 
-                    <a href="/register">Register</a>
-                    <a href="/login">Login</a>
+                    <a href="/api/user/logout">Log out</a>
                 </div>
         </div>
     </nav>
+

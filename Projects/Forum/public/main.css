@@ -186,10 +186,10 @@ label input:focus {
 	width: 41%;
 }
 .col-6 {
-	width: 50%;
+	width: 60%;
 }
 .col-7 {
-	width: 58%;
+	width: 48%;
 }
 .col-8 {
 	width: 66%;
@@ -292,6 +292,56 @@ tr a {
 .register a {
     color: #50685e;
 }
+.profileInfo{
+    display: grid;
+   justify-items: center;
+   padding: 10px;
+   
+}
+.profile-photo-large {
+	width: 250px;
+	height: 250px;
+	overflow: hidden;
+	border-radius: 100%;
+	border: 1px solid gray;
+}
+.profile-photo-large img {
+	width: 250px;
+	height: 250px;
+	object-fit: cover;
+}
+
+.data-row span {
+	display: inline-block;
+	font-size: 18px;
+}
+.thumbs-up {
+	color: #50685e;
+	cursor: pointer;
+}
+.thumbs-down {
+	color: rgb(235, 162, 134);
+	cursor: pointer;
+}
+.heading{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 25%;
+}
+.profile-info span{
+    margin-bottom: 10px;
+}
+
+.hands{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.special{
+    margin: -70px;
+}
+
 
 
 
