@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prisijungimas</title>
     <link rel="stylesheet" href="public/main.css">
+    <script
+			src="/public/index.js"
+			defer
+		></script>
 </head>
 <body>
     <%- include('./components/header.ejs') %>
     <div class="box">
+        <%- include('./components/errorMessage.ejs') %>
         <div class="register"> 
             <form
 				action="/api/user/login"

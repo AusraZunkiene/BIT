@@ -342,6 +342,21 @@ tr a {
     margin: -70px;
 }
 
+.error {
+	background-color: rgb(219, 123, 27);
+	color: rgb(65, 13, 13);
+	border-radius: 3px;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}
+
+.message {
+	background-color:rgb(219, 123, 27);
+	color: rgb(41, 110, 21);
+	border-radius: 3px;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}
 
 
 
