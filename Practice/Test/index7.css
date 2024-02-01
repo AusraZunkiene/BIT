@@ -1,6 +1,9 @@
 body{
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
 .section{
     height: 700px;
     background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("LT-en-20240115-trifectadaily-perspective_alpha_website_large.jpg");
@@ -60,7 +63,7 @@ header{
     border: 1px solid white;
 }
 input[value="Email address"]{ 
-    color: white;
+    color:rgba(255,255,255,0.7);
     font-size: 1rem;
     padding-left: 10px;
 }
@@ -105,28 +108,29 @@ h1{
     height: 600px;
     background-color: black;
     color: white;
-   
 }
 .enjoy{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 200px;
-    padding-top: 20px;
 }
 .right,
 .left{
     width: 50%;
 }
-.right{
-    padding-top: 100px;
+.right h1,
+.left h1{
+    padding-top:100px;
 }
+
+
 .section2 h1,
 .section3 h1,
 .section4 h1,
 .section5 h1{
     font-size: 3rem;
 }
+
 .section2 p,
 .section3 p,
 .section4 p,
@@ -136,10 +140,14 @@ h1{
 .videoo{
     position: absolute;
     left: 800px;
+    width: 500px;
 }
 .video{
     position: relative;
-    top: 60px;
+    top: 70px;
+    width: 365px;
+    height: 220px;
+    left: 95px;
   
 }
 .pcImg{
@@ -178,6 +186,7 @@ h1 {
     margin-top: 10px;
     color: white;
     font-size: 30px;
+    margin-left: 250px;
 }
 .acordion{
     display: block;
@@ -187,15 +196,33 @@ h1 {
     color:white
 }
 .acordionText{
-    padding-top: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 90px;
     text-align: center;
 }
 
 .column {
     float: left;
     width: 20%;
-    padding: 10px;
-    background-color: #090601;
+}
+.footeris a{
+    line-height: 30px;
+    color:rgba(255,255,255,0.7);
+    font-size: 16px;
+}
+.footeris{
+    display: grid;
+    width: 100%;
+    height: 300px;
+    background-color: black;
     margin-top: -38px;
-  }
+    padding: 90px;
+}
+.question{
+    padding-left: 20px;
+}
+.none{
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+
