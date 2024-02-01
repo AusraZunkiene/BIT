@@ -14,6 +14,11 @@ router.post("/register", upload.single("img"), async (req, res) => {
 		if (!username || !email || !password || !birthDate) {
 			return res.redirect("/register?error=Ne visi duomenys buvo užpildyti");
 		}
+		const validationResult = validate(req.body);
+		if (validationResult !== "success") {
+			return res.redirect("/register?error=" + validationResult);
+		}
+
 
 		//Patikrinti ar vartotojo username bei email laukeliai yra unikalus
 
@@ -31,11 +36,7 @@ router.post("/register", upload.single("img"), async (req, res) => {
 			birthDate,
 			profilePicture: `/public/images/${fileName}`,
 		};
-		const validationResult = validate(newUserObj);
-		if (validationResult !== "success") {
-			return res.redirect("/register?error=" + validationResult);
-		}
-
+	
 		const newUser = new UserModel(newUserObj);
 		await newUser.save();
 		// Nustatoma sesija vartotojui - po registracijos iš kart įvykdomas prijungimas prie sistemos
