@@ -23,27 +23,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <%- include('./components/table.ejs') %> <%-
-                        include('./components/table.ejs') %> <%-
-                        
-                        include('./components/table.ejs') %>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="section second">
-            <div class="sectionTitle">The archives</div>
-            <div class="container gap-from-top">
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="col-6">Topics</th>
-                            <th class="col-1">Replies</th>
-                            <th class="col-1">Views</th>
-                            <th class="col-4">Last post</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                        <% for( const post of posts ) { %> <%-
+                            include('./components/table.ejs', {post}) %> <% } %>
                         <%- include('./components/table.ejs') %> <%-
                         include('./components/table.ejs') %> <%-
                         

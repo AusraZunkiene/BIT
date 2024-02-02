@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const UserModel = require("../models/user");
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
 	//index.ejs failo atvaizdavimas iš views aplanko
 
 	const config = {
@@ -13,6 +13,7 @@ router.get("/", (req, res) => {
 		activeTab: "Home",
 		loggedIn: !!req.session.user?.loggedIn,
 		message: req.query.message,
+		posts: await PostModel.find({}),
 	};
 	res.render("news", config);
 	//Kartu paduodami ir parametrai EJS failui
@@ -75,6 +76,19 @@ router.get("/forums", (req, res) => {
 		loggedIn: !!req.session.user?.loggedIn,
 	};
 	res.render("forums", config);
+
+});
+
+router.get("/new-post", (req, res) => {
+	if (!req.session.user?.loggedIn) {
+		return res.redirect("/login?error=Jums reikia prisijungti prie paskyros");
+	}
+	const config = {
+		title: "Fortra - best forum in the world!",
+		activeTab: "",
+		loggedIn: !!req.session.user?.loggedIn,
+	};
+	res.render("new-post", config);
 
 });
 

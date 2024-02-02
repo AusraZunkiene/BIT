@@ -19,6 +19,19 @@ router.post("/register", upload.single("img"), async (req, res) => {
 			return res.redirect("/register?error=" + validationResult);
 		}
 
+		const existingUser = await UserModel.findOne({
+			$or: [{ email }, { username }],
+		});
+
+		if (existingUser) {
+			if (username === existingUser.username) {
+				return res.redirect("/register?error=Username already exists");
+			}
+			if (email === existingUser.email) {
+				return res.redirect("/register?error=Email already exists");
+			}
+		}
+
 
 		//Patikrinti ar vartotojo username bei email laukeliai yra unikalus
 
