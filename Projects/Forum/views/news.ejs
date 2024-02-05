@@ -10,8 +10,14 @@
     <%- include('./components/header.ejs') %>
     <div class="container">  
         <div class="section">
-            <%- include('./components/infoMessage.ejs') %>
+            <%- include('./components/infoMessage.ejs') %> <%-
+			include('./components/errorMessage.ejs') %>
             <div class="sectionTitle">General discussion</div>
+            <a
+            href="/new-post"
+            class="message1"
+            >Create new post</a
+        >
             <div class="container gap-from-top">
                 <table>
                     <thead>
@@ -25,10 +31,6 @@
                     <tbody>
                         <% for( const post of posts ) { %> <%-
                             include('./components/table.ejs', {post}) %> <% } %>
-                        <%- include('./components/table.ejs') %> <%-
-                        include('./components/table.ejs') %> <%-
-                        
-                        include('./components/table.ejs') %>
                     </tbody>
                 </table>
             </div>
