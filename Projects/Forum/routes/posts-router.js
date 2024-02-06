@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const PostModel = require("../models/post");
-const upload = require("../config/multer").upload;
-const validate = require("../utils/validation/userValidation");
+
 
 router.get("/", async (req, res) => {
 	//Visu irasu gavimas

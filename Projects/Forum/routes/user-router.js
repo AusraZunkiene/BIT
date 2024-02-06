@@ -7,7 +7,6 @@ const validate = require("../utils/validation/userValidation");
 
 router.post("/register", upload.single("img"), async (req, res) => {
 	try {
-		// console.log(req.body);
 		const { username, password, birthDate, email } = req.body;
 		const fileName = require("../config/multer").lastFileName;
 
@@ -19,6 +18,15 @@ router.post("/register", upload.single("img"), async (req, res) => {
 			return res.redirect("/register?error=" + validationResult);
 		}
 
+		//Patikrinti ar vartotojo username bei email laukeliai yra unikalus
+
+		// await UserModel.find({_id: id}) gaunamas masyvas
+		// await UserModel.findOne({_id: id}) gaunamas vienas irasas
+
+		// vartotojo paieška pagal elektroninį paštą arba vartotojo vardą
+
+		// 2. budas
+		//$or
 		const existingUser = await UserModel.findOne({
 			$or: [{ email }, { username }],
 		});
@@ -32,12 +40,6 @@ router.post("/register", upload.single("img"), async (req, res) => {
 			}
 		}
 
-
-		//Patikrinti ar vartotojo username bei email laukeliai yra unikalus
-
-		// await UserModel.find({_id: id}) gaunamas masyvas
-		// await UserModel.findOne({_id: id}) gaunamas vienas irasas
-
 		const salt = security.generateSalt();
 		const hashedPassword = security.hashPassword(password, salt);
 
@@ -49,7 +51,7 @@ router.post("/register", upload.single("img"), async (req, res) => {
 			birthDate,
 			profilePicture: `/public/images/${fileName}`,
 		};
-	
+
 		const newUser = new UserModel(newUserObj);
 		await newUser.save();
 		// Nustatoma sesija vartotojui - po registracijos iš kart įvykdomas prijungimas prie sistemos
@@ -61,11 +63,10 @@ router.post("/register", upload.single("img"), async (req, res) => {
 	} catch (err) {
 		res.redirect("/register?error=Registracija nepavyko dėl blogų duomenų");
 	}
-
 });
 
 router.get("/users", async (req, res) => {
-	if (!req.session.user.admin)
+	if (!req.session.user?.admin)
 		return res.status(403).json({ message: "neturite tam teisiu" });
 	console.log(req.session.user);
 	const users = await UserModel.find({});

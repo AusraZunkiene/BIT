@@ -13,6 +13,7 @@ const schema = new mongoose.Schema({
 		required: true,
 		minLength: 8,
 		maxLength: 120,
+		// Unique - nurodo, kad duomenu bazeje butu unikalus įrašas
 		unique: true,
 	},
 	password: {
@@ -47,12 +48,10 @@ const schema = new mongoose.Schema({
 	admin: {
 		type: Boolean,
 		default: false,
-		required: true,
 	},
 	registrationDate: {
 		type: Date,
 		default: new Date(),
-		required: true,
 	},
 });
 
