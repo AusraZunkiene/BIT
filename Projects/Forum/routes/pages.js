@@ -10,6 +10,7 @@ router.get("/", async (req, res) => {
 		path: "author",
 		select: "username email",
 	});
+	console.log(posts[0]);
 	const config = {
 		title: "Fortra - best forum in the world!",
 		username: "Justelio19",
