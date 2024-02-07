@@ -81,27 +81,40 @@ nav{
     margin-bottom: 20px;
 }
 .section1-email{
-    background: #fff;
-    border-radius: 4px;
     display: flex;
     align-items: center;
-    margin-top: 30px;
-    overflow: hidden;
+    margin-top: 20px;
+    text-align: center;
+    justify-content: center;
 }
 .section1-email input{
+    background-color: rgba(25, 22, 22, 0.809);
     flex: 1;
-    border: 0;
-    outline: 0;
-    margin-left: 20px;
+    margin-right: 7px;
+    min-height: 55px;
+    max-width: 360px;
+    border: 1px solid rgba(132, 128, 128, 0.688);
+    color: rgb(255, 255, 255);
+    outline: none;
+}
+.section1-email input::placeholder {
+    color: rgba(255, 255, 255, 0.686);
+    padding-left: 5px;
+}
+.section1-email input:focus {
+    background-color: rgba(25, 22, 22, 0.809);
+    color: rgb(255, 255, 255);
+    border: 2px solid rgba(250, 250, 250, 0.865) ;
 }
 .section1-email button{
     background: #db0001;
-    border: 0;
-    outline: 0;
+    border: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 4px;
     cursor: pointer;
-    padding: 15px 30px;
+    padding: 18px 20px;
 }
 .section2{
     padding: 50px 12%;
@@ -142,8 +155,8 @@ nav{
 }
 .accordion{
     padding: 20px;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 25px;
+    font-weight: 400;
     background: #303030;
     margin-bottom: 2px;
     cursor: pointer;
@@ -163,10 +176,47 @@ nav{
 }
 .desc{
     max-height: 0;
-    background: #303030;
+    text-align: justify;
+    line-height: 30px;
+    color: white;
+    height: fit-content;
+    font-size: 23px;
+    background-color: #2d2d2d;
     overflow: hidden;
-    padding: 0 1rem;
+    padding: 0 20px;
     transition: max-height 0.5s, padding 0.5s;
+}
+.section2-email{
+    width: 50%;
+    background: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;  
+}
+.section2-email input{
+    flex: 1;
+    border: 0;
+    outline: 0;
+    margin-left: 20px;
+}
+.section2-email button{
+    background: #db0001;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 15px 30px;
+}
+.span{
+   margin-left: 20%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.acordion h2{
+    margin-bottom: 30px;
 }
 .acordion .section1-email{
     margin: 20px auto 60px;
