@@ -1,4 +1,4 @@
-# Projekto pavadinimas
+# Project name
 
 <h1 align="center">
   RELAXITAS
