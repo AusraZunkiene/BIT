@@ -14,6 +14,7 @@
 <li>Invoice     <a href="https://ausrazunkiene.github.io/BIT/Projects/Invoice/Sąskaitos%20šablonas.html">View</a></li>
 <li>Landing-page Collab     <a href="https://ausrazunkiene.github.io/BIT/Projects/Landing-page/Collab/Collab.html">View</a></li>
 <li>Landing-page Shoes-shop    <a href="https://ausrazunkiene.github.io/BIT/Projects/Shoes-shop/shop.html">View</a></li>
+<li>Landing-page Shopping-cart    <a href="https://ausrazunkiene.github.io/BIT/Projects/Landing-page/Shopping-cart/bootstrap.html">View</a></li>
 <li>Landing-page Travlog     <a href="https://ausrazunkiene.github.io/BIT/Projects/Landing-page/Travlog/Travlog.html">View</a></li>
 <li>Number-game    <a href="https://ausrazunkiene.github.io/BIT/Projects/Number-game/index.html">View</a></li>
 <li>Palindrome     <a href="https://ausrazunkiene.github.io/BIT/Projects/Palindrome/index5.html">View</a></li>
