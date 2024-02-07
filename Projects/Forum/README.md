@@ -1,7 +1,7 @@
 # Projekto pavadinimas
 
 <h1 align="center">
-  <img src="https://static.fortra.com/fortra-global-assets/fortra-logo-full.svg?l=1220145297" alt="Fortra"/>
+  RELAXITAS
 </h1>
 <br/>
 <div align="center">
