@@ -1,18 +1,28 @@
 <!-- HEADER -->
-<div class="background"></div>
-    <nav>
-        <div class="container navas">
-                <div class="three">
-                    <a href="/">Home</a>
-					<a
-					href="/my-profile"
-					class="<%= activeTab === 'Profile' ? 'active-nav-item' : '' %>"
-					>My profile</a
-				>
-                </div>
-                <div class="two"> 
-                    <a href="/api/user/logout">Log out</a>
-                </div>
-        </div>
-    </nav>
+<header class="header">
+	<a href="/"
+		><img
+			class="logo"
+			src="https://static.goanywhere.com/images/logos/fta-goanywhere-logo-light.svg"
+	/></a>
 
+	<nav>
+		<div class="nav-item">
+			<a
+				href="/"
+				class="<%= activeTab === 'Home' ? 'active-nav-item' : '' %>"
+				>Home</a
+			>
+		</div>
+		<div class="nav-item">
+			<a
+				href="/my-profile"
+				class="<%= activeTab === 'Profile' ? 'active-nav-item' : '' %>"
+				>My profile</a
+			>
+		</div>
+		<div class="nav-item">
+			<a href="/api/user/logout">Log out</a>
+		</div>
+	</nav>
+</header>

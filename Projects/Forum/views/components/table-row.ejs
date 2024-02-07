@@ -1,14 +1,14 @@
 <tr>
 	<td class="col-6">
 		<div class="post">
-			<img src="/public/1498089-mind-relaxing-wallpapers-2283x1649-for-meizu.jpg" />
+			<img src="https://placehold.co/300x300" />
 			<div class="topic-details">
 				<a
 					class="topic"
 					href="/post/<%= post._id %>"
 					><%= post.title %></a
 				>
-				<p class="author">Author: <a class="topic" href=""><%= post.author %></a></p>
+				<p class="author">Author: <a href=""><%= post.author.username %></a></p>
 			</div>
 		</div>
 	</td>
@@ -22,15 +22,15 @@
 		<div class="last-post">
 			<div>
 				<span>by&nbsp</span>
-				<span class="author topic">
+				<span class="author">
 					<a
 						href=""
 						class="author-outline"
-						>Linas20</a
+						><%= post.lastCommentBy %></a
 					>
 				</span>
 			</div>
-			<div class="date">Tue Mar 21, 2017 08:50</div>
+			<div class="date"><%= new Date(post.lastComment).toDateString() %></div>
 		</div>
 	</td>
 </tr>

@@ -1,7 +1,7 @@
 # Project name
 
 <h1 align="center">
-  RELAXITAS
+  RELAXA
 </h1>
 <br/>
 <div align="center">
