@@ -37,7 +37,7 @@ router.get("/register", (req, res) => {
 	}
 	const config = {
 		activeTab: "Register",
-		title: " - Registration",
+		title: "Relaxa - Registration",
 		loggedIn: !!req.session.user?.loggedIn,
 		error: req.query.error,
 	};
@@ -50,7 +50,7 @@ router.get("/login", (req, res) => {
 	}
 	const config = {
 		activeTab: "Login",
-		title: " - Authentication",
+		title: "Relaxa - Authentication",
 		loggedIn: !!req.session.user?.loggedIn,
 		error: req.query.error,
 	};
@@ -94,7 +94,7 @@ router.get("/new-post", (req, res) => {
 
 router.get("/profile/:id", async (req, res) => {
 	try {
-		const userData = await UserModel.findOne({ _id: req.session.user.id });
+		const userData = await UserModel.findOne({ _id: req.params.id });
 		const config = {
 			activeTab: "Profile",
 			title: "Relaxa - My profile",
@@ -107,16 +107,22 @@ router.get("/profile/:id", async (req, res) => {
 			commentsCount: userData.commentsCount,
 			likes: userData.likes,
 			dislikes: userData.dislikes,
+			id: req.params.id,
 		};
 		res.render("foreign-profile", config);
-	} catch (err) {}
+	} catch (err) {
+		res.redirect("/?error=netinkamas vartotojo ID");
+	}
 });
 router.get("/post/:id", async (req, res) => {
 	try {
 		const post = await PostModel.findOne({ _id: req.params.id }).populate(
 			"author"
 		);
-		const comments = await CommentModel.find({ post: req.params.id });
+		const comments = await CommentModel.find({ post: req.params.id }).populate({
+			path: "author",
+			select: "username",
+		});
 		post.viewsCount++;
 		post.save();
 		// PostModel.findByIdAndUpdate(
