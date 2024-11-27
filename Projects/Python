@@ -1,0 +1,17 @@
+from playwright.sync_api import sync_playwright
+
+def run_test():
+    with sync_playwright() as p:
+        
+        browser = p.chromium.launch(headless=False) 
+        page = browser.new_page()
+        page.goto("https://demo.betgames.tv/?language=lt")
+        page.wait_for_selector("li#language > a.dropdown-toggle")
+        page.click("li#language > a.dropdown-toggle") 
+        page.wait_for_selector("div.dropdown-menu.multi-column") 
+        page.click("a:has-text('English')")  
+        print("Kalba pakeista!")
+        page.screenshot(path="language_selected.png")
+        browser.close()
+
+run_test()
